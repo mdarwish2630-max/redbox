@@ -1,0 +1,163 @@
+/* ============================================
+   REEL FIX v5 - BASED ON REAL SNGINE HTML
+   Sngine v4.2 - Actual structure analyzed:
+   
+   <div class="post-item" id="post-13" data-post-id="13" data-type="reel">
+     ...
+     <div class="">                              ← EMPTY CLASS wrapper
+       <video class="js_video-plyr" id="reel-2" 
+              onplay="update_media_views('reel', 2)"
+              playsinline controls preload="auto">
+         <source src="...sngine_xxx.mp4">
+       </video>
+     </div>
+     ...
+   </div>
+   
+   KEY: We target video[id^="reel-"] to find reels
+   Then we hide the wrapper and show our thumbnail
+   ============================================ */
+
+
+/* === CUSTOM THUMBNAIL (our own element - Sngine can't touch) === */
+.rn-reel-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+}
+
+.rn-reel-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Play icon */
+.rn-reel-thumb-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 36, 66, 0.85);
+    border-radius: 50%;
+    z-index: 5;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(255, 36, 66, 0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.rn-reel-thumb-play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-left: 16px solid #fff;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.rn-reel-thumb:hover .rn-reel-thumb-play {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 36, 66, 1);
+}
+
+/* Duration badge */
+.rn-reel-thumb-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* === FULLSCREEN VIDEO MODAL === */
+.rn-reel-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: rnFadeIn 0.2s ease;
+}
+
+@keyframes rnFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.rn-reel-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.rn-reel-modal-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.rn-reel-modal-close {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.rn-reel-modal-close:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* === MOBILE === */
+@media (max-width: 767px) {
+    .rn-reel-thumb-play {
+        width: 42px;
+        height: 42px;
+    }
+    .rn-reel-thumb-play::after {
+        border-left-width: 13px;
+        border-top-width: 7px;
+        border-bottom-width: 7px;
+    }
+    .rn-reel-modal-content {
+        max-width: 100%;
+    }
+}

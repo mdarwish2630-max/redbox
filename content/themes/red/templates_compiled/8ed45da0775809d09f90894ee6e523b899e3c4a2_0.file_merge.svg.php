@@ -1,0 +1,29 @@
+<?php
+/* Smarty version 5.7.0, created on 2026-05-12 06:28:47
+  from 'file:C:\xampp\htdocs\selfie\content\themes\red\templates\../images/svg/merge.svg' */
+
+/* @var \Smarty\Template $_smarty_tpl */
+if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
+  'version' => '5.7.0',
+  'unifunc' => 'content_6a02c89f34f2e2_39475848',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '8ed45da0775809d09f90894ee6e523b899e3c4a2' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\selfie\\content\\themes\\red\\templates\\../images/svg/merge.svg',
+      1 => 1776786000,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+))) {
+function content_6a02c89f34f2e2_39475848 (\Smarty\Template $_smarty_tpl) {
+$_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\red\\images\\svg';
+echo '<?'; ?>
+xml version="1.0" encoding="utf-8"<?php echo '?>'; ?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="-4 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-merge"><path d='M8 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM7 5.83a3.001 3.001 0 1 1 2.033-.013v2.028c0 .074-.003.148-.008.221a1 1 0 0 0 .462.637l3.086 1.846a3 3 0 0 1 1.46 2.575v1.059a3.001 3.001 0 1 1-2-.024v-1.035a1 1 0 0 0-.487-.858L8.46 10.42a3 3 0 0 1-.444-.324 3 3 0 0 1-.443.324l-3.086 1.846a1 1 0 0 0-.487.858v1.047a3.001 3.001 0 1 1-2 0v-1.047a3 3 0 0 1 1.46-2.575l3.086-1.846a1 1 0 0 0 .462-.637A3.006 3.006 0 0 1 7 7.845V5.829zM3 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/></svg><?php }
+}

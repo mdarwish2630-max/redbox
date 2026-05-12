@@ -1,0 +1,2069 @@
+/* ============================================
+   RedNote Theme - Full Layout + Design Override
+   Based on RedNote/Xiaohongshu UI Reference
+   Primary: #ff2442 | BG: #f5f5f5
+   ============================================ */
+
+/* ============================
+   1. ROOT VARIABLES
+   ============================ */
+:root {
+  --rednote-primary: #ff2442;
+  --rednote-primary-dark: #d42040;
+  --rednote-primary-light: #fff0f2;
+  --rednote-bg: #f5f5f5;
+  --rednote-white: #ffffff;
+  --rednote-text: #333333;
+  --rednote-text-secondary: #666666;
+  --rednote-text-muted: #999999;
+  --rednote-border: #eeeeee;
+  --rednote-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  --rednote-shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+  --rednote-shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+  --rednote-radius: 15px;
+  --rednote-radius-sm: 10px;
+  --rednote-radius-pill: 20px;
+  --rednote-transition: 0.3s ease;
+  --rednote-sidebar-width: 220px;
+}
+
+/* ============================
+   2. BODY & BACKGROUND
+   ============================ */
+body {
+  background-color: var(--rednote-bg) !important;
+  font-family: Poppins, Arial, sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.night-mode {
+  background-color: #1a1a1a !important;
+}
+
+/* ============================
+   3. REDNOTE LAYOUT STRUCTURE
+   ============================ */
+.rednote-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ============================
+   4. SIDEBAR
+   ============================ */
+.rednote-sidebar {
+  width: var(--rednote-sidebar-width);
+  min-width: var(--rednote-sidebar-width);
+  background: var(--rednote-white);
+  padding: 20px 15px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+body.night-mode .rednote-sidebar {
+  background: #1e1e1e;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+}
+
+/* Hide default scrollbar on sidebar */
+.rednote-sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Logo */
+.rednote-logo {
+  background: var(--rednote-primary);
+  color: white;
+  padding: 12px;
+  border-radius: var(--rednote-radius-sm);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  display: block;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.rednote-logo:hover {
+  background: var(--rednote-primary-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,36,66,0.3);
+  color: white !important;
+  opacity: 1 !important;
+}
+
+/* Menu items */
+.rednote-menu {
+  flex: 1;
+}
+
+.rednote-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 15px;
+  margin: 2px 0;
+  border-radius: var(--rednote-radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.rednote-menu-item:hover {
+  background: var(--rednote-primary-light) !important;
+  color: var(--rednote-primary) !important;
+  opacity: 1 !important;
+  transform: translateX(2px);
+}
+
+body.night-mode .rednote-menu-item {
+  color: #aaa;
+}
+
+body.night-mode .rednote-menu-item:hover {
+  background: #2a1519 !important;
+  color: var(--rednote-primary) !important;
+}
+
+.rednote-menu-item.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(255,36,66,0.3);
+  opacity: 1 !important;
+}
+
+.rednote-menu-item.active:hover {
+  background: var(--rednote-primary-dark) !important;
+  color: #fff !important;
+}
+
+.rednote-menu-item.active .rn-menu-icon,
+.rednote-menu-item.active .rn-menu-icon * {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.rn-menu-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #666;
+}
+
+.rednote-menu-divider {
+  height: 1px;
+  background: var(--rednote-border);
+  margin: 10px 10px;
+}
+
+body.night-mode .rednote-menu-divider {
+  background: #333;
+}
+
+/* Sidebar footer (user info / login) */
+.rednote-sidebar-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.rednote-user-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--rednote-radius-sm);
+  background: #f8f8f8;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+body.night-mode .rednote-user-btn {
+  background: #2a2a2a;
+}
+
+.rednote-user-btn:hover {
+  background: var(--rednote-primary-light) !important;
+  opacity: 1 !important;
+}
+
+.rednote-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rednote-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rednote-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.night-mode .rednote-user-name {
+  color: #ccc;
+}
+
+/* Login / Signup buttons */
+.rednote-login-btn {
+  display: block;
+  margin-top: 15px;
+  background: var(--rednote-primary);
+  color: white !important;
+  padding: 11px;
+  text-align: center;
+  border-radius: var(--rednote-radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.rednote-login-btn:hover {
+  background: var(--rednote-primary-dark) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,36,66,0.3);
+  opacity: 1 !important;
+}
+
+.rednote-signup-btn {
+  display: block;
+  margin-top: 8px;
+  background: transparent;
+  color: var(--rednote-text-secondary) !important;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--rednote-radius-sm);
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: none !important;
+  border: 1px solid var(--rednote-border);
+  transition: all 0.2s ease;
+}
+
+.rednote-signup-btn:hover {
+  border-color: var(--rednote-primary) !important;
+  color: var(--rednote-primary) !important;
+  background: var(--rednote-primary-light) !important;
+  opacity: 1 !important;
+}
+
+/* Mobile toggle */
+.rednote-mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background: var(--rednote-primary);
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1050;
+  box-shadow: 0 2px 10px rgba(255,36,66,0.3);
+}
+
+/* ============================
+   5. MAIN AREA
+   ============================ */
+.rednote-main {
+  flex: 1;
+  margin-left: var(--rednote-sidebar-width);
+  min-height: 100vh;
+}
+
+/* ============================
+   6. SEARCH HEADER
+   ============================ */
+.rednote-header {
+  background: var(--rednote-white);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+body.night-mode .rednote-header {
+  background: #1e1e1e;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.rednote-search-wrapper {
+  width: 60%;
+  max-width: 600px;
+}
+
+.rednote-search-wrapper .search-wrapper {
+  width: 100%;
+}
+
+.rednote-search-wrapper .form-control {
+  border-radius: var(--rednote-radius-pill) !important;
+  border: 1px solid var(--rednote-border) !important;
+  background: #f8f8f8 !important;
+  height: 42px !important;
+  font-size: 14px !important;
+  padding: 8px 20px 8px 42px !important;
+  transition: all var(--rednote-transition) !important;
+}
+
+.rednote-search-wrapper .form-control:focus {
+  border-color: var(--rednote-primary) !important;
+  background: var(--rednote-white) !important;
+  box-shadow: 0 0 0 3px rgba(255,36,66,0.1) !important;
+}
+
+body.night-mode .rednote-search-wrapper .form-control {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.night-mode .rednote-search-wrapper .form-control:focus {
+  border-color: var(--rednote-primary) !important;
+  background: #1a1a1a !important;
+}
+
+/* ============================
+   7. CATEGORIES BAR
+   ============================ */
+.rednote-categories-wrapper {
+  background: var(--rednote-bg);
+  padding: 0 20px;
+}
+
+.rednote-categories {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0 8px;
+  overflow-x: auto;
+  background: var(--rednote-bg);
+  scrollbar-width: none;
+  align-items: center;
+}
+
+.rednote-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.rn-recommended-badge {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  color: #d4880f;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid #f0d78c;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rn-recommended-badge i {
+  font-size: 9px;
+  color: #f0a500;
+}
+
+/* Expanded All Categories Panel */
+.rn-all-categories {
+  display: none;
+  padding: 8px 0 14px;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: rnSlideDown 0.25s ease;
+}
+
+.rn-all-categories.show {
+  display: flex;
+}
+
+@keyframes rnSlideDown {
+  from { opacity: 0; max-height: 0; }
+  to { opacity: 1; max-height: 200px; }
+}
+
+.rn-all-cat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--rednote-white);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--rednote-text-secondary);
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1.5px solid transparent;
+}
+
+.rn-all-cat-item:hover {
+  background: var(--rednote-primary-light) !important;
+  color: var(--rednote-primary) !important;
+  border-color: var(--rednote-primary);
+  opacity: 1 !important;
+}
+
+.rn-all-cat-item.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+  border-color: var(--rednote-primary);
+  opacity: 1 !important;
+  box-shadow: 0 2px 8px rgba(255,36,66,0.3);
+}
+
+.rn-all-cat-item i {
+  font-size: 12px;
+}
+
+body.night-mode .rn-all-cat-item {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+body.night-mode .rn-all-cat-item.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+}
+
+.rednote-category {
+  background: var(--rednote-white);
+  padding: 8px 18px;
+  border-radius: var(--rednote-radius-pill);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rednote-text-secondary);
+  white-space: nowrap;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  flex-shrink: 0;
+}
+
+body.night-mode .rednote-category {
+  background: #2a2a2a;
+  color: #aaa;
+}
+
+.rednote-category:hover {
+  background: var(--rednote-primary-light) !important;
+  color: var(--rednote-primary) !important;
+  opacity: 1 !important;
+}
+
+.rednote-category.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(255,36,66,0.3);
+  opacity: 1 !important;
+}
+
+/* ============================
+   8. CONTENT AREA
+   ============================ */
+.rednote-content {
+  padding: 10px 20px 20px;
+}
+
+/* ============================
+   9. MASONRY GRID (Pinterest Layout)
+   ============================ */
+ul.rednote-grid {
+  column-count: 5;
+  column-gap: 12px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+ul.rednote-grid > li {
+  list-style: none !important;
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+/* ============================
+   10. POST CARDS (RedNote Style)
+   ============================ */
+
+/* Override default .post for grid items */
+.rednote-grid .post {
+  background: var(--rednote-white) !important;
+  border-radius: var(--rednote-radius) !important;
+  border: 0 none !important;
+  box-shadow: var(--rednote-shadow-card) !important;
+  overflow: hidden;
+  margin-bottom: 0 !important;
+  transition: transform var(--rednote-transition), box-shadow var(--rednote-transition) !important;
+  cursor: default;
+  position: relative;
+  animation: rednoteFadeIn 0.3s ease;
+}
+
+.rednote-grid .post:hover {
+  transform: scale(1.02);
+  box-shadow: var(--rednote-shadow-hover) !important;
+}
+
+/* Click layer for post cards - controls click behavior */
+.rednote-grid .post a,
+.rednote-grid .post button,
+.rednote-grid .post .post-link,
+.rednote-grid .post .data-bs-toggle,
+.rednote-grid .post .pointer,
+.rednote-grid .post .dropdown-toggle,
+.rednote-grid .post .js_user-popover,
+.rednote-grid .post .js_moment,
+.rednote-grid .post .reactions-wrapper,
+.rednote-grid .post .rn-reel-thumb {
+  position: relative;
+  z-index: 2;
+}
+
+.rednote-grid .post .post-card-click-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+body.night-mode .rednote-grid .post {
+  background: #222 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+body.night-mode .rednote-grid .post:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+}
+
+@keyframes rednoteFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card images - RedNote style */
+.rednote-grid .post-media-image {
+  overflow: hidden;
+}
+
+.rednote-grid .post-media-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+}
+
+.rednote-grid .post-body {
+  padding: 0 !important;
+}
+
+/* Card content area */
+.rednote-grid .post-text {
+  padding: 10px 12px 4px !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: var(--rednote-text) !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+body.night-mode .rednote-grid .post-text {
+  color: #ccc !important;
+}
+
+/* Card author/avatar in grid */
+.rednote-grid .post-avatar-picture {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+}
+
+.rednote-grid .post-author {
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  color: var(--rednote-text) !important;
+}
+
+.rednote-grid .post-time {
+  font-size: 11px !important;
+  color: var(--rednote-text-muted) !important;
+}
+
+/* Card stats (likes, comments) */
+.rednote-grid .post-stats {
+  padding: 6px 12px 10px !important;
+  font-size: 12px !important;
+  color: var(--rednote-text-muted) !important;
+  border-top: 0 none !important;
+  margin-top: 0 !important;
+}
+
+/* Hide full post actions in grid view (user clicks card to see details) */
+.rednote-grid .post-actions {
+  display: none !important;
+}
+
+/* Hide post footer (comments) in grid view */
+.rednote-grid .post-footer {
+  display: none !important;
+}
+
+/* Post media (link previews, etc.) in grid */
+.rednote-grid .post-media {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+/* Blog/product cards in grid */
+.rednote-grid .post-media-meta {
+  padding: 10px 12px !important;
+}
+
+.rednote-grid .post-media-meta .title {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--rednote-text) !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rednote-grid .post-media-meta .text {
+  font-size: 12px !important;
+  color: var(--rednote-text-muted) !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Pending/boosted/pinned icons */
+.rednote-grid .pending-icon,
+.rednote-grid .pin-icon,
+.rednote-grid .boosted-icon {
+  z-index: 5;
+}
+
+/* ============================
+   11. SEE MORE BUTTON
+   ============================ */
+.rednote-see-more {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.rednote-see-more.alert-info {
+  border-radius: var(--rednote-radius-pill) !important;
+  background: var(--rednote-white) !important;
+  color: var(--rednote-primary) !important;
+  border: 0 none !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rednote-see-more.alert-info:hover {
+  background: var(--rednote-primary-light) !important;
+}
+
+/* ============================
+   12. STORIES
+   ============================ */
+.rednote-stories-card {
+  background: var(--rednote-white) !important;
+  border-radius: var(--rednote-radius) !important;
+  box-shadow: var(--rednote-shadow-card) !important;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.rednote-stories-wrapper {
+  padding: 12px 12px 8px;
+}
+
+/* ============================
+   13. PUBLISHER BOX
+   ============================ */
+.rednote-content .publisher {
+  background: var(--rednote-white) !important;
+  border-radius: var(--rednote-radius) !important;
+  box-shadow: var(--rednote-shadow-card) !important;
+  border: 0 none !important;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+body.night-mode .rednote-content .publisher {
+  background: #222 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+.rednote-content .publisher-card {
+  border-radius: var(--rednote-radius) !important;
+  border: 0 none !important;
+}
+
+/* ============================
+   14. GENERAL CARDS (used by widgets etc.)
+   ============================ */
+.rednote-content .card {
+  background: var(--rednote-white) !important;
+  border-radius: var(--rednote-radius) !important;
+  border: 0 none !important;
+  box-shadow: var(--rednote-shadow-card) !important;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+body.night-mode .rednote-content .card {
+  background: #222 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* ============================
+   15. NO DATA STATE
+   ============================ */
+.rednote-no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--rednote-text-muted);
+}
+
+/* ============================
+   16. PAGE HEADER (memories etc.)
+   ============================ */
+.rednote-content .page-header {
+  border-radius: var(--rednote-radius) !important;
+}
+
+/* ============================
+   17. ALERT BOXES
+   ============================ */
+.rednote-content .alert {
+  border-radius: var(--rednote-radius) !important;
+  border: 0 none !important;
+}
+
+/* ============================
+   18. BUTTONS
+   ============================ */
+.btn-primary {
+  background: var(--rednote-primary) !important;
+  border-color: var(--rednote-primary) !important;
+  border-radius: var(--rednote-radius-sm) !important;
+  font-weight: 500 !important;
+  transition: all var(--rednote-transition) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--rednote-primary-dark) !important;
+  border-color: var(--rednote-primary-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,36,66,0.3) !important;
+}
+
+.btn-outline-primary {
+  color: var(--rednote-primary) !important;
+  border-color: var(--rednote-primary) !important;
+  border-radius: var(--rednote-radius-sm) !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+}
+
+.btn {
+  border-radius: var(--rednote-radius-sm) !important;
+  font-weight: 500 !important;
+}
+
+/* ============================
+   19. INPUT FIELDS
+   ============================ */
+.form-control {
+  border-radius: var(--rednote-radius-sm) !important;
+  border: 2px solid #EFEFEF !important;
+  transition: all 0.2s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--rednote-primary) !important;
+  box-shadow: 0 0 0 3px rgba(255,36,66,0.1) !important;
+}
+
+body.night-mode .form-control {
+  background: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+}
+
+body.night-mode .form-control:focus {
+  border-color: var(--rednote-primary) !important;
+}
+
+/* ============================
+   20. DROPDOWN MENUS
+   ============================ */
+.dropdown-menu {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+  border: 0 none !important;
+  padding: 8px !important;
+  background: var(--rednote-white) !important;
+}
+
+.dropdown-item {
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  transition: background 0.2s ease !important;
+  font-size: 14px !important;
+}
+
+.dropdown-item:hover {
+  background: var(--rednote-primary-light) !important;
+  color: var(--rednote-primary) !important;
+}
+
+body.night-mode .dropdown-menu {
+  background: #222 !important;
+}
+
+body.night-mode .dropdown-item:hover {
+  background: #2a1519 !important;
+}
+
+/* ============================
+   21. MODALS
+   ============================ */
+.modal-content {
+  border-radius: 20px !important;
+  border: 0 none !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2) !important;
+  overflow: hidden;
+  animation: rednoteModalIn 0.3s ease;
+}
+
+@keyframes rednoteModalIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-header {
+  border-bottom: 1px solid #f0f0f0 !important;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 18px 24px !important;
+}
+
+.modal-footer {
+  border-top: 1px solid #f0f0f0 !important;
+  border-radius: 0 0 20px 20px !important;
+  padding: 14px 24px !important;
+}
+
+body.night-mode .modal-content {
+  background: #222 !important;
+}
+
+body.night-mode .modal-header {
+  border-bottom-color: #333 !important;
+}
+
+body.night-mode .modal-footer {
+  border-top-color: #333 !important;
+}
+
+/* ============================
+   22. LINKS
+   ============================ */
+a, .text-link {
+  color: var(--rednote-primary) !important;
+  transition: opacity 0.2s ease !important;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* ============================
+   23. SCROLLBAR
+   ============================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rednote-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rednote-primary);
+}
+
+/* ============================
+   24. BADGE
+   ============================ */
+.badge {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  padding: 4px 8px !important;
+}
+
+.badge.rounded-pill {
+  border-radius: 20px !important;
+}
+
+/* ============================
+   25. NOTIFICATION BADGES
+   ============================ */
+.notification-badge {
+  background: var(--rednote-primary) !important;
+}
+
+/* ============================
+   26. TOOLTIPS
+   ============================ */
+.tooltip-inner {
+  background: #333 !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  padding: 6px 12px !important;
+}
+
+/* ============================
+   27. SWITCH / TOGGLE
+   ============================ */
+.form-check-input:checked {
+  background-color: var(--rednote-primary) !important;
+  border-color: var(--rednote-primary) !important;
+}
+
+/* ============================
+   28. PROGRESS BAR
+   ============================ */
+.progress {
+  border-radius: 10px !important;
+  height: 8px !important;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #ff2442, #ff6b81) !important;
+  border-radius: 10px !important;
+}
+
+/* ============================
+   29. ALERT / TOAST
+   ============================ */
+.alert {
+  border-radius: 12px !important;
+  border: 0 none !important;
+}
+
+.toast {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+/* ============================
+   30. OFFCANVAS (Mobile Sidebar)
+   ============================ */
+.offcanvas {
+  border-radius: 0 !important;
+}
+
+.offcanvas-start {
+  width: 280px !important;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1) !important;
+}
+
+/* ============================
+   31. PAGINATION
+   ============================ */
+.page-link {
+  border-radius: var(--rednote-radius-sm) !important;
+  margin: 0 2px !important;
+  border: 0 none !important;
+  color: var(--rednote-primary) !important;
+  transition: all 0.2s ease !important;
+}
+
+.page-item.active .page-link {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+}
+
+.page-link:hover {
+  background: var(--rednote-primary-light) !important;
+}
+
+/* ============================
+   32. AVATAR
+   ============================ */
+.avatar {
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+
+/* ============================
+   33. CHAT BOX
+   ============================ */
+.chatbox {
+  border-radius: var(--rednote-radius) var(--rednote-radius) 0 0 !important;
+  overflow: hidden;
+}
+
+.chatbox .chatbox-head {
+  background: var(--rednote-primary) !important;
+  border-radius: var(--rednote-radius) var(--rednote-radius) 0 0 !important;
+}
+
+/* ============================
+   34. TABLE
+   ============================ */
+.table {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+/* ============================
+   35. FOOTER
+   ============================ */
+.footer {
+  background: var(--rednote-white) !important;
+  border-top: 1px solid var(--rednote-border) !important;
+  border-radius: 0 !important;
+  margin: 20px 0 0 !important;
+  padding: 20px 0 !important;
+}
+
+body.night-mode .footer {
+  background: #1a1a1a !important;
+  border-top-color: #333 !important;
+}
+
+/* ============================
+   36. STORY CIRCLES
+   ============================ */
+.story-avatar-wrapper {
+  border: 2px solid var(--rednote-primary) !important;
+  border-radius: 50% !important;
+}
+
+/* ============================
+   37. ADS
+   ============================ */
+.ad-block {
+  border-radius: var(--rednote-radius) !important;
+  overflow: hidden;
+}
+
+/* ============================
+   38. LIGHTBOX
+   ============================ */
+.lightbox-modal .modal-content {
+  background: #000 !important;
+  border-radius: 0 !important;
+}
+
+.lightbox-modal .modal-header,
+.lightbox-modal .modal-footer {
+  border: 0 !important;
+}
+
+/* ============================
+   39. LOADER
+   ============================ */
+.loader_small {
+  border-color: rgba(255,36,66,0.2) !important;
+  border-top-color: var(--rednote-primary) !important;
+}
+
+/* ============================
+   40. REACTIONS
+   ============================ */
+.reactions-stats {
+  font-size: 13px !important;
+}
+
+/* ============================
+   41. NAV TABS
+   ============================ */
+.nav-tabs {
+  border-bottom: 0 none !important;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 4px;
+}
+
+.nav-tabs .nav-link {
+  border-radius: var(--rednote-radius-pill) !important;
+  border: 0 none !important;
+  background: var(--rednote-white) !important;
+  color: #666 !important;
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+.nav-tabs .nav-link:hover {
+  background: var(--rednote-primary-light) !important;
+  color: var(--rednote-primary) !important;
+}
+
+.nav-tabs .nav-link.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 8px rgba(255,36,66,0.3) !important;
+}
+
+body.night-mode .nav-tabs .nav-link {
+  background: #2a2a2a !important;
+  color: #aaa !important;
+}
+
+body.night-mode .nav-tabs .nav-link.active {
+  background: var(--rednote-primary) !important;
+  color: #fff !important;
+}
+
+/* ============================
+   42. PROFILE HEADER
+   ============================ */
+.profile-header {
+  border-radius: 0 0 var(--rednote-radius) var(--rednote-radius) !important;
+}
+
+/* ============================
+   43. USER MENU (header dropdown)
+   ============================ */
+.user-menu {
+  border-radius: var(--rednote-radius-sm) !important;
+  overflow: hidden;
+}
+
+/* ============================
+   44. WIDGET
+   ============================ */
+.widget {
+  border-radius: var(--rednote-radius) !important;
+  box-shadow: var(--rednote-shadow-card) !important;
+  border: 0 none !important;
+}
+
+body.night-mode .widget {
+  background: #222 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* ============================
+   45. TRENDING WIDGET
+   ============================ */
+.trending-hashtag-item {
+  padding: 8px 10px !important;
+  border-radius: var(--rednote-radius-sm) !important;
+  transition: background 0.2s ease !important;
+}
+
+.trending-hashtag-item:hover {
+  background: #fafafa !important;
+}
+
+body.night-mode .trending-hashtag-item:hover {
+  background: #2a2a2a !important;
+}
+
+/* ============================
+   46. PROMOTED CARDS
+   ============================ */
+.pro-box-wrapper .user-box {
+  border-radius: var(--rednote-radius-sm) !important;
+  transition: transform var(--rednote-transition) !important;
+}
+
+.pro-box-wrapper .user-box:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================
+   47. COMMENTS IN CARDS WITH LIST
+   ============================ */
+.card-body.with-list ul li {
+  padding: 8px !important;
+  border-radius: var(--rednote-radius-sm) !important;
+  margin: 2px 0 !important;
+  transition: background 0.2s ease !important;
+}
+
+.card-body.with-list ul li:hover {
+  background: #fafafa !important;
+}
+
+body.night-mode .card-body.with-list ul li:hover {
+  background: #2a2a2a !important;
+}
+
+/* ============================
+   48. SMOOTH TRANSITIONS
+   ============================ */
+button, a, input, select, textarea {
+  transition: all 0.2s ease;
+}
+
+/* Alert links */
+.alert-post {
+  border-radius: var(--rednote-radius) !important;
+}
+
+/* Verified badge */
+.verified-badge svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Remove Bootstrap focus ring */
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 3px rgba(255,36,66,0.1) !important;
+}
+
+/* ============================
+   49. RTL SUPPORT
+   ============================ */
+[dir="RTL"] .rednote-layout {
+  flex-direction: row-reverse;
+}
+
+[dir="RTL"] .rednote-sidebar {
+  left: auto;
+  right: 0;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.05);
+}
+
+[dir="RTL"] .rednote-main {
+  margin-left: 0;
+  margin-right: var(--rednote-sidebar-width);
+}
+
+[dir="RTL"] .rednote-menu-item:hover {
+  transform: translateX(-2px);
+}
+
+[dir="RTL"] .rednote-mobile-toggle {
+  left: auto;
+  right: 15px;
+}
+
+/* ============================
+   50. RESPONSIVE — APP-LIKE MOBILE
+   ============================ */
+
+/* --- TABLET (991px) --- */
+@media (max-width: 991px) {
+  .rednote-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .rednote-sidebar.show {
+    transform: translateX(0);
+  }
+
+  .rednote-main {
+    margin-left: 0;
+  }
+
+  [dir="RTL"] .rednote-main {
+    margin-right: 0;
+  }
+
+  .rednote-mobile-toggle {
+    display: block;
+  }
+
+  ul.rednote-grid {
+    column-count: 3;
+    column-gap: 10px;
+  }
+
+  ul.rednote-grid > li {
+    margin-bottom: 10px;
+  }
+
+  .rednote-content {
+    padding: 10px 12px 20px;
+  }
+
+  .rednote-search-wrapper {
+    width: 80%;
+  }
+}
+
+/* --- MOBILE (767px) — App-like experience --- */
+@media (max-width: 767px) {
+  :root {
+    --rednote-sidebar-width: 0px;
+  }
+
+  /* Hide default top-bar on mobile */
+  .top-bar { display: none !important; }
+  .bottom-bar { display: none !important; }
+
+  /* Full-width layout */
+  .rednote-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 70px; /* space for bottom nav */
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Header becomes app-style */
+  .rednote-header {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .rednote-search-wrapper {
+    width: 100%;
+    flex: 1;
+  }
+
+  .rednote-search-wrapper .form-control {
+    height: 36px !important;
+    font-size: 13px !important;
+    padding: 6px 14px 6px 36px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Categories bar */
+  .rednote-categories-wrapper {
+    padding: 0 12px;
+  }
+
+  .rednote-categories {
+    padding: 10px 0 6px;
+    gap: 8px;
+  }
+
+  .rednote-category {
+    padding: 6px 14px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .rn-recommended-badge {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+
+  .rn-all-cat-item {
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+
+  /* Content area */
+  .rednote-content {
+    padding: 6px 8px 20px;
+  }
+
+  /* Posts grid: 2 columns on mobile */
+  ul.rednote-grid {
+    column-count: 2;
+    column-gap: 6px;
+  }
+
+  ul.rednote-grid > li {
+    margin-bottom: 6px;
+  }
+
+  /* Post cards */
+  .rednote-grid .post {
+    border-radius: 10px !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+  }
+
+  .rednote-grid .post:hover {
+    transform: none !important;
+  }
+
+  /* Mobile: disable click layer hover, use tap instead */
+  .rednote-grid .post .post-card-click-layer {
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .rednote-grid .post-text {
+    font-size: 12px !important;
+    padding: 8px 8px 2px !important;
+    -webkit-line-clamp: 2;
+  }
+
+  .rednote-grid .post-author {
+    font-size: 11px !important;
+  }
+
+  .rednote-grid .post-time {
+    font-size: 10px !important;
+  }
+
+  .rednote-grid .post-avatar-picture {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .rednote-grid .post-stats {
+    padding: 4px 8px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Publisher mobile */
+  .rednote-content .publisher {
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+  }
+
+  .publisher-message textarea {
+    font-size: 14px !important;
+    min-height: 40px !important;
+    padding: 10px 12px !important;
+  }
+
+  .publisher-avatar {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .publisher-emojis {
+    right: 12px !important;
+    top: 12px !important;
+  }
+
+  [dir="RTL"] .publisher-emojis {
+    right: auto !important;
+    left: 12px !important;
+  }
+
+  .publisher-tools-tabs {
+    padding: 6px 8px !important;
+  }
+
+  .publisher-tools-tab {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  .publisher-tools-tab .main-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .rn-category-grid {
+    gap: 6px;
+    max-height: 160px;
+  }
+
+  .rn-category-pill {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  /* Stories card */
+  .rednote-stories-card {
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+  }
+
+  .rednote-stories-wrapper {
+    padding: 8px;
+  }
+
+  /* See more button */
+  .rednote-see-more {
+    padding: 14px;
+  }
+
+  .rednote-see-more.alert-info {
+    border-radius: 20px !important;
+    font-size: 13px;
+  }
+
+  /* Cards */
+  .rednote-content .card {
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+  }
+
+  .widget {
+    border-radius: 12px !important;
+  }
+
+  /* Modals full screen on mobile */
+  .modal-dialog {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .modal-content {
+    border-radius: 16px 16px 0 0 !important;
+    min-height: 60vh;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 14px 16px !important;
+  }
+
+  .modal-footer {
+    padding: 12px 16px !important;
+  }
+
+  /* Page header */
+  .rednote-content .page-header {
+    border-radius: 12px !important;
+  }
+
+  /* Alert boxes */
+  .rednote-content .alert {
+    border-radius: 12px !important;
+    font-size: 13px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* Hide desktop elements */
+  .rednote-mobile-toggle {
+    display: none; /* sidebar handled by bottom nav */
+  }
+
+  /* ===== BOTTOM NAVIGATION BAR (App-like) ===== */
+  .rn-bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--rednote-white);
+    border-top: 1px solid #f0f0f0;
+    z-index: 1060;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+  }
+
+  body.night-mode .rn-bottom-nav {
+    background: #1a1a1a;
+    border-top-color: #333;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+  }
+
+  .rn-bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 6px 12px;
+    text-decoration: none !important;
+    color: #999;
+    font-size: 10px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    min-width: 50px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .rn-bottom-nav-item:active {
+    transform: scale(0.9);
+  }
+
+  .rn-bottom-nav-item.active {
+    color: var(--rednote-primary);
+  }
+
+  .rn-bottom-nav-item.active i {
+    transform: scale(1.05);
+  }
+
+  /* Publish button in bottom nav (special style) */
+  .rn-bottom-nav-pub {
+    width: 44px;
+    height: 36px;
+    background: linear-gradient(135deg, #ff2442, #ff6b81);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 22px;
+    box-shadow: 0 3px 10px rgba(255,36,66,0.35);
+    margin-top: -6px;
+  }
+
+  .rn-bottom-nav-pub:active {
+    transform: scale(0.92);
+    box-shadow: 0 2px 6px rgba(255,36,66,0.3);
+  }
+
+  /* Hide sidebar footer on mobile */
+  .rednote-sidebar-footer {
+    display: none;
+  }
+
+  .rednote-login-btn,
+  .rednote-signup-btn {
+    display: none;
+  }
+
+  /* Hide default Sngine header on mobile */
+  .main-wrapper > .main-header,
+  .main-header {
+    display: none !important;
+  }
+
+  /* Pagination */
+  .page-link {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+
+  /* Offcanvas sidebar for mobile */
+  .rednote-sidebar.show {
+    z-index: 1070;
+    width: 280px;
+    min-width: 280px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+  }
+
+  [dir="RTL"] .rednote-sidebar.show {
+    border-radius: 20px 0 0 20px;
+  }
+
+  /* Mobile overlay when sidebar is open */
+  .rn-sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1065;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .rn-sidebar-overlay.show {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Dropdown menus on mobile */
+  .dropdown-menu {
+    max-width: 90vw;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+  }
+
+  /* Smooth scroll on mobile */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent overscroll bounce */
+  body {
+    overscroll-behavior: none;
+  }
+
+  /* Touch-friendly inputs */
+  input, select, textarea {
+    font-size: 16px !important; /* prevents iOS zoom */
+  }
+
+  .form-control {
+    min-height: 40px;
+  }
+
+  /* Chat box on mobile */
+  .chatbox {
+    border-radius: 12px 12px 0 0 !important;
+  }
+
+  /* Footer on mobile */
+  .footer {
+    margin: 10px 0 70px 0 !important;
+    padding: 15px 12px !important;
+    border-radius: 0 !important;
+    text-align: center;
+  }
+}
+
+/* --- SMALL MOBILE (480px) --- */
+@media (max-width: 480px) {
+  .rednote-header {
+    padding: 8px 10px;
+  }
+
+  .rednote-categories-wrapper {
+    padding: 0 8px;
+  }
+
+  .rednote-content {
+    padding: 4px 6px 20px;
+  }
+
+  ul.rednote-grid {
+    column-gap: 5px;
+  }
+
+  ul.rednote-grid > li {
+    margin-bottom: 5px;
+  }
+
+  .rednote-grid .post-text {
+    font-size: 11px !important;
+    padding: 6px 6px 2px !important;
+    -webkit-line-clamp: 2;
+  }
+
+  .rednote-grid .post-author {
+    font-size: 10px !important;
+  }
+
+  .rednote-category {
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+
+  .rn-all-cat-item {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .rn-bottom-nav {
+    height: 54px;
+  }
+
+  .rn-bottom-nav-item {
+    padding: 4px 8px;
+    font-size: 9px;
+    min-width: 44px;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 18px;
+  }
+
+  .rn-bottom-nav-pub {
+    width: 40px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .rn-category-pill {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* ============================
+   51. DARK MODE OVERRIDES
+   ============================ */
+body.night-mode .card-header {
+  border-bottom-color: #333 !important;
+}
+
+body.night-mode .card-footer {
+  border-top-color: #333 !important;
+}
+
+body.night-mode .card-header.block-title {
+  color: #888 !important;
+}
+
+body.night-mode .dropdown-divider {
+  border-color: #333 !important;
+}
+
+body.night-mode .dropdown-menu {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3) !important;
+}
+
+body.night-mode .form-label {
+  color: #ccc !important;
+}
+
+body.night-mode .post-author {
+  color: #eee !important;
+}
+
+body.night-mode .post-title {
+  color: #888 !important;
+}
+
+body.night-mode .post-time {
+  color: #666 !important;
+}
+
+body.night-mode .post-text {
+  color: #ccc !important;
+}
+
+body.night-mode .publisher-message {
+  background: transparent !important;
+}
+
+body.night-mode .publisher-tools-tabs,
+body.night-mode .publisher-footer {
+  border-top-color: #333 !important;
+}
+
+body.night-mode .publisher-tools-tab {
+  color: #999 !important;
+}
+
+body.night-mode .publisher-tools-tab:hover {
+  background: #2a1519 !important;
+  color: #ff2442 !important;
+}
+
+body.night-mode .post-actions .action-btn {
+  color: #999 !important;
+}
+
+body.night-mode .post-actions .action-btn:hover {
+  background: #2a1519 !important;
+  color: #ff2442 !important;
+}
+
+body.night-mode .rednote-signup-btn {
+  border-color: #444 !important;
+  color: #aaa !important;
+}
+
+body.night-mode .rednote-user-btn {
+  background: #2a2a2a;
+}
+
+body.night-mode .rednote-stories-card {
+  background: #222 !important;
+}
+
+/* ============================
+   52. REDNOTE LOGO TEXT (fallback when no logo image)
+   ============================ */
+.rednote-logo-text {
+  display: inline-block;
+  background: var(--rednote-primary);
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: var(--rednote-radius-sm);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* ============================
+   53. STAGGERED ANIMATION FOR GRID CARDS
+   ============================ */
+ul.rednote-grid > li:nth-child(1) .post { animation-delay: 0s; }
+ul.rednote-grid > li:nth-child(2) .post { animation-delay: 0.05s; }
+ul.rednote-grid > li:nth-child(3) .post { animation-delay: 0.1s; }
+ul.rednote-grid > li:nth-child(4) .post { animation-delay: 0.15s; }
+ul.rednote-grid > li:nth-child(5) .post { animation-delay: 0.2s; }
+ul.rednote-grid > li:nth-child(6) .post { animation-delay: 0.25s; }
+ul.rednote-grid > li:nth-child(7) .post { animation-delay: 0.3s; }
+ul.rednote-grid > li:nth-child(8) .post { animation-delay: 0.35s; }
+
+/* ===== Publisher Category Grid ===== */
+.rn-category-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.rn-category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 4px;
+  border-radius: 12px;
+  transition: border 0.3s ease;
+}
+
+.rn-category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #f0f0f0;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.rn-category-pill:hover {
+  background: #ffe8ec;
+  border-color: #ff2442;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 36, 66, 0.15);
+}
+
+.rn-category-pill.active {
+  background: linear-gradient(135deg, #ff2442, #ff6b81);
+  color: #fff;
+  border-color: #ff2442;
+  box-shadow: 0 3px 12px rgba(255, 36, 66, 0.3);
+}
+
+.rn-category-pill.active .rn-category-icon {
+  color: #fff !important;
+}
+
+.rn-category-icon {
+  font-size: 15px;
+}
+
+.rn-category-badge {
+  display: inline-block;
+  background: #ff2442;
+  color: #fff;
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+.rn-category-error {
+  color: #ff2442;
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Dark mode for category grid */
+body.night-mode .rn-category-label {
+  color: #ccc;
+}
+
+body.night-mode .rn-category-pill {
+  background: #2d2d2d;
+  color: #ccc;
+}
+
+body.night-mode .rn-category-pill:hover {
+  background: #3d1a20;
+  border-color: #ff2442;
+}
+
+body.night-mode .rn-category-pill.active {
+  background: linear-gradient(135deg, #ff2442, #ff6b81);
+  color: #fff;
+}
+
+/* RTL support */
+[dir="rtl"] .rn-category-pill {
+  padding: 7px 14px;
+}
+
+/* Category grid scrollbar */
+.rn-category-grid::-webkit-scrollbar {
+  width: 4px;
+}
+.rn-category-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.rn-category-grid::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+body.night-mode .rn-category-grid::-webkit-scrollbar-thumb {
+  background: #555;
+}

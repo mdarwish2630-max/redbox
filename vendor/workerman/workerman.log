@@ -1,0 +1,59 @@
+2025-08-31 11:14:47 pid:8904 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-08-31 11:15:01 pid:9110 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] status 
+2025-08-31 11:15:01 pid:9110 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] not run
+2025-08-31 11:15:04 pid:9150 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] start in DAEMON mode
+2025-08-31 11:15:28 pid:9426 Workerman[sockets/php/socket.php] stop 
+2025-08-31 11:15:28 pid:9426 Workerman[sockets/php/socket.php] not run
+2025-08-31 11:15:30 pid:9489 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-08-31 11:19:10 pid:12220 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-08-31 20:16:47 pid:12220 Workerman[socket.php] stopping ...
+2025-08-31 20:16:47 pid:12220 worker[PHPSocketIO:12221] exit with status 13
+2025-08-31 20:16:47 pid:12220 Workerman[socket.php] has been stopped
+2025-09-03 13:25:11 pid:97669 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-03 14:48:06 pid:97669 Workerman[socket.php] stopping ...
+2025-09-03 14:48:06 pid:97669 Workerman[socket.php] has been stopped
+2025-09-08 15:48:28 pid:67745 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-08 16:44:38 pid:67745 Workerman[socket.php] stopping ...
+2025-09-08 16:44:38 pid:67745 Workerman[socket.php] has been stopped
+2025-09-08 16:44:48 pid:17013 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-08 16:46:03 pid:17013 Workerman[socket.php] stopping ...
+2025-09-08 16:46:03 pid:17013 Workerman[socket.php] has been stopped
+2025-09-08 16:46:10 pid:18186 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-08 16:50:58 pid:18186 Workerman[socket.php] stopping ...
+2025-09-08 16:50:58 pid:18186 Workerman[socket.php] has been stopped
+2025-09-08 16:51:05 pid:22625 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-08 16:51:54 pid:22625 Workerman[socket.php] stopping ...
+2025-09-08 16:51:54 pid:22625 Workerman[socket.php] has been stopped
+2025-09-08 16:51:57 pid:23382 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-09 12:48:28 pid:23382 Workerman[socket.php] stopping ...
+2025-09-09 12:48:28 pid:23382 Workerman[socket.php] has been stopped
+2025-09-09 12:48:36 pid:20837 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-09 13:00:02 pid:29899 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] status 
+2025-09-09 13:00:11 pid:30022 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] start in DAEMON mode
+2025-09-09 13:00:11 pid:30022 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] already running
+2025-09-09 13:02:03 pid:20837 Workerman[socket.php] stopping ...
+2025-09-09 13:02:03 pid:20837 Workerman[socket.php] has been stopped
+2025-09-09 13:02:10 pid:31685 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-09 21:45:52 pid:31685 Workerman[socket.php] stopping ...
+2025-09-09 21:45:52 pid:31685 worker[PHPSocketIO:31686] exit with status 65280
+2025-09-09 21:45:52 pid:31685 Workerman[socket.php] has been stopped
+2025-09-14 18:09:52 pid:43057 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-14 18:35:26 pid:43057 Workerman[socket.php] stopping ...
+2025-09-14 18:35:26 pid:43057 worker[PHPSocketIO:43067] exit with status 65280
+2025-09-14 18:35:26 pid:43057 Workerman[socket.php] has been stopped
+2025-09-24 21:49:04 pid:43080 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-25 20:43:23 pid:43080 Workerman[socket.php] stopping ...
+2025-09-25 20:43:23 pid:43080 worker[PHPSocketIO:43081] exit with status 13
+2025-09-25 20:43:23 pid:43080 Workerman[socket.php] has been stopped
+2025-09-26 02:55:13 pid:25321 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-09-26 06:36:19 pid:25321 Workerman[socket.php] stopping ...
+2025-09-26 06:36:19 pid:25321 worker[PHPSocketIO:25322] exit with status 65280
+2025-09-26 06:36:19 pid:25321 Workerman[socket.php] has been stopped
+2025-10-08 15:36:34 pid:45233 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-10-08 15:58:36 pid:45233 Workerman[socket.php] stopping ...
+2025-10-08 15:58:36 pid:45233 Workerman[socket.php] has been stopped
+2025-11-17 11:27:36 pid:58945 Workerman[sockets/php/socket.php] start in DEBUG mode
+2025-11-17 11:44:21 pid:70560 Workerman[/Users/yehiaabed/Sites/sngine/includes/../sockets/php/socket.php] status 
+2025-11-17 13:19:41 pid:58945 Workerman[socket.php] stopping ...
+2025-11-17 13:19:41 pid:58945 worker[PHPSocketIO:58946] exit with status 65280
+2025-11-17 13:19:41 pid:58945 Workerman[socket.php] has been stopped
