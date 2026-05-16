@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 15:40:24
+/* Smarty version 5.7.0, created on 2026-05-16 16:57:32
   from 'file:_posts.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a088fe8946653_70894933',
+  'unifunc' => 'content_6a08a1fc972283_92866196',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_no_data.tpl' => 1,
   ),
 ))) {
-function content_6a088fe8946653_70894933 (\Smarty\Template $_smarty_tpl) {
+function content_6a08a1fc972283_92866196 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- posts-filter -->
 <div class="posts-filter">

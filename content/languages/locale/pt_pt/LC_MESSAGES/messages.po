@@ -480,7 +480,7 @@ msgstr ""
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr ""
+msgstr "Loja"
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -561,7 +561,7 @@ msgstr "Bem-vindo à"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Notas populares"
+msgstr "Publicações populares"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -620,26 +620,26 @@ msgstr ""
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Publicações Impulsionadas"
+msgstr "Publicações patrocinadas"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Páginas Impulsionadas"
+msgstr "Páginas patrocinadas"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 #| msgid "Closed Group"
 msgid "Boosted Groups"
-msgstr "Grupo Fechado"
+msgstr "Grupos patrocinados"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Closed Event"
 msgid "Boosted Events"
-msgstr "Evento Fechado"
+msgstr "Eventos patrocinados"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -686,7 +686,7 @@ msgstr "Seus Jogos"
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr ""
+msgstr "Cursos"
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -835,7 +835,7 @@ msgstr "Eventos"
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr "Encontrar"
+msgstr "Descobrir"
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1078,7 +1078,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr ""
+msgstr "Méritos"
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1630,9 +1630,6 @@ msgstr "Páginas"
 #: content/themes/default/templates/admin.courses.tpl:26
 msgid "Categories"
 msgstr "Categorias"
-
-msgid "Category Name"
-msgstr "Nome da categoria"
 
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53
@@ -8186,7 +8183,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Nota"
+msgstr "Publicação"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -12301,7 +12298,7 @@ msgstr "Atualizar"
 #: content/themes/default/templates/index.newsfeed.tpl:488
 #, fuzzy
 msgid "Promoted Users"
-msgstr "Promovidos"
+msgstr "Utilizadores em destaque"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12317,7 +12314,7 @@ msgstr "Páginas Impulsionadas"
 #, fuzzy
 #| msgid "Promoted Products"
 msgid "Promoted Groups"
-msgstr "Produtos Promovidos"
+msgstr "Grupos em destaque"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12325,7 +12322,7 @@ msgstr "Produtos Promovidos"
 #, fuzzy
 #| msgid "Promoted Posts"
 msgid "Promoted Events"
-msgstr "Postagens promovidas"
+msgstr "Eventos em destaque"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12414,13 +12411,13 @@ msgstr "Usuários Pro"
 #, fuzzy
 #| msgid "Suggested Events"
 msgid "Suggested Friends"
-msgstr "Eventos Sugeridos"
+msgstr "Amigos sugeridos"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Páginas Sugeridas"
+msgstr "Pessoas sugeridas"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -17857,7 +17854,7 @@ msgstr "Posicionamento de Anúncios"
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Notícias"
+msgstr "Início"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -22699,7 +22696,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -22714,7 +22711,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Entrar"
+msgstr "Terminar sessão"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -23533,7 +23530,7 @@ msgstr "enquete"
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr ""
+msgstr "Reel"
 
 #: content/themes/default/templates/admin.posts.tpl:189
 #, fuzzy
@@ -23957,7 +23954,7 @@ msgstr "Contas Vinculadas"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Poll"
 msgid "Create Post"
-msgstr "Publicar nota"
+msgstr "Criar publicação"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create Event"
@@ -26416,7 +26413,7 @@ msgstr "Mais Artigos"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Loja"
+msgstr "Mercado"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -27671,7 +27668,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Feed de Notícias"
+msgstr "Início"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"
@@ -28424,72 +28421,6 @@ msgstr "Selecionar categoria (Obrigatório)"
 
 msgid "Please select a category before publishing"
 msgstr "Por favor selecione uma categoria antes de publicar"
-msgid "Select a category..."
-msgstr "Selecione uma categoria..."
-
-msgid "Travel"
-msgstr "Viagens"
-
-msgid "Food"
-msgstr "Comida"
-
-msgid "Fashion"
-msgstr "Moda"
-
-msgid "Beauty"
-msgstr "Beleza"
-
-msgid "Technology"
-msgstr "Tecnologia"
-
-msgid "Fitness"
-msgstr "Fitness"
-
-msgid "Art"
-msgstr "Arte"
-
-msgid "Music"
-msgstr "Música"
-
-msgid "Photography"
-msgstr "Fotografia"
-
-msgid "Pets"
-msgstr "Animais de Estimação"
-
-msgid "Gaming"
-msgstr "Jogos"
-
-msgid "DIY"
-msgstr "Faça você mesmo"
-
-msgid "Sports"
-msgstr "Desporto"
-
-msgid "Comedy"
-msgstr "Comédia"
-
-msgid "Nature"
-msgstr "Natureza"
-
-msgid "Cars"
-msgstr "Carros"
-
-msgid "Books"
-msgstr "Livros"
-
-msgid "Category names are used as translation keys. Add translations in the language files."
-msgstr "Os nomes das categorias são usados como chaves de tradução."
-
-msgid "This name is used as the translation key in all language files"
-msgstr "Este nome é usado como chave de tradução em todos os ficheiros de idioma"
-
-msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
-msgstr "Classe de ícone FontAwesome, ex: fa-plane, fa-music, fa-camera"
-
-msgid "Active categories are visible to users"
-msgstr "Categorias ativas são visíveis para os utilizadores"
-
 
 msgid "Search GIFs"
 msgstr "Pesquisar GIF"
@@ -29175,34 +29106,3 @@ msgstr ""
 
 #~ msgid "User Profile"
 #~ msgstr "Perfil de Usuário"
-
-msgid "Arabic"
-msgstr "Árabe"
-
-msgid "This logo will be displayed when the language is Arabic (RTL)"
-msgstr "Este logótipo será exibido quando o idioma for árabe (RTL)"
-
-msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
-msgstr "Este logótipo será exibido quando o idioma for árabe (RTL) no modo escuro"
-
-
-msgid "Showing posts from"
-msgstr "A mostrar publicações de"
-
-msgid "based on your location"
-msgstr "com base na sua localização"
-
-msgid "No more local posts. Showing posts from around the world."
-msgstr "Sem mais publicações locais. A mostrar publicações de todo o mundo."
-
-msgid "No more posts from"
-msgstr "Sem mais publicações de"
-
-msgid "Showing popular posts from around the world."
-msgstr "A mostrar publicações populares de todo o mundo."
-
-msgid "My Location"
-msgstr "A minha localização"
-
-msgid "Auto-detected"
-msgstr "Detetado automaticamente"

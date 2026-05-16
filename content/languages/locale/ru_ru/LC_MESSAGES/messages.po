@@ -480,7 +480,7 @@ msgstr "Оплата баллами"
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr ""
+msgstr "Маркетплейс"
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -561,7 +561,7 @@ msgstr "Добро пожаловать"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Популярные заметки"
+msgstr "Популярные публикации"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -620,26 +620,26 @@ msgstr "Воспоминания"
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Расширенные Сообщения"
+msgstr "Продвигаемые публикации"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Расширенные страницы"
+msgstr "Продвигаемые страницы"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 #| msgid "Closed Group"
 msgid "Boosted Groups"
-msgstr "Закрытая группа"
+msgstr "Продвигаемые группы"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Closed Event"
 msgid "Boosted Events"
-msgstr "Закрытое мероприятие"
+msgstr "Продвигаемые события"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -686,7 +686,7 @@ msgstr "Ваши игры"
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr ""
+msgstr "Курсы"
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -835,7 +835,7 @@ msgstr "Мероприятия"
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr "Найти"
+msgstr "Обзор"
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1076,7 +1076,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr ""
+msgstr "Мериты"
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1628,9 +1628,6 @@ msgstr "Страницы"
 #: content/themes/default/templates/admin.courses.tpl:26
 msgid "Categories"
 msgstr "Категории"
-
-msgid "Category Name"
-msgstr "Название категории"
 
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53
@@ -8273,7 +8270,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Заметка"
+msgstr "Публикация"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -10575,7 +10572,7 @@ msgstr "Удалить"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr "Изменить"
+msgstr "Редактировать"
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12495,7 +12492,7 @@ msgstr "Обновить"
 #: content/themes/default/templates/index.newsfeed.tpl:488
 #, fuzzy
 msgid "Promoted Users"
-msgstr "Повышен"
+msgstr "Рекомендуемые пользователи"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12511,7 +12508,7 @@ msgstr "Расширенные страницы"
 #, fuzzy
 #| msgid "Promoted Products"
 msgid "Promoted Groups"
-msgstr "Продвигаемые продукты"
+msgstr "Рекомендуемые группы"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12519,7 +12516,7 @@ msgstr "Продвигаемые продукты"
 #, fuzzy
 #| msgid "Promoted Posts"
 msgid "Promoted Events"
-msgstr "Продвигаемые сообщения"
+msgstr "Рекомендуемые события"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12608,13 +12605,13 @@ msgstr "Количество пользователей"
 #, fuzzy
 #| msgid "Suggested Events"
 msgid "Suggested Friends"
-msgstr "Предлагаемые мероприятия"
+msgstr "Предложенные друзья"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Рекомендуемые страницы"
+msgstr "Предложенные пользователи"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -18159,7 +18156,7 @@ msgstr "Размещение объявлений"
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Канал новостей"
+msgstr "Главная"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -23111,7 +23108,7 @@ msgstr "Идеальный размер для иконки (ширина: 60px 
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr ""
+msgstr "Меню"
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -23126,7 +23123,7 @@ msgstr "Панель модератора"
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Войти"
+msgstr "Выйти"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -23951,7 +23948,7 @@ msgstr "Опрос"
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr ""
+msgstr "Reel"
 
 #: content/themes/default/templates/admin.posts.tpl:189
 msgid "Audio"
@@ -24373,7 +24370,7 @@ msgstr "Список связанных учётных записей"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Poll"
 msgid "Create Post"
-msgstr "Опубликовать заметку"
+msgstr "Создать публикацию"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create File"
@@ -26877,7 +26874,7 @@ msgstr "Другие статьи"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Маркет"
+msgstr "Магазин"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -28174,7 +28171,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Новости"
+msgstr "Главная"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"
@@ -28936,72 +28933,6 @@ msgstr "Выберите категорию (Обязательно)"
 
 msgid "Please select a category before publishing"
 msgstr "Пожалуйста, выберите категорию перед публикацией"
-msgid "Select a category..."
-msgstr "Выберите категорию..."
-
-msgid "Travel"
-msgstr "Путешествия"
-
-msgid "Food"
-msgstr "Еда"
-
-msgid "Fashion"
-msgstr "Мода"
-
-msgid "Beauty"
-msgstr "Красота"
-
-msgid "Technology"
-msgstr "Технологии"
-
-msgid "Fitness"
-msgstr "Фитнес"
-
-msgid "Art"
-msgstr "Искусство"
-
-msgid "Music"
-msgstr "Музыка"
-
-msgid "Photography"
-msgstr "Фотография"
-
-msgid "Pets"
-msgstr "Питомцы"
-
-msgid "Gaming"
-msgstr "Видеоигры"
-
-msgid "DIY"
-msgstr "Сделай сам"
-
-msgid "Sports"
-msgstr "Спорт"
-
-msgid "Comedy"
-msgstr "Комедия"
-
-msgid "Nature"
-msgstr "Природа"
-
-msgid "Cars"
-msgstr "Автомобили"
-
-msgid "Books"
-msgstr "Книги"
-
-msgid "Category names are used as translation keys. Add translations in the language files."
-msgstr "Имена категорий используются как ключи перевода."
-
-msgid "This name is used as the translation key in all language files"
-msgstr "Это имя используется как ключ перевода во всех файлах языков"
-
-msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
-msgstr "Класс иконки FontAwesome, напр. fa-plane, fa-music, fa-camera"
-
-msgid "Active categories are visible to users"
-msgstr "Активные категории видны пользователям"
-
 
 msgid "Search GIFs"
 msgstr "Поиск GIF"
@@ -29793,34 +29724,3 @@ msgstr ""
 
 #~ msgid "User Profile"
 #~ msgstr "Профиль пользователя"
-
-msgid "Arabic"
-msgstr "Арабский"
-
-msgid "This logo will be displayed when the language is Arabic (RTL)"
-msgstr "Этот логотип будет отображаться, когда язык арабский (RTL)"
-
-msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
-msgstr "Этот логотип будет отображаться, когда язык арабский (RTL) в темном режиме"
-
-
-msgid "Showing posts from"
-msgstr "Показ публикаций из"
-
-msgid "based on your location"
-msgstr "на основе вашего местоположения"
-
-msgid "No more local posts. Showing posts from around the world."
-msgstr "Локальные публикации закончились. Показ публикаций со всего мира."
-
-msgid "No more posts from"
-msgstr "Нет больше публикаций из"
-
-msgid "Showing popular posts from around the world."
-msgstr "Показ популярных публикаций со всего мира."
-
-msgid "My Location"
-msgstr "Моё местоположение"
-
-msgid "Auto-detected"
-msgstr "Автоопределение"

@@ -1,119 +1,177 @@
 /* ============================================
    Default Theme — Full-Width Feed Layout + Sidebar Footer
-   Replaces 3-column grid with fixed sidebar + full-width masonry feed.
+   Works with existing Bootstrap grid structure
+   No template changes needed!
    ============================================ */
 
 /* ============================
-   1. LAYOUT STRUCTURE
+   1. FEED AREA
+   Sidebar stays as-is, posts use masonry grid inside the main content area
    ============================ */
-.default-full-layout {
-  display: flex;
-  min-height: 100vh;
+
+/* ============================
+   2. MASONRY GRID FOR POSTS
+   Targets .js_posts_stream which exists in _posts.tpl
+   ============================ */
+
+/* Posts list → masonry columns */
+.js_posts_stream > ul {
+  column-count: 3;
+  column-gap: 16px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Each post item */
+.js_posts_stream > ul > li {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: inline-block;
   width: 100%;
 }
 
-/* ============================
-   2. SIDEBAR (Fixed)
-   ============================ */
-.default-full-layout .default-sidebar {
-  width: 280px;
-  min-width: 280px;
-  background: var(--header-bg-color, #fff);
-  padding: 15px 0;
-  height: 100vh;
-  position: fixed;
-  top: 70px; /* below header */
-  right: 0;
-  z-index: 1020;
-  overflow-y: auto;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.05);
+/* Post card styling */
+.js_posts_stream .post {
+  margin-bottom: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-body.night-mode .default-full-layout .default-sidebar {
-  background: var(--header-bg-color-dark, #262D34);
-  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+.js_posts_stream .post:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-.default-full-layout .default-sidebar::-webkit-scrollbar {
-  width: 4px;
+/* Post images full width */
+.js_posts_stream .post .post-image img,
+.js_posts_stream .post .post-gallery img {
+  width: 100%;
+  display: block;
 }
 
-.default-full-layout .default-sidebar::-webkit-scrollbar-thumb {
-  background: #ddd;
-  border-radius: 2px;
+/* Post body */
+.js_posts_stream .post .post-body {
+  padding: 12px;
 }
 
-body.night-mode .default-full-layout .default-sidebar::-webkit-scrollbar-thumb {
-  background: #444;
+/* Post text - max 4 lines */
+.js_posts_stream .post .post-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-/* ============================
-   3. MAIN FEED AREA (Full Width)
-   ============================ */
-.default-full-layout .default-main-feed {
-  flex: 1;
-  margin-right: 280px;
-  padding: 20px 24px 30px;
-  min-height: calc(100vh - 70px);
+/* Compact avatar */
+.js_posts_stream .post .post-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }
 
-/* ============================
-   4. MASONRY GRID FOR POSTS
-   ============================ */
-.default-main-feed ul {
-  column-count: 3;
-  column-gap: 16px;
+/* Compact post actions */
+.js_posts_stream .post .post-actions {
+  padding: 8px 12px;
+  border-top: 1px solid #f0f0f0;
 }
 
-.default-main-feed ul > li {
+.js_posts_stream .post .post-actions .action-btn {
+  font-size: 13px;
+  padding: 6px 8px;
+}
+
+/* Post footer (comments) - hidden by default, show on click */
+.js_posts_stream .post .post-footer {
+  display: none;
+}
+
+/* Compact post stats */
+.js_posts_stream .post .post-stats {
+  padding: 8px 12px 0;
+  font-size: 12px;
+}
+
+/* See-more pagination - full width */
+.js_posts_stream > .see-more,
+.js_posts_stream > .js_see-more {
+  column-span: all;
   break-inside: avoid;
-  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
-.default-main-feed .post {
-  break-inside: avoid;
-  margin-bottom: 16px;
-}
+/* ============================
+   3. RESPONSIVE MASONRY
+   ============================ */
 
-/* Responsive: 4 columns on wide screens */
-@media (min-width: 1600px) {
-  .default-main-feed ul {
+/* Large desktop: 4 columns */
+@media (min-width: 1400px) {
+  .js_posts_stream > ul {
     column-count: 4;
   }
 }
 
-/* Responsive: 2 columns on tablets */
-@media (max-width: 991px) {
-  .default-full-layout .default-sidebar {
-    transform: translateX(100%);
+/* Standard desktop: 3 columns (default) */
+
+/* Small desktop: 3 columns */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .js_posts_stream > ul {
+    column-count: 3;
   }
-  .default-full-layout .default-sidebar.show {
-    transform: translateX(0);
-  }
-  .default-full-layout .default-main-feed {
-    margin-right: 0;
-    padding: 15px;
-  }
-  .default-main-feed ul {
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .js_posts_stream > ul {
     column-count: 2;
     column-gap: 12px;
   }
 }
 
-/* Responsive: 1 column on mobile */
-@media (max-width: 767px) {
-  .default-full-layout .default-main-feed {
-    margin-right: 0;
-    padding: 10px;
-  }
-  .default-main-feed ul {
+/* Mobile: 1 column */
+@media (max-width: 575.98px) {
+  .js_posts_stream > ul {
     column-count: 1;
     column-gap: 0;
   }
 }
 
+/* Fluid design: extra columns */
+.container-fluid .js_posts_stream > ul {
+  column-count: 4;
+  column-gap: 20px;
+}
+
+@media (min-width: 1600px) {
+  .container-fluid .js_posts_stream > ul {
+    column-count: 5;
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .container-fluid .js_posts_stream > ul {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .container-fluid .js_posts_stream > ul {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container-fluid .js_posts_stream > ul {
+    column-count: 1;
+  }
+}
+
 /* ============================
-   5. SIDEBAR FOOTER LINKS
+   4. SIDEBAR FOOTER LINKS
+   (These classes exist in _sidebar.tpl)
    ============================ */
 .sidebar-footer-links {
   padding: 0 15px;
@@ -202,7 +260,7 @@ body.night-mode .sidebar-footer-nav li a {
 }
 
 /* ============================
-   6. HIDE OLD FOOTER (bottom bar)
+   5. HIDE OLD FOOTER (bottom bar)
    ============================ */
 .footer {
   display: none !important;
@@ -210,4 +268,30 @@ body.night-mode .sidebar-footer-nav li a {
 
 .mini-footer {
   display: none !important;
+}
+
+/* ============================
+   6. NIGHT MODE - Posts
+   ============================ */
+body.night-mode .js_posts_stream .post {
+  background: #1e2733;
+}
+
+body.night-mode .js_posts_stream .post:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.night-mode .js_posts_stream .post .post-actions {
+  border-top-color: #2d3748;
+}
+
+body.night-mode .js_posts_stream .post .post-stats {
+  color: #a0aec0;
+}
+
+/* ============================
+   7. RTL SUPPORT
+   ============================ */
+[dir="RTL"] .js_posts_stream > ul {
+  direction: rtl;
 }

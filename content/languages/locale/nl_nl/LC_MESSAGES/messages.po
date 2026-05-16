@@ -477,7 +477,7 @@ msgstr ""
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr ""
+msgstr "Marktplaats"
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -556,7 +556,7 @@ msgstr "Welkom bij"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Populaire notities"
+msgstr "Populaire berichten"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -614,25 +614,25 @@ msgstr ""
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr ""
+msgstr "Gepromote berichten"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr ""
+msgstr "Gepromote pagina's"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 msgid "Boosted Groups"
-msgstr "Clans waar ik lid van ben"
+msgstr "Gepromote groepen"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Sponsored"
 msgid "Boosted Events"
-msgstr "Sponsor"
+msgstr "Gepromote evenementen"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -679,7 +679,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr ""
+msgstr "Cursussen"
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -828,7 +828,7 @@ msgstr ""
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr ""
+msgstr "Ontdekken"
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1067,7 +1067,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr ""
+msgstr "Merits"
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1612,9 +1612,6 @@ msgstr "Pagina"
 msgid "Categories"
 msgstr "Categorieën"
 
-msgid "Category Name"
-msgstr "Categorienaam"
-
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53
 #: content/themes/default/templates/admin.settings.tpl:659
@@ -1771,7 +1768,7 @@ msgstr "Pin bericht"
 #: content/themes/default/templates/_footer.bottom_bar.tpl:80
 #: content/themes/default/templates/admin.tpl:586
 msgid "Ads"
-msgstr "Zoekertjes"
+msgstr "Advertenties"
 
 #: admin.php:2923 content/themes/default/templates/admin.ads.tpl:102
 msgid "Users Ads"
@@ -7978,7 +7975,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Nota"
+msgstr "Bericht"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -10243,7 +10240,7 @@ msgstr "Verwijder"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr ""
+msgstr "Bewerken"
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12057,7 +12054,7 @@ msgstr ""
 #, fuzzy
 #| msgid "List Users"
 msgid "Promoted Users"
-msgstr "gebruikerslijst"
+msgstr "Aanbevolen gebruikers"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12071,7 +12068,7 @@ msgstr "Homepagina"
 #: content/themes/default/templates/groups.tpl:116
 #, fuzzy
 msgid "Promoted Groups"
-msgstr "Clans waar ik lid van ben"
+msgstr "Aanbevolen groepen"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12079,7 +12076,7 @@ msgstr "Clans waar ik lid van ben"
 #, fuzzy
 #| msgid "Create Page"
 msgid "Promoted Events"
-msgstr "Maak pagina"
+msgstr "Aanbevolen evenementen"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12166,13 +12163,13 @@ msgstr "gebruikerslijst"
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested Friends"
-msgstr "Aanbevolen pagina 's"
+msgstr "Voorgestelde vrienden"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Aanbevolen pagina 's"
+msgstr "Voorgestelde personen"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -17406,7 +17403,7 @@ msgstr ""
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr ""
+msgstr "Startpagina"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -22100,7 +22097,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -22115,7 +22112,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Log in"
+msgstr "Uitloggen"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -22906,7 +22903,7 @@ msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr ""
+msgstr "Reel"
 
 #: content/themes/default/templates/admin.posts.tpl:189
 #, fuzzy
@@ -23219,7 +23216,7 @@ msgstr ""
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr ""
+msgstr "Startpagina"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -23322,7 +23319,7 @@ msgstr "Gekoppelde Accounts"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Page"
 msgid "Create Post"
-msgstr "Publiceer nota"
+msgstr "Bericht aanmaken"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create Page"
@@ -25647,7 +25644,7 @@ msgstr "heeft een bestand toegevoegd"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr ""
+msgstr "Winkel"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -26839,7 +26836,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Nieuws Feed"
+msgstr "Startpagina"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"
@@ -27583,72 +27580,6 @@ msgstr "Selecteer categorie (Vereist)"
 
 msgid "Please select a category before publishing"
 msgstr "Selecteer een categorie voordat je publiceert"
-msgid "Select a category..."
-msgstr "Selecteer een categorie..."
-
-msgid "Travel"
-msgstr "Reizen"
-
-msgid "Food"
-msgstr "Eten"
-
-msgid "Fashion"
-msgstr "Mode"
-
-msgid "Beauty"
-msgstr "Schoonheid"
-
-msgid "Technology"
-msgstr "Technologie"
-
-msgid "Fitness"
-msgstr "Fitness"
-
-msgid "Art"
-msgstr "Kunst"
-
-msgid "Music"
-msgstr "Muziek"
-
-msgid "Photography"
-msgstr "Fotografie"
-
-msgid "Pets"
-msgstr "Huisdieren"
-
-msgid "Gaming"
-msgstr "Gamen"
-
-msgid "DIY"
-msgstr "Zelf doen"
-
-msgid "Sports"
-msgstr "Sport"
-
-msgid "Comedy"
-msgstr "Komedie"
-
-msgid "Nature"
-msgstr "Natuur"
-
-msgid "Cars"
-msgstr "Auto's"
-
-msgid "Books"
-msgstr "Boeken"
-
-msgid "Category names are used as translation keys. Add translations in the language files."
-msgstr "Categorienamen worden gebruikt als vertaalsleutels."
-
-msgid "This name is used as the translation key in all language files"
-msgstr "Deze naam wordt gebruikt als vertaalsleutel in alle taalbestanden"
-
-msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
-msgstr "FontAwesome-icon klasse, bijv. fa-plane, fa-music, fa-camera"
-
-msgid "Active categories are visible to users"
-msgstr "Actieve categorieën zijn zichtbaar voor gebruikers"
-
 
 msgid "Search GIFs"
 msgstr "GIF zoeken"
@@ -27990,34 +27921,3 @@ msgstr ""
 
 #~ msgid "Website Logo"
 #~ msgstr "Website logo"
-
-msgid "Arabic"
-msgstr "Arabisch"
-
-msgid "This logo will be displayed when the language is Arabic (RTL)"
-msgstr "Dit logo wordt weergegeven wanneer de taal Arabisch (RTL) is"
-
-msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
-msgstr "Dit logo wordt weergegeven wanneer de taal Arabisch (RTL) is in donkere modus"
-
-
-msgid "Showing posts from"
-msgstr "Berichten weergeven uit"
-
-msgid "based on your location"
-msgstr "op basis van uw locatie"
-
-msgid "No more local posts. Showing posts from around the world."
-msgstr "Geen lokale berichten meer. Berichten uit de hele wereld weergeven."
-
-msgid "No more posts from"
-msgstr "Geen berichten meer uit"
-
-msgid "Showing popular posts from around the world."
-msgstr "Populaire berichten uit de hele wereld weergeven."
-
-msgid "My Location"
-msgstr "Mijn locatie"
-
-msgid "Auto-detected"
-msgstr "Automatisch gedetecteerd"

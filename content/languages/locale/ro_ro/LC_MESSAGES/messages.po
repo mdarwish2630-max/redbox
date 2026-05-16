@@ -479,7 +479,7 @@ msgstr ""
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr ""
+msgstr "Marketplace"
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -558,7 +558,7 @@ msgstr "Bun venit pe"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Notițe populare"
+msgstr "Postări populare"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -616,25 +616,25 @@ msgstr ""
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr ""
+msgstr "Postări promovate"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr ""
+msgstr "Pagini promovate"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 msgid "Boosted Groups"
-msgstr "Grupuri adunate"
+msgstr "Grupuri promovate"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Sponsored"
 msgid "Boosted Events"
-msgstr "Sponsor"
+msgstr "Evenimente promovate"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -681,7 +681,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr ""
+msgstr "Cursuri"
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -830,7 +830,7 @@ msgstr ""
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr ""
+msgstr "Descoperă"
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1073,7 +1073,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr ""
+msgstr "Merits"
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1622,9 +1622,6 @@ msgstr "Pagini"
 #: content/themes/default/templates/admin.courses.tpl:26
 msgid "Categories"
 msgstr "Categorii"
-
-msgid "Category Name"
-msgstr "Nume categorie"
 
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53
@@ -8084,7 +8081,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Notă"
+msgstr "Postare"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -10355,7 +10352,7 @@ msgstr "Elimina"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr ""
+msgstr "Editare"
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12188,7 +12185,7 @@ msgstr ""
 #: content/themes/default/templates/index.newsfeed.tpl:488
 #, fuzzy
 msgid "Promoted Users"
-msgstr "Sponsorizat"
+msgstr "Utilizatori recomandați"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12204,7 +12201,7 @@ msgstr "Postari Promovate"
 #, fuzzy
 #| msgid "Promoted Products"
 msgid "Promoted Groups"
-msgstr "Produse promovate"
+msgstr "Grupuri recomandate"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12212,7 +12209,7 @@ msgstr "Produse promovate"
 #, fuzzy
 #| msgid "Promoted Posts"
 msgid "Promoted Events"
-msgstr "Postari Promovate"
+msgstr "Evenimente recomandate"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12301,13 +12298,13 @@ msgstr "Lista Utilizatori"
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested Friends"
-msgstr "Pagini Sugerate "
+msgstr "Prietenii sugerați"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Pagini Sugerate "
+msgstr "Persoane sugerate"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -17650,7 +17647,7 @@ msgstr ""
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr ""
+msgstr "Acasă"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -22445,7 +22442,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr ""
+msgstr "Meniu"
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -22460,7 +22457,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Conecteaza-te"
+msgstr "Deconectare"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -23278,7 +23275,7 @@ msgstr "sondaj"
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr ""
+msgstr "Reel"
 
 #: content/themes/default/templates/admin.posts.tpl:189
 #, fuzzy
@@ -23599,7 +23596,7 @@ msgstr ""
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr ""
+msgstr "Acasă"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -23703,7 +23700,7 @@ msgstr "Conturi asociate"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Poll"
 msgid "Create Post"
-msgstr "Publică nota"
+msgstr "Creează postare"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create Page"
@@ -26099,7 +26096,7 @@ msgstr "a adăugat un fișier"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Anunturi"
+msgstr "Magazin"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -27333,7 +27330,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "News Feed"
+msgstr "Acasă"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"
@@ -28082,72 +28079,6 @@ msgstr "Selectează categoria (Obligatoriu)"
 
 msgid "Please select a category before publishing"
 msgstr "Selectați o categorie înainte de a publica"
-msgid "Select a category..."
-msgstr "Selectați o categorie..."
-
-msgid "Travel"
-msgstr "Călătorii"
-
-msgid "Food"
-msgstr "Mâncare"
-
-msgid "Fashion"
-msgstr "Modă"
-
-msgid "Beauty"
-msgstr "Frumusețe"
-
-msgid "Technology"
-msgstr "Tehnologie"
-
-msgid "Fitness"
-msgstr "Fitness"
-
-msgid "Art"
-msgstr "Artă"
-
-msgid "Music"
-msgstr "Muzică"
-
-msgid "Photography"
-msgstr "Fotografie"
-
-msgid "Pets"
-msgstr "Animale de companie"
-
-msgid "Gaming"
-msgstr "Jocuri video"
-
-msgid "DIY"
-msgstr "DIY"
-
-msgid "Sports"
-msgstr "Sport"
-
-msgid "Comedy"
-msgstr "Comedie"
-
-msgid "Nature"
-msgstr "Natură"
-
-msgid "Cars"
-msgstr "Mașini"
-
-msgid "Books"
-msgstr "Cărți"
-
-msgid "Category names are used as translation keys. Add translations in the language files."
-msgstr "Numele categoriilor sunt folosite ca chei de traducere."
-
-msgid "This name is used as the translation key in all language files"
-msgstr "Acest nume este folosit ca cheie de traducere în toate fișierele de limbă"
-
-msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
-msgstr "Clasa pictogramă FontAwesome, ex: fa-plane, fa-music, fa-camera"
-
-msgid "Active categories are visible to users"
-msgstr "Categoriile active sunt vizibile pentru utilizatori"
-
 
 msgid "Search GIFs"
 msgstr "Căutare GIF"
@@ -28577,34 +28508,3 @@ msgstr ""
 
 #~ msgid "This photo can't be deleted"
 #~ msgstr "Această fotografie nu poate fi ștearsă"
-
-msgid "Arabic"
-msgstr "Arabă"
-
-msgid "This logo will be displayed when the language is Arabic (RTL)"
-msgstr "Acest logo va fi afișat când limba este arabă (RTL)"
-
-msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
-msgstr "Acest logo va fi afișat când limba este arabă (RTL) în modul întunecat"
-
-
-msgid "Showing posts from"
-msgstr "Afișare postări din"
-
-msgid "based on your location"
-msgstr "pe baza locației dvs."
-
-msgid "No more local posts. Showing posts from around the world."
-msgstr "Nu mai sunt postări locale. Afișare postări din întreaga lume."
-
-msgid "No more posts from"
-msgstr "Nu mai sunt postări din"
-
-msgid "Showing popular posts from around the world."
-msgstr "Afișare postări populare din întreaga lume."
-
-msgid "My Location"
-msgstr "Locația mea"
-
-msgid "Auto-detected"
-msgstr "Detectat automat"

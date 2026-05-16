@@ -1,0 +1,203 @@
+/* ============================================
+   Redbox Masonry Feed Layout (Xiaohongshu-style)
+   3-4 posts per row with full-width feed
+   ============================================ */
+
+/* --- Masonry Grid --- */
+.redbox-main-content .js_posts_stream > ul {
+    column-count: 4;
+    column-gap: 16px;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.redbox-main-content .js_posts_stream > ul > li {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Post cards in masonry */
+.redbox-main-content .js_posts_stream .post {
+    margin-bottom: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+}
+
+.redbox-main-content .js_posts_stream .post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Post image styling */
+.redbox-main-content .js_posts_stream .post .post-image,
+.redbox-main-content .js_posts_stream .post .post-gallery,
+.redbox-main-content .js_posts_stream .post .post-file-image {
+    border-radius: 12px 12px 0 0;
+}
+
+.redbox-main-content .js_posts_stream .post .post-image img,
+.redbox-main-content .js_posts_stream .post .post-gallery img {
+    width: 100%;
+    display: block;
+}
+
+/* Post body styling */
+.redbox-main-content .js_posts_stream .post .post-body {
+    padding: 12px;
+}
+
+/* Post text content truncation for grid */
+.redbox-main-content .js_posts_stream .post .post-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Post header compact */
+.redbox-main-content .js_posts_stream .post .post-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Post actions compact */
+.redbox-main-content .js_posts_stream .post .post-actions {
+    padding: 8px 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.redbox-main-content .js_posts_stream .post .post-actions .action-btn {
+    font-size: 13px;
+    padding: 6px 8px;
+}
+
+/* Hide post footer comments by default in grid, show on hover/click */
+.redbox-main-content .js_posts_stream .post .post-footer {
+    display: none;
+}
+
+.redbox-main-content .js_posts_stream .post .post-footer.post-footer-open {
+    display: block;
+}
+
+/* Post stats compact */
+.redbox-main-content .js_posts_stream .post .post-stats {
+    padding: 8px 12px 0;
+    font-size: 12px;
+}
+
+/* Hide "see-more" pagination from masonry, place it full-width below */
+.redbox-main-content .js_posts_stream > .see-more,
+.redbox-main-content .js_posts_stream > .js_see-more,
+.redbox-main-content > .see-more,
+.redbox-main-content > .js_see-more {
+    column-span: all;
+    break-inside: avoid;
+    margin-top: 16px;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Large desktop: 4 columns */
+@media (min-width: 1200px) {
+    .redbox-main-content .js_posts_stream > ul {
+        column-count: 4;
+    }
+}
+
+/* Desktop: 3 columns */
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .redbox-main-content .js_posts_stream > ul {
+        column-count: 3;
+    }
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .redbox-main-content .js_posts_stream > ul {
+        column-count: 2;
+    }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 575.98px) {
+    .redbox-main-content .js_posts_stream > ul {
+        column-count: 1;
+    }
+}
+
+/* --- Publisher box stays full width (not in masonry) --- */
+.redbox-main-content > .publisher,
+.redbox-main-content > .card:has(.publisher) {
+    break-inside: avoid;
+    column-span: all;
+}
+
+/* --- Night Mode --- */
+body.night-mode .redbox-main-content .js_posts_stream .post {
+    background: #1e2733;
+}
+
+body.night-mode .redbox-main-content .js_posts_stream .post:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+body.night-mode .redbox-main-content .js_posts_stream .post .post-actions {
+    border-top-color: #2d3748;
+}
+
+body.night-mode .redbox-main-content .js_posts_stream .post .post-stats {
+    color: #a0aec0;
+}
+
+/* --- RTL Support --- */
+[dir="RTL"] .redbox-main-content .js_posts_stream > ul {
+    direction: rtl;
+}
+
+/* --- Fluid design override --- */
+.container-fluid .redbox-main-content .js_posts_stream > ul {
+    column-count: 5;
+}
+
+.container-fluid .redbox-main-content .js_posts_stream > ul {
+    column-gap: 20px;
+}
+
+@media (max-width: 1399.98px) and (min-width: 1200px) {
+    .container-fluid .redbox-main-content .js_posts_stream > ul {
+        column-count: 4;
+    }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .container-fluid .redbox-main-content .js_posts_stream > ul {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .container-fluid .redbox-main-content .js_posts_stream > ul {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container-fluid .redbox-main-content .js_posts_stream > ul {
+        column-count: 1;
+    }
+}
+
+/* --- Stories & Announcements stay full width --- */
+.redbox-main-content > .card:has(.stories-wrapper),
+.redbox-main-content > .alert {
+    break-inside: avoid;
+}
