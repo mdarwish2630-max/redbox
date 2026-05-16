@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 11:59:56
+/* Smarty version 5.7.0, created on 2026-05-16 14:14:21
   from 'file:_head.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a085c3cd37fc4_84406825',
+  'unifunc' => 'content_6a087bbdb09b51_72593564',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c5fd616ad9ac27928b77c56901c97210e5bf2894' => 
     array (
       0 => '_head.tpl',
-      1 => 1778954964,
+      1 => 1778959278,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_head.css.tpl' => 1,
   ),
 ))) {
-function content_6a085c3cd37fc4_84406825 (\Smarty\Template $_smarty_tpl) {
+function content_6a087bbdb09b51_72593564 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!doctype html>
 
