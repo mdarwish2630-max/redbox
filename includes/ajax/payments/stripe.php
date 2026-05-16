@@ -2,7 +2,7 @@
 
 /**
  * ajax -> payments -> stripe
- * 
+ *
  * @package Sngine
  * @author Zamblek
  */
@@ -60,6 +60,10 @@ try {
     case 'donate':
       // valid inputs
       if (!isset($_POST['post_id']) || !is_numeric($_POST['post_id'])) {
+        _error(400);
+      }
+      /* FIX: Validate price for donate */
+      if (!isset($_POST['price']) || !is_numeric($_POST['price']) || floatval($_POST['price']) <= 0) {
         _error(400);
       }
 
@@ -134,6 +138,10 @@ try {
       if (!isset($_POST['orders_collection_id'])) {
         _error(400);
       }
+      /* FIX: Validate orders_collection_id is numeric */
+      if (!is_numeric($_POST['orders_collection_id'])) {
+        _error(400);
+      }
 
       // get orders collection
       $orders_collection = $user->get_orders_collection($_POST['orders_collection_id']);
@@ -158,5 +166,5 @@ try {
   // return & exit
   return_json($return);
 } catch (Exception $e) {
-  modal("ERROR", __("Error"), $e->getMessage());
+  modal("ERROR", __("Error"), __("An error occurred. Please try again."));
 }

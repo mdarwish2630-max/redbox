@@ -2,7 +2,7 @@
 
 /**
  * ajax -> core -> signup
- * 
+ *
  * @package Sngine
  * @author Zamblek
  */
@@ -30,7 +30,10 @@ try {
 
   // return
   if ($_POST['oauth_app_id']) {
-    return_json(['callback' => 'window.location.href = "' . $system['system_url'] . '/api/oauth?app_id=' . $_POST['oauth_app_id'] . '";']);
+    /* FIX: Validate oauth_app_id is numeric and use json_encode to prevent XSS */
+    $safe_app_id = is_numeric($_POST['oauth_app_id']) ? intval($_POST['oauth_app_id']) : 0;
+    $safe_url = htmlspecialchars($system['system_url'], ENT_QUOTES, 'UTF-8');
+    return_json(['callback' => 'window.location.href = "' . $safe_url . '/api/oauth?app_id=' . $safe_app_id . '";']);
   } else {
     return_json(['callback' => 'window.location.reload();']);
   }

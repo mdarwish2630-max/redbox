@@ -328,14 +328,14 @@ class Request
 
   /**
    * Set @var header the HTTP HEADERS in the following format:
-   * 		array('HEADER_NAME' => 'VALUE');
+   *            array('HEADER_NAME' => 'VALUE');
    */
   public function get_http_header()
   {
 
     /**
      * headers_list() @return HTTP HEADERS in the following format:
-     * 		array('HEADER_NAME:VALUE');
+     *          array('HEADER_NAME:VALUE');
      */
     $headers = headers_list();
     $headers_key_value = array();
@@ -397,7 +397,7 @@ class Request
 
   /**
    * Adds a new element to @var params in the following format
-   * 		array('KEY', 'VALUE');
+   *            array('KEY', 'VALUE');
    */
   public function set_params($key, $value)
   {
@@ -502,7 +502,10 @@ class Response
         /**
          * Case default, no view engine is used, we serve PHP view files
          */
-        include $this->views . '/' . $template . '.php';
+        /* FIX: Prevent Local File Inclusion (LFI) via path traversal in template name */
+        $safe_template = basename($template);
+        $safe_template = preg_replace('/[^a-zA-Z0-9_\-\/]/', '', $safe_template);
+        include $this->views . '/' . $safe_template . '.php';
         break;
       case 'smarty':
 
@@ -518,7 +521,7 @@ class Response
          * Enable caching if set
          */
         if ($this->template_caching == true) {
-          echo $this->template_cache_dir . '_______-';
+          /* FIX: Remove debug echo that leaks server path */
           $smarty->cache_dir = __DIR__ . '/' . $this->template_cache_dir;
           $smarty->caching = true;
         }
@@ -570,7 +573,7 @@ class Response
    */
   public function setSession($key, $value)
   {
-    # Add a new element to $_SESSION 
+    # Add a new element to $_SESSION
     $session_status = session_status();
     if ($session_status == 2) {
       # Implies that session as been started, append element
@@ -584,7 +587,14 @@ class Response
    */
   public function redirect($route)
   {
-    header('location:' . $this->basePath . $route);
+    /* FIX: Prevent open redirect via protocol-relative URLs */
+    $safe_route = ltrim($route, '/');
+    if (preg_match('#^https?://#i', $safe_route)) {
+      // External URL detected - reject
+      return;
+    }
+    header('Location: ' . $this->basePath . $safe_route);
+    exit;
   }
 
   /**
@@ -639,15 +649,15 @@ class Express
 
   /**
    * @var array Array Contains Injected Express modules in the format:
-   *		array('_MODULE_NAME'=>OBJECT);
+   *            array('_MODULE_NAME'=>OBJECT);
    */
   private $modules;
 
   /**
    * @var array Array Contains Reverse names(identifiers) of routes as the keys and
    *      their second callback functions as value in a format:
-   * 		array('route'=>'callback')
-   * 		i.e array('/user/[i:uid]'=>$callback(new Request, new Response));
+   *            array('route'=>'callback')
+   *            i.e array('/user/[i:uid]'=>$callback(new Request, new Response));
    */
   public $route_callback = array();
 
@@ -663,7 +673,7 @@ class Express
 
   /**
    * @var array Array Register that holds callbacks for route specific middle wares in format:
-   * 		array('route'=>array('middleware1_callback', 'middleware2_callback'))
+   *            array('route'=>array('middleware1_callback', 'middleware2_callback'))
    */
   public $route_middlewares =  array();
 
@@ -744,7 +754,7 @@ class Express
     /**
      * Check if the property name meets Express Module Naming convention format:
      *     Underscore followed by module name in pascal case
-     *		_ModuleName
+     *          _ModuleName
      */
     if ((strpos($name, '_') !== FALSE) && (strpos($name, '_') === 0)) {
 
@@ -803,10 +813,10 @@ class Express
 
     /**
      * Overloaded methods includes:
-     *		$Object->use($param1);
-     *		$Object->use($param1, $param2);
-     *		$Object->get($param1);
-     *		$Object->get($param1, $param2);
+     *          $Object->use($param1);
+     *          $Object->use($param1, $param2);
+     *          $Object->get($param1);
+     *          $Object->get($param1, $param2);
      */
     if ($method_name == "use") {
 
@@ -819,9 +829,15 @@ class Express
           # Global middle ware logic...
 
           /**
-           * Invoke the middle ware
+           * FIX: Actually invoke the middleware function instead of just referencing it
+           * Previously: $parameter[0]; (dead code - not called)
            */
-          $parameter[0];
+          if (is_callable($parameter[0])) {
+            $req = new Request();
+            $res = new Response();
+            $res->config_template($this->basePath, $this->view_engine, $this->views, $this->template_caching, $this->template_cache_dir);
+            $parameter[0]($req, $res);
+          }
           break;
         case '2':
           # Route specific middle ware...
@@ -912,7 +928,7 @@ class Express
           /**
            * The GET HTTP request route function
            * Set this route reverse name in format:
-           * 		$route-$_SERVER['REQUEST_METHOD']
+           *            $route-$_SERVER['REQUEST_METHOD']
            */
           $route_reverse_name = $route . '-GET';
 
@@ -1025,7 +1041,7 @@ class Express
         $req->set_params($key, $value);
       }
 
-      # Get the current route...      
+      # Get the current route...
       $get_route = str_replace($this->basePath, '', $_SERVER['REQUEST_URI']);
 
       /**
@@ -1216,7 +1232,7 @@ class Express
   public function __destruct()
   {
 
-    // Invoke __destruct(), let match the current request 
+    // Invoke __destruct(), let match the current request
     $match = $this->router->match();
 
     // If a match is found
@@ -1259,11 +1275,16 @@ class Express
 
       // Check there is a route that is dedicated to handle 404 error
       if ($this->errorPage['404'] == null) {
-        echo 'Cannot ' . $_SERVER['REQUEST_METHOD'] . ' ' . str_replace($this->basePath, '', $_SERVER['REQUEST_URI']);
+        /* FIX: Sanitize REQUEST_URI to prevent reflected XSS in 404 page */
+        $safe_method = htmlspecialchars($_SERVER['REQUEST_METHOD'], ENT_QUOTES, 'UTF-8');
+        $safe_uri = htmlspecialchars(str_replace($this->basePath, '', $_SERVER['REQUEST_URI']), ENT_QUOTES, 'UTF-8');
+        header('Content-Type: text/plain; charset=utf-8');
+        echo 'Cannot ' . $safe_method . ' ' . $safe_uri;
       } else {
 
         // Found! Then redirect to the route
-        header("location:" . $this->basePath . $this->errorPage['404']);
+        header("Location:" . $this->basePath . $this->errorPage['404']);
+        exit;
       }
     }
   }

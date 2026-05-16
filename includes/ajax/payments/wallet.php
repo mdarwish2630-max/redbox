@@ -2,7 +2,7 @@
 
 /**
  * ajax -> payments -> wallet
- * 
+ *
  * @package Sngine
  * @author Zamblek
  */
@@ -24,6 +24,10 @@ try {
       if (!isset($_POST['amount']) || !is_numeric($_POST['amount']) || $_POST['amount'] < 0) {
         throw new Exception(__("Enter valid amount of money"));
       }
+      /* FIX: Validate send_to_id is numeric to prevent IDOR/SQL injection */
+      if (!isset($_POST['send_to_id']) || !is_numeric($_POST['send_to_id'])) {
+        _error(400);
+      }
 
       // process
       $user->wallet_transfer($_POST['send_to_id'], $_POST['amount']);
@@ -36,6 +40,10 @@ try {
       // valid inputs
       if (!isset($_POST['amount']) || !is_numeric($_POST['amount']) || $_POST['amount'] < 0) {
         throw new Exception(__("Enter valid amount of money"));
+      }
+      /* FIX: Validate send_to_id is numeric */
+      if (!isset($_POST['send_to_id']) || !is_numeric($_POST['send_to_id'])) {
+        _error(400);
       }
 
       // process
@@ -52,7 +60,13 @@ try {
       }
 
       // return
-      modal("#payment", "{'handle': 'wallet', 'price': '" . $_POST['amount'] . "', 'vat': '" . get_payment_vat_value($_POST['amount']) . "', 'fees': '" . get_payment_fees_value($_POST['amount']) . "', 'total': '" . get_payment_total_value($_POST['amount']) . "', 'total_printed': '" . get_payment_total_value($_POST['amount'], true) . "'}");
+      /* FIX: Use json_encode to prevent XSS in JavaScript callback */
+      $safe_amount = floatval($_POST['amount']);
+      $vat = get_payment_vat_value($_POST['amount']);
+      $fees = get_payment_fees_value($_POST['amount']);
+      $total = get_payment_total_value($_POST['amount']);
+      $total_printed = get_payment_total_value($_POST['amount'], true);
+      modal("#payment", json_encode(['handle' => 'wallet', 'price' => $safe_amount, 'vat' => $vat, 'fees' => $fees, 'total' => $total, 'total_printed' => $total_printed]));
       break;
 
     case 'wallet_withdraw_affiliates':
@@ -121,6 +135,10 @@ try {
       break;
 
     case 'wallet_package_payment':
+      /* FIX: Validate package_id is numeric */
+      if (!isset($_POST['package_id']) || !is_numeric($_POST['package_id'])) {
+        _error(400);
+      }
       // process
       $user->wallet_package_payment($_POST['package_id']);
 
@@ -129,6 +147,10 @@ try {
       break;
 
     case 'wallet_monetization_payment':
+      /* FIX: Validate plan_id is numeric */
+      if (!isset($_POST['plan_id']) || !is_numeric($_POST['plan_id'])) {
+        _error(400);
+      }
       // process
       $user->wallet_monetization_payment($_POST['plan_id']);
 
@@ -137,6 +159,10 @@ try {
       break;
 
     case 'wallet_paid_post':
+      /* FIX: Validate post_id is numeric */
+      if (!isset($_POST['post_id']) || !is_numeric($_POST['post_id'])) {
+        _error(400);
+      }
       // process
       $user->wallet_paid_post($_POST['post_id']);
 
@@ -149,6 +175,10 @@ try {
       if (!isset($_POST['amount']) || !is_numeric($_POST['amount']) || $_POST['amount'] < 0) {
         throw new Exception(__("Enter valid amount of money"));
       }
+      /* FIX: Validate post_id is numeric */
+      if (!isset($_POST['post_id']) || !is_numeric($_POST['post_id'])) {
+        _error(400);
+      }
 
       // process
       $user->wallet_donate($_POST['post_id'], $_POST['amount']);
@@ -158,6 +188,10 @@ try {
       break;
 
     case 'wallet_marketplace':
+      /* FIX: Validate orders_collection_id is numeric */
+      if (!isset($_POST['orders_collection_id']) || !is_numeric($_POST['orders_collection_id'])) {
+        _error(400);
+      }
       // process
       $user->wallet_marketplace_payment($_POST['orders_collection_id']);
 
@@ -171,8 +205,8 @@ try {
   }
 } catch (Exception $e) {
   if ($_REQUEST['do'] == "wallet_marketplace") {
-    modal("ERROR", __("Error"), $e->getMessage());
+    modal("ERROR", __("Error"), __("An error occurred"));
   } else {
-    return_json(['error' => true, 'message' => $e->getMessage()]);
+    return_json(['error' => true, 'message' => __("An error occurred")]);
   }
 }

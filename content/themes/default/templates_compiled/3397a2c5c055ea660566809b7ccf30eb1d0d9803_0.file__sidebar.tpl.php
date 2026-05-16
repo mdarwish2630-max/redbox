@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 17:46:52
+/* Smarty version 5.7.0, created on 2026-05-16 20:23:08
   from 'file:_sidebar.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a08ad8c243c56_25018325',
+  'unifunc' => 'content_6a08d22c6da368_01768404',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 35,
   ),
 ))) {
-function content_6a08ad8c243c56_25018325 (\Smarty\Template $_smarty_tpl) {
+function content_6a08d22c6da368_01768404 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="card main-side-nav-card">
   <div class="card-body with-nav">

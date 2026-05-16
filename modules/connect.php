@@ -12,7 +12,7 @@ require('../bootstrap.php');
 
 try {
 
-  switch ($_REQUEST['do']) {
+  switch ($_GET['do'] ?? '') {
     case 'connect':
       // check if social login enabled
       if (!$system['social_login_enabled']) {
@@ -25,7 +25,8 @@ try {
       }
 
       // check provider
-      switch ($_REQUEST['provider']) {
+      $provider = $_GET['provider'] ?? '';
+      switch ($provider) {
         case 'facebook':
           if (!$system['facebook_login_enabled']) {
             _error(404);
@@ -74,14 +75,14 @@ try {
       }
 
       // set provider
-      $provider = $_REQUEST["provider"];
+      $provider = $_GET['provider'] ?? '';
       $provider = ($provider == "linkedin") ? "LinkedInOpenID" : $provider;
 
       if ($provider != "sngine") {
 
         // config hybridauth
         $config = [
-          'callback' => $system['system_url'] . "/connect/" . $_REQUEST["provider"],
+          'callback' => $system['system_url'] . "/connect/" . htmlspecialchars($provider),
           "providers" => [
             "Facebook" => [
               "enabled" => true,
@@ -137,11 +138,15 @@ try {
         $app_id = $system['sngine_appid'];
         $app_secret = $system['sngine_secret'];
         $app_url = $system['sngine_app_domain'];
-        $auth_key = $_GET['auth_key'];
+        $auth_key = $_GET['auth_key'] ?? '';
+        if (empty($auth_key)) {
+          _error(404);
+        }
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://$app_url/api/authorize?app_id=$app_id&app_secret=$app_secret&auth_key=$auth_key");
+        curl_setopt($ch, CURLOPT_URL, "https://$app_url/api/authorize?app_id=" . urlencode($app_id) . "&app_secret=" . urlencode($app_secret) . "&auth_key=" . urlencode($auth_key));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         $response = curl_exec($ch);
         curl_close($ch);
         $responseJson = json_decode($response, true);
@@ -152,9 +157,10 @@ try {
         // get user profile
         $access_token = $responseJson['access_token'];
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://$app_url/api/get_user_info?access_token=$access_token");
+        curl_setopt($ch, CURLOPT_URL, "https://$app_url/api/get_user_info?access_token=" . urlencode($access_token));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         $response = curl_exec($ch);
         curl_close($ch);
         $responseJson = json_decode($response, true);
@@ -184,7 +190,8 @@ try {
       user_access();
 
       // check provider
-      switch ($_REQUEST['provider']) {
+      $provider = $_GET['provider'] ?? '';
+      switch ($provider) {
         case 'facebook':
           $social_id = "facebook_id";
           $social_connected = "facebook_connected";
@@ -230,8 +237,13 @@ try {
           break;
       }
 
-      // revoke
-      $db->query(sprintf("UPDATE users SET $social_connected = '0', $social_id = NULL WHERE user_id = %s", secure($user->_data['user_id'], 'int')));
+      // revoke - validate social_id to prevent SQL injection
+      $allowed_social_ids = ['facebook_id', 'google_id', 'twitter_id', 'instagram_id', 'linkedin_id', 'vkontakte_id', 'wordpress_id', 'sngine_id'];
+      $allowed_social_connected = ['facebook_connected', 'google_connected', 'twitter_connected', 'instagram_connected', 'linkedin_connected', 'vkontakte_connected', 'wordpress_connected', 'sngine_connected'];
+      if (!in_array($social_id, $allowed_social_ids) || !in_array($social_connected, $allowed_social_connected)) {
+        _error(404);
+      }
+      $db->query(sprintf("UPDATE users SET %s = '0', %s = NULL WHERE user_id = %s", secure($social_connected), secure($social_id), secure($user->_data['user_id'], 'int')));
       redirect('/settings/linked');
       break;
 

@@ -188,10 +188,13 @@ class User
         $this->_data['connected_accounts'] = $this->get_connected_accounts($this->_data['user_master_account']);
         /* prepare full name */
         $this->_data['user_fullname'] = ($system['show_usernames_enabled']) ? $this->_data['user_name'] : $this->_data['user_firstname'] . " " . $this->_data['user_lastname'];
-        /* check unusual login */
+        /* check unusual login - update IP instead of blocking when IP changes on same browser */
         if (!$this->_login_as && $system['unusual_login_enabled'] && !defined('SKIP_UNUSUAL_LOGIN_CHECK')) {
           if ($this->_data['user_ip'] != get_user_ip()) {
-            return;
+            /* Update user IP in DB instead of returning (which causes session to die) */
+            $current_ip = get_user_ip();
+            $db->query(sprintf("UPDATE users SET user_ip = %s WHERE user_id = %s", secure($current_ip), secure($this->_data['user_id'], 'int')));
+            $this->_data['user_ip'] = $current_ip;
           }
         }
         $this->_logged_in = true;

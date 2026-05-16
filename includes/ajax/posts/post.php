@@ -2,7 +2,7 @@
 
 /**
  * ajax -> posts -> post
- * 
+ *
  * @package Sngine
  * @author Zamblek
  */
@@ -228,7 +228,9 @@ try {
   $inputs['for_subscriptions'] = ($_POST['handle'] != 'user' && $_POST['for_subscriptions'] == "true") ? '1' : '0';
   if ($inputs['for_subscriptions']) {
     if ($_POST['subscriptions_image']) {
-      $inputs['subscriptions_image'] = $_POST['subscriptions_image'];
+      /* FIX: Validate image path to prevent path traversal */
+      $safe_image = str_replace('..', '', $_POST['subscriptions_image']);
+      $inputs['subscriptions_image'] = $safe_image;
     }
   }
   /* check is_paid */
@@ -250,7 +252,9 @@ try {
       throw new ValidationException(__("Paid post description is more than 1000 characters"));
     }
     if ($_POST['paid_image']) {
-      $inputs['paid_image'] = $_POST['paid_image'];
+      /* FIX: Validate image path to prevent path traversal */
+      $safe_paid_image = str_replace('..', '', $_POST['paid_image']);
+      $inputs['paid_image'] = $safe_paid_image;
     }
   }
   /* prepare inputs */
@@ -321,7 +325,9 @@ try {
     }
   }
 } catch (ValidationException $e) {
-  return_json(['callback' => 'error.html("' . $e->getMessage() . '").slideDown();']);
+  /* FIX: Escape exception message before embedding in JavaScript to prevent XSS */
+  $safe_message = htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8');
+  return_json(['callback' => 'error.html("' . $safe_message . '").slideDown();']);
 } catch (Exception $e) {
-  modal("ERROR", __("Error"), $e->getMessage());
+  modal("ERROR", __("Error"), __("An error occurred. Please try again."));
 }

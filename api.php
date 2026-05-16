@@ -8,7 +8,8 @@
  */
 
 // fetch bootstrap|bootloader
-if ($_GET['do'] == "oauth") {
+$api_action = isset($_GET['do']) ? $_GET['do'] : '';
+if ($api_action == "oauth") {
   require('bootloader.php');
 } else {
   require('bootstrap.php');
@@ -19,7 +20,7 @@ try {
   // initialize the return array
   $return = [];
 
-  switch ($_GET['do']) {
+  switch ($api_action) {
     case 'oauth':
       // user access
       user_access(false, false, false, $_GET['app_id']);
@@ -61,21 +62,21 @@ try {
 
       // get user
       $get_user = $db->query(sprintf("SELECT 
-				user_id, 
-				user_name, 
-				user_email, 
-				user_firstname, 
-				user_lastname, 
-				user_gender, 
-				user_birthdate, 
-				user_picture, 
-				user_cover, 
-				user_registered, 
-				user_verified, 
-				user_relationship, 
-				user_biography,
-				user_website
-				FROM users WHERE user_id = %s", secure($user_id, 'int')));
+                                user_id, 
+                                user_name, 
+                                user_email, 
+                                user_firstname, 
+                                user_lastname, 
+                                user_gender, 
+                                user_birthdate, 
+                                user_picture, 
+                                user_cover, 
+                                user_registered, 
+                                user_verified, 
+                                user_relationship, 
+                                user_biography,
+                                user_website
+                                FROM users WHERE user_id = %s", secure($user_id, 'int')));
       if ($get_user->num_rows > 0) {
         while ($_user = $get_user->fetch_assoc()) {
           $_user['profile_picture'] = get_picture($_user['user_picture'], $_user['user_gender']);
@@ -94,7 +95,7 @@ try {
       break;
   }
 } catch (Exception $e) {
-  if ($_GET['do'] == "oauth") {
+  if ($api_action == "oauth") {
     _error(__("Error"), $e->getMessage());
   } else {
     return_json(['error' => true, 'message' => $e->getMessage()]);

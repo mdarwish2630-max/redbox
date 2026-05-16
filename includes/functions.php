@@ -841,7 +841,7 @@ function extarct_hash_token($file_name)
 function set_cookie($cookie_name, $cookie_value, $is_expired = false, $is_httponly = true)
 {
   $secured = (get_system_protocol() == "https") ? true : false;
-  $expire_time = ($is_expired) ?  0 : time() + 2592000;
+  $expire_time = ($is_expired) ?  0 : time() + (86400 * 30);
   $httponly = ($is_httponly) ? true : false;
   $options = [
     'expires' => $expire_time,

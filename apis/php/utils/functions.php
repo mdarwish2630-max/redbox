@@ -9,7 +9,7 @@
 
 /**
  * checkAPIRequest
- * 
+ *
  * @return void
  */
 function checkAPIRequest()
@@ -22,19 +22,21 @@ function checkAPIRequest()
 
 /**
  * expressJSON
- * 
+ *
  * @return void
  */
 function expressJSON()
 {
-  if (strpos($_SERVER['REQUEST_URI'], 'data/upload') !== false) return;
+  /* FIX: Use exact path match instead of substring match to prevent bypass */
+  $request_uri = strtok($_SERVER['REQUEST_URI'], '?');
+  if (preg_match('#/data/upload$#', $request_uri)) return;
   $_POST = json_decode(file_get_contents('php://input'), true);
 }
 
 
 /**
  * isUserAuthenticated
- * 
+ *
  * @return void
  */
 function isUserAuthenticated()
@@ -63,9 +65,8 @@ function isUserAuthenticated()
     '/auth/forget_password_reset',
   ];
   $endpoint = strtok(str_replace(API_STACK, '', $_SERVER['REQUEST_URI']), '?');
-  foreach ($excluded_endpoints as $url) {
-    if (strpos($endpoint, $url) !== false) return;
-  }
+  /* FIX: Use exact match instead of strpos substring match to prevent authentication bypass */
+  if (in_array($endpoint, $excluded_endpoints)) return;
   if (!$user->_logged_in) {
     apiError(__('You are not logged in'), 401);
   }
@@ -74,16 +75,18 @@ function isUserAuthenticated()
 
 /**
  * apiError
- * 
+ *
  * @param string $message
  * @param int $code
- * 
+ *
  * @return void
  */
 function apiError($message, $code = null)
 {
   global $date;
   header('Content-Type: application/json');
+  /* FIX: Sanitize error message to prevent information disclosure */
+  $safe_message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
   switch ($code) {
     case '400':
       header('HTTP/1.1 400 Bad Request');
@@ -107,7 +110,7 @@ function apiError($message, $code = null)
   }
   exit(json_encode([
     'status' => 'error',
-    'message' => $message,
+    'message' => $safe_message,
     'timestamp' => $date
   ]));
 }
@@ -115,10 +118,10 @@ function apiError($message, $code = null)
 
 /**
  * apiResponse
- * 
+ *
  * @param object $res
  * @param array $args
- * 
+ *
  * @return void
  */
 function apiResponse($res, $args = [])

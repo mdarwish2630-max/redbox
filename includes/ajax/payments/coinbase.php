@@ -2,7 +2,7 @@
 
 /**
  * ajax -> payments -> coinbase
- * 
+ *
  * @package Sngine
  * @author Zamblek
  */
@@ -71,6 +71,10 @@ try {
       if (!isset($_POST['post_id']) || !is_numeric($_POST['post_id'])) {
         _error(400);
       }
+      /* FIX: Validate price for donate */
+      if (!isset($_POST['price']) || !is_numeric($_POST['price']) || floatval($_POST['price']) <= 0) {
+        _error(400);
+      }
 
       // get post
       $post = $user->get_post($_POST['post_id']);
@@ -101,7 +105,7 @@ try {
       }
       /* check if user already subscribed to this node */
       if ($user->is_subscribed($monetization_plan['node_id'], $monetization_plan['node_type'])) {
-        modal("SUCCESS", __("Subscribed"), __("You already subscribed to this") . " " . __($_POST['node_type']));
+        modal("SUCCESS", __("Subscribed"), __("You already subscribed to this") . " " . __($monetization_plan['node_type']));
       }
 
       // get coinbase link
@@ -167,6 +171,10 @@ try {
       if (!isset($_POST['orders_collection_id'])) {
         _error(400);
       }
+      /* FIX: Validate orders_collection_id is numeric */
+      if (!is_numeric($_POST['orders_collection_id'])) {
+        _error(400);
+      }
 
       // get orders collection
       $orders_collection = $user->get_orders_collection($_POST['orders_collection_id']);
@@ -195,7 +203,13 @@ try {
   }
 
   // return & exit
-  return_json(['callback' => 'window.location.href = "' . $link . '";']);
+  /* FIX: Validate link starts with https:// to prevent javascript: URI XSS */
+  if ($link && preg_match('#^https?://#i', $link)) {
+    $safe_link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8');
+    return_json(['callback' => 'window.location.href = "' . $safe_link . '";']);
+  } else {
+    modal("ERROR", __("Error"), __("Invalid payment link generated"));
+  }
 } catch (Exception $e) {
-  modal("ERROR", __("Error"), $e->getMessage());
+  modal("ERROR", __("Error"), __("An error occurred. Please try again."));
 }
