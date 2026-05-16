@@ -39,7 +39,7 @@ msgstr ""
 #: content/themes/default/templates/admin.tpl:485
 #: content/themes/default/templates/admin.tpl:568
 msgid "Movies"
-msgstr "Film"
+msgstr "Films"
 
 #: movies.php:140 ads.php:99 developers.php:125 event.php:307 support.php:76
 #: wallet.php:131 group.php:376 settings.php:693 index.php:577 post.php:53
@@ -476,7 +476,7 @@ msgstr "Paiements de points"
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr "Boutique"
+msgstr "Marketplace"
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -557,7 +557,7 @@ msgstr "Bienvenue"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Publications populaires"
+msgstr "Notes populaires"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -618,26 +618,26 @@ msgstr "Mémoires"
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Publications sponsorisées"
+msgstr "Publications boostées"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Pages sponsorisées"
+msgstr "Pages boostées"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 #| msgid "Closed Group"
 msgid "Boosted Groups"
-msgstr "Groupes sponsorisés"
+msgstr "Groupe fermé"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Closed Event"
 msgid "Boosted Events"
-msgstr "Événements sponsorisés"
+msgstr "Événement fermé"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -684,7 +684,7 @@ msgstr "Vos jeux"
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr "Cours"
+msgstr ""
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -1074,7 +1074,7 @@ msgstr "Répertoire des jeux"
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr "Mérites"
+msgstr ""
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1780,7 +1780,7 @@ msgstr "Modules"
 #: content/themes/default/templates/_footer.bottom_bar.tpl:80
 #: content/themes/default/templates/admin.tpl:586
 msgid "Ads"
-msgstr "Publicités"
+msgstr "Annonces"
 
 #: admin.php:2923 content/themes/default/templates/admin.ads.tpl:102
 msgid "Users Ads"
@@ -8243,7 +8243,7 @@ msgstr "Ce live n’existe plus"
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Publication"
+msgstr "Note"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -9802,6 +9802,57 @@ msgstr "Professionel"
 msgid "Education"
 msgstr "Éducation"
 
+msgid "Art"
+msgstr "Art"
+
+msgid "Beauty"
+msgstr "Beauté"
+
+msgid "Books"
+msgstr "Livres"
+
+msgid "Cars"
+msgstr "Voitures"
+
+msgid "Comedy"
+msgstr "Comédie"
+
+msgid "DIY"
+msgstr "Bricolage"
+
+msgid "Fashion"
+msgstr "Mode"
+
+msgid "Fitness"
+msgstr "Fitness"
+
+msgid "Food"
+msgstr "Cuisine & Boissons"
+
+msgid "Gaming"
+msgstr "Jeux Vidéo"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "Nature"
+msgstr "Nature"
+
+msgid "Pets"
+msgstr "Animaux"
+
+msgid "Photography"
+msgstr "Photographie"
+
+msgid "Sports"
+msgstr "Sports"
+
+msgid "Technology"
+msgstr "Technologie"
+
+msgid "Travel"
+msgstr "Voyages"
+
 #: content/themes/default/templates/settings.tpl:56
 #: content/themes/default/templates/settings.profile.tpl:270
 #: content/themes/default/templates/admin.users.tpl:904
@@ -10549,7 +10600,7 @@ msgstr "Delete"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Éditer"
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12430,7 +12481,7 @@ msgstr "Mise à niveau"
 #, fuzzy
 #| msgid "Promoted Offers"
 msgid "Promoted Users"
-msgstr "Utilisateurs en vedette"
+msgstr "Offres sponsorisées"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12446,7 +12497,7 @@ msgstr "Pages boostées"
 #, fuzzy
 #| msgid "Promoted Products"
 msgid "Promoted Groups"
-msgstr "Groupes en vedette"
+msgstr "Produits promus"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12454,7 +12505,7 @@ msgstr "Groupes en vedette"
 #, fuzzy
 #| msgid "Promoted Posts"
 msgid "Promoted Events"
-msgstr "Événements en vedette"
+msgstr "Post boosté"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12543,13 +12594,13 @@ msgstr "Nombre d’utilisateurs"
 #, fuzzy
 #| msgid "Suggested Events"
 msgid "Suggested Friends"
-msgstr "Amis suggérés"
+msgstr "Événements suggérés"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Personnes suggérées"
+msgstr "Pages suggérées"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -18102,7 +18153,7 @@ msgstr "Placement des annonces"
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Accueil"
+msgstr "Fil d’actualité"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -23064,7 +23115,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -23077,7 +23128,7 @@ msgstr "Panneau des modérateurs"
 
 #: content/themes/default/templates/_user_menu.tpl:58
 msgid "Sign Out"
-msgstr "Déconnexion"
+msgstr "Se deconnecter"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -23926,7 +23977,7 @@ msgstr "Scrutin"
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr "Reel"
+msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:189
 msgid "Audio"
@@ -24245,7 +24296,7 @@ msgstr "Modifier la demande de financement"
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr "Accueil"
+msgstr "Maison"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -24348,7 +24399,7 @@ msgstr "Comptes"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Poll"
 msgid "Create Post"
-msgstr "Créer une publication"
+msgstr "Publier une note"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create File"
@@ -26811,7 +26862,7 @@ msgstr "Qui peut écrire des articles"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Marché"
+msgstr "Marketplace"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -28114,7 +28165,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Accueil"
+msgstr "Fil d’actualités"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"

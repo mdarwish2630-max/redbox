@@ -478,7 +478,7 @@ msgstr ""
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr "Tienda"
+msgstr ""
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -557,7 +557,7 @@ msgstr "Bienvenido a"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Publicaciones populares"
+msgstr "Notas populares"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -618,25 +618,25 @@ msgstr ""
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Publicaciones promocionadas"
+msgstr ""
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Páginas promocionadas"
+msgstr ""
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 msgid "Boosted Groups"
-msgstr "Grupos promocionados"
+msgstr "se unió a los grupos"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Sponsored"
 msgid "Boosted Events"
-msgstr "Eventos promocionados"
+msgstr "Patrocinados"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -683,7 +683,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr "Cursos"
+msgstr ""
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -832,7 +832,7 @@ msgstr "Eventos"
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr "Descubrir"
+msgstr ""
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1071,7 +1071,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr "Méritos"
+msgstr ""
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1774,7 +1774,7 @@ msgstr "pin del anuncio"
 #: content/themes/default/templates/_footer.bottom_bar.tpl:80
 #: content/themes/default/templates/admin.tpl:586
 msgid "Ads"
-msgstr "Anuncios"
+msgstr "Publicaciones"
 
 #: admin.php:2923 content/themes/default/templates/admin.ads.tpl:102
 msgid "Users Ads"
@@ -8005,7 +8005,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Publicación"
+msgstr "Nota"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -9537,6 +9537,57 @@ msgstr "Trabajo"
 msgid "Education"
 msgstr "Educación"
 
+msgid "Art"
+msgstr "Arte"
+
+msgid "Beauty"
+msgstr "Belleza"
+
+msgid "Books"
+msgstr "Libros"
+
+msgid "Cars"
+msgstr "Coches"
+
+msgid "Comedy"
+msgstr "Comedia"
+
+msgid "DIY"
+msgstr "Manualidades"
+
+msgid "Fashion"
+msgstr "Moda"
+
+msgid "Fitness"
+msgstr "Fitness"
+
+msgid "Food"
+msgstr "Comida y Bebida"
+
+msgid "Gaming"
+msgstr "Videojuegos"
+
+msgid "Music"
+msgstr "Música"
+
+msgid "Nature"
+msgstr "Naturaleza"
+
+msgid "Pets"
+msgstr "Mascotas"
+
+msgid "Photography"
+msgstr "Fotografía"
+
+msgid "Sports"
+msgstr "Deportes"
+
+msgid "Technology"
+msgstr "Tecnología"
+
+msgid "Travel"
+msgstr "Viajes"
+
 #: content/themes/default/templates/settings.tpl:56
 #: content/themes/default/templates/settings.profile.tpl:270
 #: content/themes/default/templates/admin.users.tpl:904
@@ -10270,7 +10321,7 @@ msgstr "Eliminar"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr "Editar"
+msgstr ""
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12087,7 +12138,7 @@ msgstr ""
 #, fuzzy
 #| msgid "List Users"
 msgid "Promoted Users"
-msgstr "Usuarios destacados"
+msgstr "Lista de Usuarios"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12101,7 +12152,7 @@ msgstr "Página de Inicio"
 #: content/themes/default/templates/groups.tpl:116
 #, fuzzy
 msgid "Promoted Groups"
-msgstr "Grupos destacados"
+msgstr "se unió a los grupos"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12109,7 +12160,7 @@ msgstr "Grupos destacados"
 #, fuzzy
 #| msgid "Create Page"
 msgid "Promoted Events"
-msgstr "Eventos destacados"
+msgstr "Crear Página"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12196,13 +12247,13 @@ msgstr "Lista de Usuarios"
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested Friends"
-msgstr "Amigos sugeridos"
+msgstr "Páginas sugeridas"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Personas sugeridas"
+msgstr "Páginas sugeridas"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -17463,7 +17514,7 @@ msgstr ""
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Inicio"
+msgstr ""
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -22167,7 +22218,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr "Menú"
+msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -22182,7 +22233,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Cerrar sesión"
+msgstr "Iniciar sesión"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -22981,7 +23032,7 @@ msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr "Reel"
+msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:189
 #, fuzzy
@@ -23297,7 +23348,7 @@ msgstr ""
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr "Inicio"
+msgstr "Hogar"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -23400,7 +23451,7 @@ msgstr "Cuentas vinculadas"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Page"
 msgid "Create Post"
-msgstr "Crear publicación"
+msgstr "Publicar nota"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create Page"
@@ -26968,7 +27019,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Inicio"
+msgstr "Noticias Feed"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"

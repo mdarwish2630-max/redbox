@@ -39,7 +39,7 @@ msgstr ""
 #: content/themes/default/templates/admin.tpl:485
 #: content/themes/default/templates/admin.tpl:568
 msgid "Movies"
-msgstr ""
+msgstr "Films"
 
 #: movies.php:140 ads.php:99 developers.php:125 event.php:307 support.php:76
 #: wallet.php:131 group.php:376 settings.php:693 index.php:577 post.php:53
@@ -477,7 +477,7 @@ msgstr ""
 #: content/themes/default/templates/admin.users.tpl:1665
 #: content/themes/default/templates/admin.tpl:729
 msgid "Marketplace"
-msgstr "Marktplaats"
+msgstr ""
 
 #: settings.php:578 funding.php:26 admin.php:3550 admin.php:3555
 #: admin.php:3594 admin.php:3622
@@ -556,7 +556,7 @@ msgstr "Welkom bij"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Populaire berichten"
+msgstr "Populaire notities"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -614,25 +614,25 @@ msgstr ""
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Gepromote berichten"
+msgstr ""
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Gepromote pagina's"
+msgstr ""
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 msgid "Boosted Groups"
-msgstr "Gepromote groepen"
+msgstr "Clans waar ik lid van ben"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Sponsored"
 msgid "Boosted Events"
-msgstr "Gepromote evenementen"
+msgstr "Sponsor"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -679,7 +679,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr "Cursussen"
+msgstr ""
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -828,7 +828,7 @@ msgstr ""
 #: content/themes/default/templates/offers.tpl:34
 #: content/themes/default/templates/groups.tpl:34
 msgid "Discover"
-msgstr "Ontdekken"
+msgstr ""
 
 #: events.php:114 events.php:121
 msgid "Going Events"
@@ -1067,7 +1067,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr "Merits"
+msgstr ""
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1768,7 +1768,7 @@ msgstr "Pin bericht"
 #: content/themes/default/templates/_footer.bottom_bar.tpl:80
 #: content/themes/default/templates/admin.tpl:586
 msgid "Ads"
-msgstr "Advertenties"
+msgstr "Zoekertjes"
 
 #: admin.php:2923 content/themes/default/templates/admin.ads.tpl:102
 msgid "Users Ads"
@@ -7975,7 +7975,7 @@ msgstr ""
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Bericht"
+msgstr "Nota"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -9507,6 +9507,57 @@ msgstr "Project"
 msgid "Education"
 msgstr "Onderwijs"
 
+msgid "Art"
+msgstr "Kunst"
+
+msgid "Beauty"
+msgstr "Schoonheid"
+
+msgid "Books"
+msgstr "Boeken"
+
+msgid "Cars"
+msgstr "Auto's"
+
+msgid "Comedy"
+msgstr "Komedie"
+
+msgid "DIY"
+msgstr "Doe-Het-Zelf"
+
+msgid "Fashion"
+msgstr "Mode"
+
+msgid "Fitness"
+msgstr "Fitness"
+
+msgid "Food"
+msgstr "Eten & Drinken"
+
+msgid "Gaming"
+msgstr "Gaming"
+
+msgid "Music"
+msgstr "Muziek"
+
+msgid "Nature"
+msgstr "Natuur"
+
+msgid "Pets"
+msgstr "Huisdieren"
+
+msgid "Photography"
+msgstr "Fotografie"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Technology"
+msgstr "Technologie"
+
+msgid "Travel"
+msgstr "Reizen"
+
 #: content/themes/default/templates/settings.tpl:56
 #: content/themes/default/templates/settings.profile.tpl:270
 #: content/themes/default/templates/admin.users.tpl:904
@@ -10240,7 +10291,7 @@ msgstr "Verwijder"
 #: content/themes/default/templates/page.tpl:1668
 #: content/themes/default/templates/admin.users.tpl:1752
 msgid "Edit"
-msgstr "Bewerken"
+msgstr ""
 
 #: content/themes/default/templates/group.tpl:1513
 #: content/themes/default/templates/admin.pages.tpl:421
@@ -12054,7 +12105,7 @@ msgstr ""
 #, fuzzy
 #| msgid "List Users"
 msgid "Promoted Users"
-msgstr "Aanbevolen gebruikers"
+msgstr "gebruikerslijst"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -12068,7 +12119,7 @@ msgstr "Homepagina"
 #: content/themes/default/templates/groups.tpl:116
 #, fuzzy
 msgid "Promoted Groups"
-msgstr "Aanbevolen groepen"
+msgstr "Clans waar ik lid van ben"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -12076,7 +12127,7 @@ msgstr "Aanbevolen groepen"
 #, fuzzy
 #| msgid "Create Page"
 msgid "Promoted Events"
-msgstr "Aanbevolen evenementen"
+msgstr "Maak pagina"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -12163,13 +12214,13 @@ msgstr "gebruikerslijst"
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested Friends"
-msgstr "Voorgestelde vrienden"
+msgstr "Aanbevolen pagina 's"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 #, fuzzy
 #| msgid "Suggested Pages"
 msgid "Suggested People"
-msgstr "Voorgestelde personen"
+msgstr "Aanbevolen pagina 's"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -17403,7 +17454,7 @@ msgstr ""
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Startpagina"
+msgstr ""
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -22097,7 +22148,7 @@ msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:3
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #: content/themes/default/templates/_user_menu.tpl:47
 #: content/themes/default/templates/_header.tpl:56
@@ -22112,7 +22163,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Sign in"
 msgid "Sign Out"
-msgstr "Uitloggen"
+msgstr "Log in"
 
 #: content/themes/default/templates/_user_menu.tpl:63
 #: content/themes/default/templates/_js_templates.tpl:612
@@ -22903,7 +22954,7 @@ msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:183
 msgid "Reel"
-msgstr "Reel"
+msgstr ""
 
 #: content/themes/default/templates/admin.posts.tpl:189
 #, fuzzy
@@ -23216,7 +23267,7 @@ msgstr ""
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr "Startpagina"
+msgstr "Huis"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -23319,7 +23370,7 @@ msgstr "Gekoppelde Accounts"
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 #| msgid "Create Page"
 msgid "Create Post"
-msgstr "Bericht aanmaken"
+msgstr "Publiceer nota"
 
 #: content/themes/default/templates/_header.tpl:142
 #| msgid "Create Page"
@@ -25644,7 +25695,7 @@ msgstr "heeft een bestand toegevoegd"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Winkel"
+msgstr ""
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -26836,7 +26887,7 @@ msgstr ""
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Startpagina"
+msgstr "Nieuws Feed"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"

@@ -553,7 +553,7 @@ msgstr "Willkommen bei"
 #: content/themes/default/templates/_posts.tpl:18
 #: content/themes/default/templates/_sidebar.tpl:25
 msgid "Popular Posts"
-msgstr "Beliebte Beiträge"
+msgstr "Beliebte Notizen"
 
 #: index.php:210 content/themes/default/templates/index.newsfeed.tpl:236
 #: content/themes/default/templates/admin.settings.tpl:1357
@@ -613,26 +613,26 @@ msgstr "Erinnerungen"
 #: index.php:398 content/themes/default/templates/settings.membership.tpl:55
 #: content/themes/default/templates/admin.users.tpl:1473
 msgid "Boosted Posts"
-msgstr "Gesponserte Beiträge"
+msgstr "Geboostete Beiträge"
 
 #: index.php:418 content/themes/default/templates/settings.membership.tpl:68
 #: content/themes/default/templates/admin.users.tpl:1488
 msgid "Boosted Pages"
-msgstr "Gesponserte Seiten"
+msgstr "Geboostete Seiten"
 
 #: index.php:438 content/themes/default/templates/settings.membership.tpl:81
 #: content/themes/default/templates/admin.users.tpl:1503
 #, fuzzy
 #| msgid "Closed Group"
 msgid "Boosted Groups"
-msgstr "Gesponserte Gruppen"
+msgstr "Geschlossene Gruppe"
 
 #: index.php:458 content/themes/default/templates/settings.membership.tpl:94
 #: content/themes/default/templates/admin.users.tpl:1518
 #, fuzzy
 #| msgid "Closed Event"
 msgid "Boosted Events"
-msgstr "Gesponserte Veranstaltungen"
+msgstr "Geschlossene Veranstaltung"
 
 #: index.php:473 content/themes/default/templates/index.newsfeed.tpl:451
 #: content/themes/default/templates/admin.settings.tpl:638
@@ -679,7 +679,7 @@ msgstr "Deine Spiele"
 #: content/themes/default/templates/_sidebar.tpl:284
 #: content/themes/default/templates/admin.tpl:432
 msgid "Courses"
-msgstr "Kurse"
+msgstr "Gruppen"
 
 #: courses.php:71 search.php:56 forums.php:185 jobs.php:71 market.php:79
 #: offers.php:76 content/themes/default/templates/admin.events.tpl:49
@@ -1063,7 +1063,7 @@ msgstr "Spiele Verzeichnis"
 #: content/themes/default/templates/_sidebar.tpl:324
 #: content/themes/default/templates/admin.tpl:1165
 msgid "Merits"
-msgstr "Merits"
+msgstr ""
 
 #: jobs.php:48 jobs.php:71 jobs.php:95 admin.php:1904 admin.php:1941
 #: admin.php:1978 admin.php:2006 admin.php:2011
@@ -1757,7 +1757,7 @@ msgstr "Module"
 #: content/themes/default/templates/_footer.bottom_bar.tpl:80
 #: content/themes/default/templates/admin.tpl:586
 msgid "Ads"
-msgstr "Anzeigen"
+msgstr "Ads"
 
 #: admin.php:2923 content/themes/default/templates/admin.ads.tpl:102
 msgid "Users Ads"
@@ -7794,7 +7794,7 @@ msgstr "Dieses Leben existiert nicht mehr"
 #: content/themes/default/templates/_publisher.tpl:716
 #: content/themes/default/templates/_footer.bottom_bar.tpl:44
 msgid "Post"
-msgstr "Beitrag"
+msgstr "Notiz"
 
 #: content/themes/default/templates/settings.notifications.tpl:9
 msgid "System Notifications"
@@ -9330,7 +9330,58 @@ msgstr "Arbeit"
 #: content/themes/default/templates/settings.profile.tpl:228
 #: content/themes/default/templates/admin.users.tpl:805
 msgid "Education"
-msgstr "Ausbildung"
+msgstr "Bildung"
+
+msgid "Art"
+msgstr "Kunst"
+
+msgid "Beauty"
+msgstr "Schönheit"
+
+msgid "Books"
+msgstr "Bücher"
+
+msgid "Cars"
+msgstr "Autos"
+
+msgid "Comedy"
+msgstr "Komödie"
+
+msgid "DIY"
+msgstr "Basteln"
+
+msgid "Fashion"
+msgstr "Mode"
+
+msgid "Fitness"
+msgstr "Fitness"
+
+msgid "Food"
+msgstr "Essen & Trinken"
+
+msgid "Gaming"
+msgstr "Gaming"
+
+msgid "Music"
+msgstr "Musik"
+
+msgid "Nature"
+msgstr "Natur"
+
+msgid "Pets"
+msgstr "Haustiere"
+
+msgid "Photography"
+msgstr "Fotografie"
+
+msgid "Sports"
+msgstr "Sport"
+
+msgid "Technology"
+msgstr "Technologie"
+
+msgid "Travel"
+msgstr "Reisen"
 
 #: content/themes/default/templates/settings.tpl:56
 #: content/themes/default/templates/settings.profile.tpl:270
@@ -11852,7 +11903,7 @@ msgstr "Upgrade"
 #, fuzzy
 #| msgid "Promoted Offers"
 msgid "Promoted Users"
-msgstr "Empfohlene Nutzer"
+msgstr "Beworbene Angebote"
 
 #: content/themes/default/templates/index.newsfeed.tpl:131
 #: content/themes/default/templates/index.newsfeed.tpl:524
@@ -11868,7 +11919,7 @@ msgstr "Geboostete Seiten"
 #, fuzzy
 #| msgid "Promoted Products"
 msgid "Promoted Groups"
-msgstr "Empfohlene Gruppen"
+msgstr "Beworbene Produkte"
 
 #: content/themes/default/templates/index.newsfeed.tpl:195
 #: content/themes/default/templates/index.newsfeed.tpl:588
@@ -11876,7 +11927,7 @@ msgstr "Empfohlene Gruppen"
 #, fuzzy
 #| msgid "Promoted Posts"
 msgid "Promoted Events"
-msgstr "Empfohlene Veranstaltungen"
+msgstr "Gesponserte Beiträge"
 
 #: content/themes/default/templates/index.newsfeed.tpl:256
 msgid "Enjoy looking back on your memories"
@@ -11963,11 +12014,11 @@ msgstr "Anzahl der Nutzer"
 
 #: content/themes/default/templates/index.newsfeed.tpl:652
 msgid "Suggested Friends"
-msgstr "Freundevorschläge"
+msgstr "Vorgeschlagene Personen"
 
 #: content/themes/default/templates/index.newsfeed.tpl:654
 msgid "Suggested People"
-msgstr "Personenvorschläge"
+msgstr "Vorgeschlagene Personen"
 
 #: content/themes/default/templates/index.newsfeed.tpl:675
 msgid "Suggested Pages"
@@ -13765,7 +13816,7 @@ msgstr "Profil"
 
 #: content/themes/default/templates/admin.settings.tpl:3023
 msgid "Friends System"
-msgstr "Freundes-System"
+msgstr "Freundessystem"
 
 #: content/themes/default/templates/admin.settings.tpl:3024
 msgid "if disabled only following system will be available"
@@ -17241,7 +17292,7 @@ msgstr "Anzeigenplatzierung"
 #: content/themes/default/templates/ads.tpl:358
 #: content/themes/default/templates/ads.tpl:621
 msgid "Newsfeed"
-msgstr "Startseite"
+msgstr "Newsfeed"
 
 #: content/themes/default/templates/ads.tpl:359
 #: content/themes/default/templates/ads.tpl:622
@@ -23007,7 +23058,7 @@ msgstr "Spendenaufruf bearbeiten"
 #: content/themes/default/templates/admin.ads.tpl:449
 #: content/themes/default/templates/_footer.bottom_bar.tpl:8
 msgid "Home"
-msgstr "Startseite"
+msgstr "Zuhause"
 
 #: content/themes/default/templates/forums.tpl:100
 #: content/themes/default/templates/forums.tpl:202
@@ -23103,7 +23154,7 @@ msgstr "Zurück wechseln"
 #: content/themes/default/templates/ajax.event.publisher.tpl:148
 #: content/themes/default/templates/ajax.group.publisher.tpl:84
 msgid "Create Post"
-msgstr "Beitrag erstellen"
+msgstr "Notiz veröffentlichen"
 
 #: content/themes/default/templates/_header.tpl:142
 msgid "Create Live"
@@ -25373,7 +25424,7 @@ msgstr "Kann Blogs lesen"
 #: content/themes/default/templates/market.tpl:37
 #: content/themes/default/templates/_sidebar.tpl:252
 msgid "Market"
-msgstr "Markt"
+msgstr "Marktplatz"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:292
 #: content/themes/default/templates/admin.permissions_groups.tpl:1679
@@ -25719,7 +25770,7 @@ msgstr "Kann Spiele spielen"
 #, fuzzy
 #| msgid "Friends System"
 msgid "Ads System"
-msgstr "Anzeigensystem"
+msgstr "Freundessystem"
 
 #: content/themes/default/templates/admin.permissions_groups.tpl:1193
 msgid "Can Manage Ads System"
@@ -25953,7 +26004,7 @@ msgstr "Neue Seite erstellen"
 #, fuzzy
 #| msgid "Points System"
 msgid "Merits System"
-msgstr "Merits-System"
+msgstr "Punkte System"
 
 #: content/themes/default/templates/admin.merits.tpl:46
 #, fuzzy
@@ -26547,7 +26598,7 @@ msgstr "Du musst dein aktuelles Passwort zur Sicherheitsprüfung eingeben"
 #: content/themes/default/templates/_sidebar.tpl:9
 #: content/themes/default/templates/_sidebar.tpl:13
 msgid "News Feed"
-msgstr "Startseite"
+msgstr "Newsfeed"
 
 #: content/themes/default/templates/_sidebar.tpl:43
 msgid "Mine"
@@ -26741,7 +26792,7 @@ msgstr "Wallet Saldo"
 
 #: content/themes/default/templates/admin.users.tpl:1670
 msgid "Marketplace Balance"
-msgstr "Marktplatz-Guthaben"
+msgstr "Marktplatz Saldo"
 
 #: content/themes/default/templates/admin.users.tpl:1694
 msgid "Funding Balance"
