@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:22
+/* Smarty version 5.7.0, created on 2026-05-16 06:33:55
   from 'file:index.newsfeed.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e73526571e49_68282874',
+  'unifunc' => 'content_6a080fd3300409_09733535',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ab50524f3d8e137f537f516dcd509b6abe7290e' => 
     array (
       0 => 'index.newsfeed.tpl',
-      1 => 1765754162,
+      1 => 1778892818,
       2 => 'file',
     ),
   ),
@@ -40,7 +40,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ))) {
-function content_69e73526571e49_68282874 (\Smarty\Template $_smarty_tpl) {
+function content_6a080fd3300409_09733535 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 $_smarty_tpl->renderSubTemplate('file:_head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 $_smarty_tpl->renderSubTemplate('file:_header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
@@ -67,6 +67,92 @@ $_smarty_tpl->renderSubTemplate('file:_header.tpl', $_smarty_tpl->cache_id, $_sm
 ?>
           <!-- announcments -->
 
+          <!-- category filter bar -->
+          <?php if ($_smarty_tpl->getValue('browse_categories')) {?>
+          <div class="category-filter-bar" id="categoryFilterBar">
+            <div class="category-filter-scroll">
+              <?php if ($_smarty_tpl->getValue('selected_category')) {?>
+                <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+" class="cf-item <?php if (!$_smarty_tpl->getValue('selected_category')) {?>cf-active<?php }?>">
+                  <i class="fa fa-fire"></i>
+                  <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All");?>
+</span>
+                </a>
+              <?php } else { ?>
+                <div class="cf-item cf-active">
+                  <i class="fa fa-fire"></i>
+                  <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All");?>
+</span>
+                </div>
+              <?php }?>
+              <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('header_categories'), 'cat');
+$foreach0DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('cat')->value) {
+$foreach0DoElse = false;
+?>
+                <?php if ($_smarty_tpl->getValue('cat')['category_id'] == $_smarty_tpl->getValue('selected_category')) {?>
+                  <div class="cf-item cf-active">
+                    <i class="fa <?php echo $_smarty_tpl->getValue('cat')['category_icon'];?>
+"></i>
+                    <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</span>
+                  </div>
+                <?php } else { ?>
+                  <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+?category=<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
+" class="cf-item">
+                    <i class="fa <?php echo $_smarty_tpl->getValue('cat')['category_icon'];?>
+"></i>
+                    <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</span>
+                  </a>
+                <?php }?>
+              <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+            </div>
+            <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('browse_categories')) > 5) {?>
+            <div class="cf-more-dropdown">
+              <button class="cf-more-btn" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu cf-more-menu">
+                <div class="js_scroller">
+                  <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('browse_categories'), 'cat');
+$foreach1DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('cat')->value) {
+$foreach1DoElse = false;
+?>
+                    <?php if ($_smarty_tpl->getValue('cat')['category_id'] == $_smarty_tpl->getValue('selected_category')) {?>
+                      <div class="dropdown-item cf-menu-item cf-active">
+                        <i class="fa <?php echo $_smarty_tpl->getValue('cat')['category_icon'];?>
+"></i>
+                        <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</span>
+                      </div>
+                    <?php } else { ?>
+                      <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+?category=<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
+" class="dropdown-item cf-menu-item">
+                        <i class="fa <?php echo $_smarty_tpl->getValue('cat')['category_icon'];?>
+"></i>
+                        <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</span>
+                      </a>
+                    <?php }?>
+                  <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+                </div>
+              </div>
+            </div>
+            <?php }?>
+          </div>
+          <?php }?>
+          <!-- category filter bar -->
+
           <?php if ($_smarty_tpl->getValue('view') == '') {?>
 
             <?php if ($_smarty_tpl->getValue('user')->_logged_in) {?>
@@ -83,9 +169,9 @@ $_smarty_tpl->renderSubTemplate('file:_header.tpl', $_smarty_tpl->cache_id, $_sm
                       <div class="merits-box-wrapper js_merits_slick">
                         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('merits_categories'), '_category');
-$foreach0DoElse = true;
+$foreach2DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_category')->value) {
-$foreach0DoElse = false;
+$foreach2DoElse = false;
 ?>
                           <div class="merit-box" data-toggle="modal" data-size="large" data-url="users/merits.php?do=publish&category_id=<?php echo $_smarty_tpl->getValue('_category')['category_id'];?>
 ">
@@ -168,9 +254,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                       <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('pro_members')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('pro_members'), '_member');
-$foreach1DoElse = true;
+$foreach3DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_member')->value) {
-$foreach1DoElse = false;
+$foreach3DoElse = false;
 ?>
                           <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /<?php echo $_smarty_tpl->getValue('_member')['user_name'];?>
@@ -221,9 +307,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                       <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_pages')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_pages'), '_page');
-$foreach2DoElse = true;
+$foreach4DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_page')->value) {
-$foreach2DoElse = false;
+$foreach4DoElse = false;
 ?>
                           <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /pages/<?php echo $_smarty_tpl->getValue('_page')['page_name'];?>
@@ -270,9 +356,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                       <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_groups')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_groups'), '_group');
-$foreach3DoElse = true;
+$foreach5DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_group')->value) {
-$foreach3DoElse = false;
+$foreach5DoElse = false;
 ?>
                           <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /groups/<?php echo $_smarty_tpl->getValue('_group')['group_name'];?>
@@ -319,9 +405,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                       <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_events')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_events'), '_event');
-$foreach4DoElse = true;
+$foreach6DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_event')->value) {
-$foreach4DoElse = false;
+$foreach6DoElse = false;
 ?>
                           <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /events/<?php echo $_smarty_tpl->getValue('_event')['event_id'];?>
@@ -483,9 +569,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                     <ul>
                       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('boosted_pages'), '_page');
-$foreach5DoElse = true;
+$foreach7DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_page')->value) {
-$foreach5DoElse = false;
+$foreach7DoElse = false;
 ?>
                         <?php $_smarty_tpl->renderSubTemplate('file:__feeds_page.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list"), (int) 0, $_smarty_current_dir);
 ?>
@@ -545,9 +631,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                     <ul>
                       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('boosted_groups'), '_group');
-$foreach6DoElse = true;
+$foreach8DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_group')->value) {
-$foreach6DoElse = false;
+$foreach8DoElse = false;
 ?>
                         <?php $_smarty_tpl->renderSubTemplate('file:__feeds_group.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list"), (int) 0, $_smarty_current_dir);
 ?>
@@ -607,9 +693,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                     <ul>
                       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('boosted_events'), '_event');
-$foreach7DoElse = true;
+$foreach9DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_event')->value) {
-$foreach7DoElse = false;
+$foreach9DoElse = false;
 ?>
                         <?php $_smarty_tpl->renderSubTemplate('file:__feeds_event.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list",'_small'=>true), (int) 0, $_smarty_current_dir);
 ?>
@@ -712,9 +798,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('pro_members')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('pro_members'), '_member');
-$foreach8DoElse = true;
+$foreach10DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_member')->value) {
-$foreach8DoElse = false;
+$foreach10DoElse = false;
 ?>
                       <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /<?php echo $_smarty_tpl->getValue('_member')['user_name'];?>
@@ -765,9 +851,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_pages')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_pages'), '_page');
-$foreach9DoElse = true;
+$foreach11DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_page')->value) {
-$foreach9DoElse = false;
+$foreach11DoElse = false;
 ?>
                       <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /pages/<?php echo $_smarty_tpl->getValue('_page')['page_name'];?>
@@ -814,9 +900,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_groups')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_groups'), '_group');
-$foreach10DoElse = true;
+$foreach12DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_group')->value) {
-$foreach10DoElse = false;
+$foreach12DoElse = false;
 ?>
                       <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /groups/<?php echo $_smarty_tpl->getValue('_group')['group_name'];?>
@@ -863,9 +949,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <div class="pro-box-wrapper <?php if ($_smarty_tpl->getSmarty()->getModifierCallback('count')($_smarty_tpl->getValue('promoted_events')) > 3) {?>js_slick<?php } else { ?>full-opacity<?php }?>">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('promoted_events'), '_event');
-$foreach11DoElse = true;
+$foreach13DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_event')->value) {
-$foreach11DoElse = false;
+$foreach13DoElse = false;
 ?>
                       <a class="user-box text-white" href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /events/<?php echo $_smarty_tpl->getValue('_event')['event_id'];?>
@@ -926,9 +1012,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <ul>
                   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('top_merits_users'), 'top_user');
-$foreach12DoElse = true;
+$foreach14DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('top_user')->value) {
-$foreach12DoElse = false;
+$foreach14DoElse = false;
 ?>
                     <?php $_smarty_tpl->renderSubTemplate('file:__feeds_user.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list",'_user'=>$_smarty_tpl->getValue('top_user')['top_user'],'_merit_category'=>$_smarty_tpl->getValue('top_user')['category'],'_merits_count'=>$_smarty_tpl->getValue('top_user')['top_user']['count']), (int) 0, $_smarty_current_dir);
 ?>
@@ -962,9 +1048,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <ul>
                   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('new_people'), '_user');
-$foreach13DoElse = true;
+$foreach15DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_user')->value) {
-$foreach13DoElse = false;
+$foreach15DoElse = false;
 ?>
                     <?php $_smarty_tpl->renderSubTemplate('file:__feeds_user.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list",'_connection'=>"add"), (int) 0, $_smarty_current_dir);
 ?>
@@ -993,9 +1079,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <ul>
                   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('new_pages'), '_page');
-$foreach14DoElse = true;
+$foreach16DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_page')->value) {
-$foreach14DoElse = false;
+$foreach16DoElse = false;
 ?>
                     <?php $_smarty_tpl->renderSubTemplate('file:__feeds_page.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list"), (int) 0, $_smarty_current_dir);
 ?>
@@ -1024,9 +1110,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <ul>
                   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('new_groups'), '_group');
-$foreach15DoElse = true;
+$foreach17DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_group')->value) {
-$foreach15DoElse = false;
+$foreach17DoElse = false;
 ?>
                     <?php $_smarty_tpl->renderSubTemplate('file:__feeds_group.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list"), (int) 0, $_smarty_current_dir);
 ?>
@@ -1055,9 +1141,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <ul>
                   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('new_events'), '_event');
-$foreach16DoElse = true;
+$foreach18DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_event')->value) {
-$foreach16DoElse = false;
+$foreach18DoElse = false;
 ?>
                     <?php $_smarty_tpl->renderSubTemplate('file:__feeds_event.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_tpl'=>"list",'_small'=>true), (int) 0, $_smarty_current_dir);
 ?>

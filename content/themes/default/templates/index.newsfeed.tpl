@@ -20,6 +20,63 @@
           {include file='_announcements.tpl'}
           <!-- announcments -->
 
+          <!-- category filter bar -->
+          {if $browse_categories}
+          <div class="category-filter-bar" id="categoryFilterBar">
+            <div class="category-filter-scroll">
+              {if $selected_category}
+                <a href="{$system['system_url']}" class="cf-item {if !$selected_category}cf-active{/if}">
+                  <i class="fa fa-fire"></i>
+                  <span>{__("All")}</span>
+                </a>
+              {else}
+                <div class="cf-item cf-active">
+                  <i class="fa fa-fire"></i>
+                  <span>{__("All")}</span>
+                </div>
+              {/if}
+              {foreach $header_categories as $cat}
+                {if $cat['category_id'] == $selected_category}
+                  <div class="cf-item cf-active">
+                    <i class="fa {$cat['category_icon']}"></i>
+                    <span>{__($cat['category_name'])}</span>
+                  </div>
+                {else}
+                  <a href="{$system['system_url']}?category={$cat['category_id']}" class="cf-item">
+                    <i class="fa {$cat['category_icon']}"></i>
+                    <span>{__($cat['category_name'])}</span>
+                  </a>
+                {/if}
+              {/foreach}
+            </div>
+            {if count($browse_categories) > 5}
+            <div class="cf-more-dropdown">
+              <button class="cf-more-btn" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu cf-more-menu">
+                <div class="js_scroller">
+                  {foreach $browse_categories as $cat}
+                    {if $cat['category_id'] == $selected_category}
+                      <div class="dropdown-item cf-menu-item cf-active">
+                        <i class="fa {$cat['category_icon']}"></i>
+                        <span>{__($cat['category_name'])}</span>
+                      </div>
+                    {else}
+                      <a href="{$system['system_url']}?category={$cat['category_id']}" class="dropdown-item cf-menu-item">
+                        <i class="fa {$cat['category_icon']}"></i>
+                        <span>{__($cat['category_name'])}</span>
+                      </a>
+                    {/if}
+                  {/foreach}
+                </div>
+              </div>
+            </div>
+            {/if}
+          </div>
+          {/if}
+          <!-- category filter bar -->
+
           {if $view == ""}
 
             {if $user->_logged_in}

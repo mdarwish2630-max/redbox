@@ -64,6 +64,10 @@
     <!-- RedNote Theme Override -->
     <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/rednote.css?v={$system['system_version']}" rel="stylesheet">
     <!-- RedNote Theme Override -->
+
+    <!-- v3: Mobile RTL & Layout Fix -->
+    <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/mobile-v3.css?v=3" rel="stylesheet">
+    <!-- v3: Mobile RTL & Layout Fix -->
 {literal}
 <style>
 .rn-reel-thumb{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;background:#000;border-radius:8px;cursor:pointer;display:block}

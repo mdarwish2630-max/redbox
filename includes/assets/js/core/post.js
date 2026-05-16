@@ -294,26 +294,32 @@ function publisher_tab(publisher, tab) {
 }
 
 
-// handle category pill click
+// handle category pill click (red theme) + dropdown change (default theme)
 $(document).on('click', '.rn-category-pill', function() {
   var $pill = $(this);
   var publisher = $pill.closest('.publisher');
-  /* remove active from all pills */
   publisher.find('.rn-category-pill').removeClass('active');
-  /* add active to clicked pill */
   $pill.addClass('active');
-  /* set the hidden input value */
   var catId = $pill.data('category-id');
   publisher.find('input[name="browse_category_id"]').val(catId);
-  /* update badge on tab */
   var catName = $pill.find('span').text();
   var $badge = publisher.find('.rn-category-badge');
-  $badge.text(catName).show();
-  /* mark tab as activated */
+  if ($badge.length) {
+    $badge.text(catName).show();
+  }
   publisher.find('.js_publisher-tab[data-tab="browse_category"]').addClass('activated');
-  /* clear error state */
   publisher.find('.rn-category-error').hide();
   publisher.find('.rn-category-grid').css('border', 'none');
+  publisher.find('.publisher-category-row').removeClass('category-error');
+});
+
+// handle category dropdown change (default theme)
+$(document).on('change', '.rn-category-dropdown', function() {
+  var publisher = $(this).closest('.publisher');
+  if ($(this).val()) {
+    publisher.find('.publisher-category-row').removeClass('category-error');
+    publisher.find('.rn-category-error').slideUp('fast');
+  }
 });
 
 
@@ -1055,8 +1061,8 @@ $(function () {
     var paid_text_input = paid_text_wrapper.find('textarea');
     var paid_image_wrapper = publisher.find("#paid-image-wrapper")
     var paid_image_input = paid_image_wrapper.find('input.js_x-uploader-input');
-    /* get browse category */
-    var browse_category_id = publisher.find('input[name="browse_category_id"]').val();
+    /* get browse category (dropdown select or hidden input for red theme) */
+    var browse_category_id = publisher.find('select[name="browse_category_id"]').val() || publisher.find('input[name="browse_category_id"]').val() || "";
     /* get post_as_page from hidden input if exists */
     var post_as_page = publisher.find('input[name="post_as_page"]').val();
     /* get the error element */
@@ -1067,14 +1073,24 @@ $(function () {
     }
     /* check mandatory category selection */
     if (!browse_category_id || browse_category_id == "") {
-      /* show the category tab */
-      publisher.find('.js_publisher-tab').removeClass('active activated disabled');
-      publisher.find('.js_publisher-tab[data-tab="browse_category"]').addClass('active');
-      publisher.find('.publisher-slider').children('.publisher-meta').hide();
-      publisher.find('.publisher-meta[data-meta="browse_category"]').slideDown('fast');
-      /* show error message */
-      publisher.find('.rn-category-error').show();
-      publisher.find('.rn-category-grid').css('border', '2px solid #ff2442');
+      /* highlight inline category selector */
+      var $catRow = publisher.find('.publisher-category-row');
+      if ($catRow.length) {
+        $catRow.addClass('category-error');
+        $catRow.find('.rn-category-error').slideDown('fast');
+        /* scroll to category selector */
+        $('html, body').animate({
+          scrollTop: $catRow.offset().top - 80
+        }, 400);
+      } else {
+        /* fallback for red theme: show the category tab */
+        publisher.find('.js_publisher-tab').removeClass('active activated disabled');
+        publisher.find('.js_publisher-tab[data-tab="browse_category"]').addClass('active');
+        publisher.find('.publisher-slider').children('.publisher-meta').hide();
+        publisher.find('.publisher-meta[data-meta="browse_category"]').slideDown('fast');
+        publisher.find('.rn-category-error').show();
+        publisher.find('.rn-category-grid').css('border', '2px solid #ff2442');
+      }
       return;
     }
     /* button loading */
@@ -1113,12 +1129,15 @@ $(function () {
         location.val('');
         location_meta.hide();
         /* hide & empty browse category */
+        publisher.find('select[name="browse_category_id"]').val('');
         publisher.find('input[name="browse_category_id"]').val('');
         publisher.find('.rn-category-pill').removeClass('active');
         publisher.find('.rn-category-badge').hide().text('');
+        publisher.find('.rn-category-selected-name').hide().text('');
         publisher.find('.publisher-meta[data-meta="browse_category"]').hide();
         publisher.find('.rn-category-error').hide();
         publisher.find('.rn-category-grid').css('border', 'none');
+        publisher.find('.publisher-category-row').removeClass('category-error');
         /* hide & empty colored patterns */
         publisher.removeData("colored_pattern");
         publisher.find(".publisher-message").removeAttr('style').removeClass("colored");

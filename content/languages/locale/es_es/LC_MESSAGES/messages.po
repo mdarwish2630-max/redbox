@@ -27716,6 +27716,9 @@ msgstr "Seleccionar categoría (Requerido)"
 msgid "Please select a category before publishing"
 msgstr "Por favor selecciona una categoría antes de publicar"
 
+msgid "Select a category..."
+msgstr "Seleccionar una categoría..."
+
 msgid "Search GIFs"
 msgstr "Buscar GIF"
 

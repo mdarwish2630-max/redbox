@@ -28934,6 +28934,9 @@ msgstr "Выберите категорию (Обязательно)"
 msgid "Please select a category before publishing"
 msgstr "Пожалуйста, выберите категорию перед публикацией"
 
+msgid "Select a category..."
+msgstr "Выберите категорию..."
+
 msgid "Search GIFs"
 msgstr "Поиск GIF"
 

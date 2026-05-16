@@ -1,0 +1,1337 @@
+/* ============================================
+   RedNote Theme — Mobile App-Shell v3.0
+   
+   Transforms the RedNote index page into a
+   clean, app-like mobile experience matching
+   the Xiaohongshu (小红书) design pattern.
+   
+   Design Reference:
+     - Simple header: logo + search icon + hamburger
+     - Scrollable category tabs (pill style)
+     - Masonry post grid (Pinterest-style)
+     - Floating action buttons (image + refresh)
+     - Bottom navigation (Home, Video, +, Alerts, Me)
+     - NO visible sidebar on mobile
+     - Drawer menu opens from hamburger / "Me" tab
+   
+   File: content/themes/red/css/mobile-fix.css
+   Load: AFTER rednote.css in _head.tpl
+   ============================================ */
+
+
+/* ============================================
+   0. CSS VARIABLES (Mobile Only)
+   ============================================ */
+@media (max-width: 767px) {
+  :root {
+    --rn-header-h: 52px;
+    --rn-tabs-h: 44px;
+    --rn-bottom-h: 64px;
+    --rn-safe-top: env(safe-area-inset-top, 0px);
+    --rn-safe-bottom: env(safe-area-inset-bottom, 0px);
+    --rn-safe-left: env(safe-area-inset-left, 0px);
+    --rn-safe-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+
+/* ============================================
+   1. GLOBAL MOBILE RESET
+   
+   Remove all desktop chrome on mobile.
+   Body becomes a flex column like the example.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- Hide desktop header completely --- */
+  .main-header {
+    display: none !important;
+  }
+
+  /* --- Reset body to flex column app shell --- */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #f5f5f5 !important;
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body.night-mode {
+    background: #111 !important;
+  }
+
+  /* --- Main wrapper: no padding, full height --- */
+  .main-wrapper {
+    padding: 0 !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- Hide desktop sidebar nav cards --- */
+  .main-side-nav-card,
+  .side-nav,
+  .sidebar,
+  .menu-icon.d-block.d-md-none,
+  .navbar-wrapper,
+  .logo-wrapper {
+    display: none !important;
+  }
+
+  /* --- Hide top-bar / bottom-bar alerts on mobile --- */
+  .top-bar,
+  .bottom-bar {
+    display: none !important;
+  }
+
+  /* --- Full-width containers --- */
+  .container,
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* --- Prevent horizontal overflow everywhere --- */
+  .rednote-layout,
+  .rednote-main,
+  .rednote-content {
+    overflow-x: hidden;
+  }
+}
+
+
+/* ============================================
+   2. APP SHELL LAYOUT
+   
+   On mobile the rednote-layout becomes a
+   vertical flex: header -> tabs -> feed -> bottom
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- RedNote layout: vertical stack --- */
+  .rednote-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+  }
+
+  /* --- Hide sidebar completely (drawer only) --- */
+  .rednote-sidebar {
+    display: none !important;
+  }
+
+  /* --- Show sidebar only when .show class added --- */
+  .rednote-sidebar.show {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 80vw;
+    background: #fff;
+    z-index: 1070;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(-100%);
+    animation: rnDrawerIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  body.night-mode .rednote-sidebar.show {
+    background: #1a1a1a;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+  }
+
+  /* --- Main area: fill vertical space --- */
+  .rednote-main {
+    flex: 1;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  /* --- Content area: scrollable feed --- */
+  .rednote-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px 8px;
+    padding-bottom: calc(var(--rn-bottom-h) + var(--rn-safe-bottom) + 12px);
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none;
+  }
+
+  .rednote-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* --- Hide mobile toggle in sidebar --- */
+  .rednote-mobile-toggle {
+    display: none !important;
+  }
+
+  /* --- Hide sidebar footer on mobile --- */
+  .rednote-sidebar-footer,
+  .rednote-login-btn,
+  .rednote-signup-btn {
+    display: none !important;
+  }
+
+  /* --- Hide master header ads --- */
+  .main-wrapper > .ad-block:first-child {
+    display: none !important;
+  }
+
+  /* --- Footer links hidden on mobile --- */
+  .footer-links {
+    display: none !important;
+  }
+}
+
+
+/* ============================================
+   3. MOBILE HEADER
+   
+   Clean app-style header: Logo | Search | Menu
+   Sticky at top with white background.
+   Matches the example: flex items-center justify-between
+   ============================================ */
+@media (max-width: 767px) {
+
+  .rednote-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px !important;
+    padding-top: calc(12px + var(--rn-safe-top)) !important;
+    background: #fff !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 20;
+    min-height: var(--rn-header-h);
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    flex-shrink: 0;
+  }
+
+  body.night-mode .rednote-header {
+    background: #1a1a1a !important;
+  }
+
+  /* --- Hide the full search form, show icon only --- */
+  .rednote-search-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .rednote-search-wrapper .form-group {
+    display: none !important;
+  }
+
+  /* --- Show search as icon button --- */
+  .rednote-header::after {
+    content: '';
+    /* Search icon placeholder - actual icon added via JS or template */
+  }
+
+  /* --- Style the logo area (left side) --- */
+  .rednote-header .rednote-search-wrapper {
+    order: 2;
+  }
+
+  /* --- Hamburger menu button (created via CSS on sidebar toggle) --- */
+  /* We use the search wrapper area to place icons */
+}
+
+
+/* ============================================
+   4. MOBILE HEADER BUTTONS
+   
+   Style search icon and menu icon inside
+   the header. Uses existing elements where
+   possible, CSS pseudo-elements otherwise.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- Create a left logo area --- */
+  .rednote-header {
+    position: relative;
+  }
+
+  /* --- Insert logo + buttons via existing structure --- */
+  /* The rednote-header contains the search-wrapper.
+     We restyle it to be an icon bar. */
+}
+
+
+/* ============================================
+   5. CATEGORY TABS BAR
+   
+   Horizontal scrollable pill tabs.
+   Sticky below header.
+   Matches the example tab navigation.
+   ============================================ */
+@media (max-width: 767px) {
+
+  .rednote-categories-wrapper {
+    display: block !important;
+    padding: 8px 12px !important;
+    padding-top: 4px !important;
+    background: #fff;
+    position: sticky;
+    top: var(--rn-header-h);
+    z-index: 10;
+    flex-shrink: 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin: 0 !important;
+  }
+
+  body.night-mode .rednote-categories-wrapper {
+    background: #1a1a1a;
+    border-bottom-color: #333;
+  }
+
+  /* --- Scrollable tabs row --- */
+  .rednote-categories {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    white-space: nowrap !important;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rednote-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* --- Individual category pill --- */
+  .rednote-category {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: #6b7280 !important;
+    background: transparent !important;
+    border: none !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 32px;
+    box-sizing: border-box;
+  }
+
+  /* --- Active pill (like "recommend" in example) --- */
+  .rednote-category.active {
+    background: #333 !important;
+    color: #fff !important;
+  }
+
+  body.night-mode .rednote-category {
+    color: #888 !important;
+  }
+
+  body.night-mode .rednote-category.active {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  /* --- Hide the recommended badge on mobile --- */
+  .rn-recommended-badge {
+    display: none !important;
+  }
+
+  /* --- "All" categories expanded panel --- */
+  .rn-all-categories {
+    display: none !important;
+    padding: 8px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .rn-all-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rn-all-cat-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    background: #f0f0f0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    margin: 0 4px 8px 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .rn-all-cat-item.active {
+    background: var(--rednote-primary, #ff2442);
+    color: #fff;
+  }
+
+  body.night-mode .rn-all-cat-item {
+    background: #2a2a2a;
+    color: #aaa;
+  }
+
+  body.night-mode .rn-all-cat-item.active {
+    background: var(--rednote-primary, #ff2442);
+    color: #fff;
+  }
+}
+
+
+/* ============================================
+   6. MASONRY POST GRID
+   
+   Pinterest-style 2-column masonry grid.
+   Cards have rounded corners, shadow, and
+   clean spacing like the example.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- Masonry grid container --- */
+  .rednote-grid,
+  .rednote-content ul.rednote-grid {
+    column-count: 2 !important;
+    column-gap: 10px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  /* --- Each post card as masonry item --- */
+  .rednote-grid > li,
+  .rednote-grid > .post,
+  .rednote-content .post {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: none !important;
+  }
+
+  body.night-mode .rednote-grid > li,
+  body.night-mode .rednote-grid > .post,
+  body.night-mode .rednote-content .post {
+    background: #222;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  /* --- Post images --- */
+  .rednote-grid .post .post-image,
+  .rednote-grid .post .post-image-container,
+  .rednote-grid .post img[data-purpose="post-image"] {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: cover;
+    border-radius: 0 !important;
+  }
+
+  /* --- Post body (title + meta) --- */
+  .rednote-grid .post .post-body {
+    padding: 8px 10px 10px !important;
+  }
+
+  .rednote-grid .post .post-text {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    margin-bottom: 8px !important;
+  }
+
+  body.night-mode .rednote-grid .post .post-text {
+    color: #ddd !important;
+  }
+
+  /* --- Post avatar + username row --- */
+  .rednote-grid .post .post-avatar {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+  }
+
+  .rednote-grid .post .post-author,
+  .rednote-grid .post .post-username {
+    font-size: 10px !important;
+    color: #999 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* --- Like count (heart icon + number) --- */
+  .rednote-grid .post .post-actions,
+  .rednote-grid .post .post-footer,
+  .rednote-grid .post .post-stats {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  /* --- Hide heavy post chrome on mobile grid --- */
+  .rednote-grid .post .post-action,
+  .rednote-grid .post .post-actions .btn,
+  .rednote-grid .post .post-footer .btn {
+    display: none !important;
+  }
+
+  /* --- Play icon overlay for video posts --- */
+  .rednote-grid .post .play-icon,
+  .rednote-grid .post .video-play-btn {
+    width: 28px !important;
+    height: 28px !important;
+    top: 8px !important;
+    right: 8px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 50% !important;
+    padding: 4px !important;
+  }
+
+  /* --- Post card click layer --- */
+  .rednote-grid .post .post-card-click-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .rednote-grid .post {
+    position: relative;
+  }
+
+  /* --- Hide publisher box on mobile feed --- */
+  .rednote-content > .publisher {
+    display: none !important;
+  }
+
+  /* --- Stories card styling --- */
+  .rednote-stories-card {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    padding: 12px 0;
+  }
+
+  body.night-mode .rednote-stories-card {
+    background: #222;
+  }
+
+  .rednote-stories-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0 8px;
+  }
+
+  .rednote-stories-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* ============================================
+   7. FLOATING ACTION BUTTONS
+   
+   Fixed right-side floating buttons
+   (image upload + refresh) like the example.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- Floating buttons container --- */
+  .rn-floating-actions {
+    position: fixed;
+    right: 12px;
+    bottom: calc(var(--rn-bottom-h) + var(--rn-safe-bottom) + 16px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 30;
+  }
+
+  [dir="RTL"] .rn-floating-actions {
+    right: auto;
+    left: 12px;
+  }
+
+  .rn-floating-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rn-floating-btn:active {
+    transform: scale(0.92);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  body.night-mode .rn-floating-btn {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #aaa;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+/* ============================================
+   8. BOTTOM NAVIGATION BAR
+   
+   App-style bottom nav with 5 items:
+   Home, Video/Reels, +, Notifications, Me
+   Matches the example footer design.
+   ============================================ */
+
+/* Hidden on desktop */
+.rn-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .rn-bottom-nav {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: calc(var(--rn-bottom-h) + var(--rn-safe-bottom));
+    padding-bottom: var(--rn-safe-bottom);
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    z-index: 40;
+    flex-shrink: 0;
+  }
+
+  body.night-mode .rn-bottom-nav {
+    background: #1a1a1a;
+    border-top-color: #333;
+  }
+
+  /* --- Individual nav item --- */
+  .rn-bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 6px 0;
+    color: #9ca3af !important;
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none !important;
+    cursor: pointer;
+    gap: 2px;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s ease;
+    min-height: 40px;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  /* --- Active state: dark color --- */
+  .rn-bottom-nav-item.active {
+    color: #111 !important;
+  }
+
+  body.night-mode .rn-bottom-nav-item.active {
+    color: #fff !important;
+  }
+
+  /* --- Publish (+) button: red rounded square --- */
+  .rn-bottom-nav-pub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #ff2442;
+    color: #fff !important;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(255, 36, 66, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .rn-bottom-nav-pub:active {
+    transform: scale(0.9);
+    box-shadow: 0 1px 6px rgba(255, 36, 66, 0.3);
+  }
+
+  .rn-bottom-nav-pub.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+
+/* ============================================
+   9. SIDEBAR DRAWER
+   
+   Slides in from left (LTR) or right (RTL)
+   when hamburger or "Me" is tapped.
+   Clean overlay behind it.
+   ============================================ */
+
+/* --- Overlay --- */
+.rn-sidebar-overlay {
+  display: none !important;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1060;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rn-sidebar-overlay.show {
+  display: block !important;
+  opacity: 1;
+}
+
+/* --- Sidebar drawer animation --- */
+@keyframes rnDrawerIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes rnDrawerOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* --- RTL drawer animation --- */
+@keyframes rnDrawerInRTL {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes rnDrawerOutRTL {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+
+/* ============================================
+   10. SIDEBAR CONTENT MOBILE STYLES
+   
+   Style the sidebar menu items for the
+   mobile drawer.
+   ============================================ */
+@media (max-width: 767px) {
+
+  .rednote-sidebar.show .rednote-logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ff2442;
+    padding: 0 20px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .rednote-sidebar.show .rednote-menu {
+    padding: 0 8px;
+    flex: 1;
+  }
+
+  .rednote-sidebar.show .rednote-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    margin: 2px 0;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 48px;
+  }
+
+  .rednote-sidebar.show .rednote-menu-item:active {
+    background: #f5f5f5;
+  }
+
+  .rednote-sidebar.show .rednote-menu-item.active {
+    background: #fff0f2;
+    color: #ff2442;
+  }
+
+  body.night-mode .rednote-sidebar.show .rednote-menu-item {
+    color: #ccc;
+  }
+
+  body.night-mode .rednote-sidebar.show .rednote-menu-item:active {
+    background: #2a2a2a;
+  }
+
+  body.night-mode .rednote-sidebar.show .rednote-menu-item.active {
+    background: #2a1519;
+    color: #ff2442;
+  }
+
+  .rednote-sidebar.show .rednote-menu-item .rn-menu-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .rednote-sidebar.show .rednote-menu-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 8px 20px;
+  }
+
+  body.night-mode .rednote-sidebar.show .rednote-menu-divider {
+    background: #333;
+  }
+
+  /* --- Close button at top of sidebar --- */
+  .rednote-sidebar.show::before {
+    content: '\f00d';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #f5f5f5;
+    z-index: 10;
+  }
+
+  [dir="RTL"] .rednote-sidebar.show::before {
+    right: auto;
+    left: 16px;
+  }
+
+  body.night-mode .rednote-sidebar.show::before {
+    background: #2a2a2a;
+    color: #888;
+  }
+}
+
+
+/* ============================================
+   11. RTL SUPPORT
+   
+   Flip sidebar direction, fix header
+   layout for Arabic/Hebrew.
+   ============================================ */
+
+/* --- Sidebar: slide from right in RTL --- */
+[dir="RTL"] .rednote-sidebar.show {
+  left: auto !important;
+  right: 0 !important;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15) !important;
+  animation: rnDrawerInRTL 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+body.night-mode[dir="RTL"] .rednote-sidebar.show,
+[dir="RTL"] body.night-mode .rednote-sidebar.show {
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* --- Categories bar: RTL scroll direction --- */
+[dir="RTL"] .rednote-categories {
+  direction: rtl;
+}
+
+/* --- Post grid: no RTL-specific changes needed (masonry works both ways) --- */
+
+/* --- Bottom nav: row-reverse in RTL --- */
+[dir="RTL"] .rn-bottom-nav {
+  flex-direction: row-reverse;
+}
+
+/* --- Floating buttons: flip to left in RTL --- */
+[dir="RTL"] .rn-floating-actions {
+  right: auto;
+  left: 12px;
+}
+
+/* --- Sngine offcanvas sidebar fix for RTL --- */
+@media (max-width: 767px) {
+  [dir="RTL"] .sg-offcanvas .sg-offcanvas-sidebar {
+    left: auto !important;
+    right: -100% !important;
+  }
+
+  [dir="RTL"] .sg-offcanvas.active .sg-offcanvas-sidebar {
+    right: 0 !important;
+  }
+
+  [dir="RTL"] .sg-offcanvas .sg-offcanvas-mainbar {
+    left: 0 !important;
+    transition: all 0.25s ease-out;
+  }
+
+  [dir="RTL"] .sg-offcanvas.active .sg-offcanvas-mainbar {
+    left: -100% !important;
+  }
+}
+
+
+/* ============================================
+   12. NON-INDEX PAGES (Profile, Settings, etc.)
+   
+   Standard Sngine pages that don't use
+   the RedNote layout. Add top/bottom padding
+   and clean up the UI.
+   ============================================ */
+@media (max-width: 767px) {
+
+  /* --- For pages WITHOUT rednote-layout class --- */
+  .main-wrapper:not(.rednote-layout) {
+    padding-top: var(--rn-header-h) !important;
+    padding-top: calc(var(--rn-header-h) + var(--rn-safe-top)) !important;
+    padding-bottom: calc(var(--rn-bottom-h) + var(--rn-safe-bottom)) !important;
+  }
+
+  /* --- Cards --- */
+  .card {
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+    border: 0 none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  body.night-mode .card {
+    background: #222 !important;
+  }
+
+  /* --- Modals: bottom sheet --- */
+  .modal-dialog {
+    margin: 0 !important;
+    max-width: 100% !important;
+    align-items: flex-end !important;
+  }
+
+  .modal-dialog .modal-content {
+    border-radius: 16px 16px 0 0 !important;
+    border: 0 none !important;
+    min-height: 40vh;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* --- Form controls --- */
+  .form-control,
+  .form-select {
+    min-height: 44px !important;
+    font-size: 16px !important;
+  }
+
+  /* --- Buttons --- */
+  .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* --- Dropdown menus --- */
+  .dropdown-menu {
+    width: calc(100vw - 16px) !important;
+    left: 8px !important;
+    right: 8px !important;
+    max-height: 50vh;
+    overflow-y: auto;
+    border-radius: 12px !important;
+  }
+
+  [dir="RTL"] .dropdown-menu {
+    left: auto !important;
+    right: 8px !important;
+    text-align: right;
+  }
+
+  /* --- Profile page --- */
+  .profile-header {
+    border-radius: 0 !important;
+    margin: 0 -8px;
+    padding: 0 !important;
+  }
+
+  .profile-header .profile-cover {
+    height: 180px !important;
+    border-radius: 0 !important;
+  }
+
+  .profile-header .profile-avatar {
+    width: 72px !important;
+    height: 72px !important;
+    top: 140px !important;
+    left: 16px !important;
+    border: 3px solid #fff !important;
+  }
+
+  [dir="RTL"] .profile-header .profile-avatar {
+    left: auto !important;
+    right: 16px !important;
+  }
+
+  /* --- Settings nav: horizontal scroll --- */
+  .settings-nav,
+  .settings-nav-tabs {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 4px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .settings-nav::-webkit-scrollbar,
+  .settings-nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .settings-nav .nav-link,
+  .settings-nav-tabs .nav-link {
+    white-space: nowrap;
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0;
+  }
+
+  .settings-nav .nav-link.active,
+  .settings-nav-tabs .nav-link.active {
+    background: #ff2442 !important;
+    color: #fff !important;
+  }
+
+  /* --- Chat panels --- */
+  .chat-panels {
+    flex-direction: column !important;
+    height: calc(100vh - var(--rn-header-h)) !important;
+  }
+
+  .chat-panels .chat-panel-left,
+  .chat-panels .chat-panel-right {
+    width: 100% !important;
+    flex: none !important;
+    border: 0 none !important;
+  }
+
+  /* --- Notifications --- */
+  .notification-item {
+    padding: 12px !important;
+    min-height: 60px;
+    border-bottom: 1px solid #f0f0f0 !important;
+  }
+
+  /* --- Table responsive --- */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    font-size: 12px !important;
+  }
+
+  /* --- Two-column layouts become single --- */
+  .content-area .col-lg-8,
+  .content-area .col-md-8,
+  .content-area .col-lg-4,
+  .content-area .col-md-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* --- Hide side columns --- */
+  .main-wrapper .col-lg-3,
+  .main-wrapper .col-lg-4.sidebar-col,
+  .main-wrapper > .container > .row > [class*="col-lg-3"],
+  .main-wrapper > .container > .row > [class*="col-lg-4"]:not(.col-lg-8):not(.col-lg-12) {
+    display: none !important;
+  }
+
+  /* --- PWA banner --- */
+  .pwa_install_banner {
+    bottom: calc(var(--rn-bottom-h) + var(--rn-safe-bottom) + 8px) !important;
+    left: 8px !important;
+    right: 8px !important;
+    border-radius: 12px !important;
+  }
+
+  /* --- Sign in/up pages --- */
+  .sign-page .sign-form {
+    max-width: 100% !important;
+    padding: 24px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* --- Disable tooltips on mobile --- */
+  .tooltip {
+    display: none !important;
+  }
+
+  /* --- Disable text selection on nav --- */
+  .rn-bottom-nav,
+  .rednote-header,
+  .rednote-sidebar {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* --- Remove tap highlight --- */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* --- Smooth scrolling --- */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* --- Better images --- */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* ============================================
+   13. SAFE AREA & NOTCH SUPPORT
+   ============================================ */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .rednote-header {
+    padding-top: calc(12px + env(safe-area-inset-top)) !important;
+  }
+
+  .rn-bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  .rednote-sidebar.show {
+    padding-top: calc(20px + env(safe-area-inset-top));
+  }
+}
+
+/* --- PWA standalone mode --- */
+@media (display-mode: standalone) {
+  .rednote-header {
+    padding-top: calc(12px + var(--rn-safe-top)) !important;
+  }
+
+  .rn-bottom-nav {
+    padding-bottom: var(--rn-safe-bottom) !important;
+  }
+}
+
+
+/* ============================================
+   14. LANDSCAPE MODE
+   ============================================ */
+@media (max-width: 767px) and (orientation: landscape) {
+  .rednote-header {
+    min-height: 44px;
+    padding-top: calc(8px + var(--rn-safe-top)) !important;
+  }
+
+  .rn-bottom-nav {
+    height: calc(48px + var(--rn-safe-bottom));
+  }
+
+  .rednote-categories-wrapper {
+    top: 44px;
+  }
+}
+
+
+/* ============================================
+   15. VERY SMALL SCREENS (< 375px)
+   ============================================ */
+@media (max-width: 374px) {
+  .rednote-category {
+    padding: 5px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .rn-bottom-nav-item {
+    font-size: 9px;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 18px;
+  }
+
+  .rn-bottom-nav-pub {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .rn-floating-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
+
+
+/* ============================================
+   16. PRINT STYLES
+   ============================================ */
+@media print {
+  .rn-bottom-nav,
+  .rednote-sidebar,
+  .rn-sidebar-overlay,
+  .rn-floating-actions,
+  .main-header,
+  .rednote-header {
+    display: none !important;
+  }
+
+  body {
+    padding: 0 !important;
+  }
+
+  .main-wrapper {
+    padding: 0 !important;
+  }
+}
+
+
+/* ============================================
+   17. NIGHT MODE TOGGLE SWITCH
+   ============================================ */
+@media (max-width: 767px) {
+  .form-check.form-switch .form-check-input {
+    width: 48px;
+    height: 26px;
+    margin-left: 0 !important;
+  }
+}
+
+
+/* ============================================
+   18. TABLET (768px - 991px)
+   ============================================ */
+@media (max-width: 991px) and (min-width: 768px) {
+  .rednote-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .rednote-sidebar.show {
+    transform: translateX(0);
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 1070;
+    background: #fff;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    animation: none;
+  }
+
+  [dir="RTL"] .rednote-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  [dir="RTL"] .rednote-sidebar.show {
+    transform: translateX(0);
+  }
+
+  ul.rednote-grid {
+    column-count: 3;
+    column-gap: 10px;
+  }
+}

@@ -1,0 +1,841 @@
+/* ============================================
+   RedBox v3 — Mobile RTL & Layout Fix
+   Fixes: Arabic font, mobile header, RTL sidebar,
+   bottom nav, layout polish for app-like UX
+   ============================================ */
+
+/* ============================
+   1. FONT FIX — Respect Arabic (Tajawal) in RTL
+   ============================ */
+[dir="RTL"] body {
+  font-family: 'Tajawal', 'Segoe UI', Arial, sans-serif !important;
+}
+
+[dir="RTL"] .rednote-logo,
+[dir="RTL"] .rednote-logo-text,
+[dir="RTL"] .rn-bottom-nav-item,
+[dir="RTL"] .rednote-category,
+[dir="RTL"] .rednote-menu-item,
+[dir="RTL"] .rn-all-cat-item,
+[dir="RTL"] .rn-category-pill,
+[dir="RTL"] .rednote-see-more,
+[dir="RTL"] .rednote-user-name,
+[dir="RTL"] .publisher-message textarea,
+[dir="RTL"] .rn-bottom-nav-pub,
+[dir="RTL"] .rn-recommended-badge,
+[dir="RTL"] .rednote-grid .post-text,
+[dir="RTL"] .rednote-grid .post-author,
+[dir="RTL"] .rednote-grid .post-time,
+[dir="RTL"] .rednote-grid .post-stats,
+[dir="RTL"] .dropdown-item,
+[dir="RTL"] .modal-title,
+[dir="RTL"] .btn,
+[dir="RTL"] .alert,
+[dir="RTL"] .form-control,
+[dir="RTL"] .form-label,
+[dir="RTL"] .page-link,
+[dir="RTL"] .rn-category-label {
+  font-family: 'Tajawal', 'Segoe UI', Arial, sans-serif !important;
+}
+
+[dir="RTL"] .rednote-grid .post-text,
+[dir="RTL"] .rednote-grid .post-author,
+[dir="RTL"] .rednote-grid .post-time,
+[dir="RTL"] .rednote-grid .post-stats {
+  line-height: 1.7 !important;
+}
+
+/* ============================
+   2. MOBILE HEADER FIX — App-style with Logo + Search + Menu
+   ============================ */
+@media (max-width: 767px) {
+
+  /* Mobile header container */
+  .rn-mobile-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: var(--rednote-white) !important;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    gap: 8px;
+    min-height: 52px;
+  }
+
+  body.night-mode .rn-mobile-header {
+    background: #1e1e1e !important;
+    border-bottom-color: #333;
+  }
+
+  /* Logo area */
+  .rn-mobile-header-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none !important;
+  }
+
+  .rn-mobile-header-logo img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .rn-mobile-header-logo .rednote-logo-text {
+    padding: 6px 14px !important;
+    font-size: 16px !important;
+    letter-spacing: 0.5px;
+  }
+
+  /* Center — search bar */
+  .rn-mobile-header-search {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rn-mobile-header-search .search-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  .rn-mobile-header-search .search-wrapper .fa-search,
+  .rn-mobile-header-search .search-wrapper .fa-magnifying-glass {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 14px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  [dir="RTL"] .rn-mobile-header-search .search-wrapper .fa-search,
+  [dir="RTL"] .rn-mobile-header-search .search-wrapper .fa-magnifying-glass {
+    right: 12px;
+    left: auto;
+  }
+
+  [dir="LTR"] .rn-mobile-header-search .search-wrapper .fa-search,
+  [dir="LTR"] .rn-mobile-header-search .search-wrapper .fa-magnifying-glass,
+  .rn-mobile-header-search .search-wrapper .fa-search,
+  .rn-mobile-header-search .search-wrapper .fa-magnifying-glass {
+    left: 12px;
+    right: auto;
+  }
+
+  .rn-mobile-header-search .form-control {
+    height: 36px !important;
+    font-size: 13px !important;
+    padding: 6px 12px 6px 36px !important;
+    border-radius: 20px !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #eee !important;
+    width: 100%;
+  }
+
+  [dir="RTL"] .rn-mobile-header-search .form-control {
+    padding: 6px 36px 6px 12px !important;
+    text-align: right;
+  }
+
+  .rn-mobile-header-search .form-control::placeholder {
+    color: #bbb;
+    font-size: 12px;
+  }
+
+  body.night-mode .rn-mobile-header-search .form-control {
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+    color: #fff !important;
+  }
+
+  /* Hamburger menu button */
+  .rn-mobile-header-menu {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rednote-text);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rn-mobile-header-menu:active {
+    background: #f0f0f0;
+  }
+
+  body.night-mode .rn-mobile-header-menu {
+    color: #ccc;
+  }
+
+  body.night-mode .rn-mobile-header-menu:active {
+    background: #333;
+  }
+
+  /* Hide the old rednote-header on mobile (we replace it) */
+  .rednote-header {
+    display: none !important;
+  }
+
+  /* Make categories sticky below the new header */
+  .rednote-categories-wrapper {
+    position: sticky;
+    top: 52px;
+    z-index: 1035;
+    background: var(--rednote-bg) !important;
+    padding: 0 12px;
+  }
+
+  body.night-mode .rednote-categories-wrapper {
+    background: #1a1a1a !important;
+  }
+
+  .rednote-categories {
+    padding: 8px 0 6px;
+    gap: 6px;
+  }
+
+  /* ============================
+   3. RTL SIDEBAR SLIDE DIRECTION FIX
+   ============================ */
+  .rednote-sidebar {
+    width: 280px !important;
+    min-width: 280px !important;
+    top: 0 !important;
+    bottom: 0;
+    border-radius: 0 !important;
+    padding: 20px 15px;
+    z-index: 1080 !important;
+  }
+
+  /* LTR: slide from left */
+  [dir="LTR"] .rednote-sidebar,
+  .rednote-sidebar {
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+  }
+
+  [dir="LTR"] .rednote-sidebar.show,
+  .rednote-sidebar.show {
+    transform: translateX(0);
+    animation: rnSlideFromLeft 0.28s ease forwards;
+  }
+
+  @keyframes rnSlideFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* RTL: slide from right */
+  [dir="RTL"] .rednote-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+    box-shadow: -4px 0 20px rgba(0,0,0,0.15) !important;
+  }
+
+  [dir="RTL"] .rednote-sidebar.show {
+    transform: translateX(0);
+    animation: rnSlideFromRight 0.28s ease forwards;
+  }
+
+  @keyframes rnSlideFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* Sidebar close button */
+  .rn-sidebar-close {
+    display: none;
+    position: absolute;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+    z-index: 5;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rn-sidebar-close:active {
+    background: #e0e0e0;
+  }
+
+  [dir="LTR"] .rn-sidebar-close {
+    right: 15px;
+  }
+
+  [dir="RTL"] .rn-sidebar-close {
+    left: 15px;
+    right: auto;
+  }
+
+  .rednote-sidebar.show .rn-sidebar-close {
+    display: flex;
+  }
+
+  body.night-mode .rn-sidebar-close {
+    background: #333;
+    color: #aaa;
+  }
+
+  /* Overlay */
+  .rn-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1075;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .rn-sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ============================
+   4. BOTTOM NAV FIX — RTL + Polish
+   ============================ */
+  .rn-bottom-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: var(--rednote-white);
+    border-top: 1px solid #f0f0f0;
+    z-index: 1060;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 8px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -1px 8px rgba(0,0,0,0.06);
+  }
+
+  body.night-mode .rn-bottom-nav {
+    background: #1a1a1a;
+    border-top-color: #333;
+    box-shadow: 0 -1px 8px rgba(0,0,0,0.3);
+  }
+
+  .rn-bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 4px 0;
+    text-decoration: none !important;
+    color: #999;
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    max-width: 70px;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s ease;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 20px;
+    margin-bottom: 1px;
+    transition: transform 0.15s ease;
+  }
+
+  .rn-bottom-nav-item:active i {
+    transform: scale(0.85);
+  }
+
+  .rn-bottom-nav-item.active {
+    color: var(--rednote-primary);
+  }
+
+  /* Notification badge on bottom nav */
+  .rn-bottom-nav-item .badge {
+    position: absolute;
+    top: 1px;
+    right: 50%;
+    margin-right: -16px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    font-size: 9px;
+    line-height: 16px;
+    border-radius: 8px;
+  }
+
+  [dir="RTL"] .rn-bottom-nav-item .badge {
+    right: auto;
+    left: 50%;
+    margin-left: -16px;
+    margin-right: 0;
+  }
+
+  /* Center publish button */
+  .rn-bottom-nav-pub {
+    width: 42px;
+    height: 34px;
+    background: linear-gradient(135deg, #ff2442, #ff6b81);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    font-size: 20px;
+    box-shadow: 0 3px 10px rgba(255,36,66,0.35);
+    margin-top: -4px;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+
+  .rn-bottom-nav-pub:active {
+    transform: scale(0.9);
+  }
+
+  /* Space for bottom nav */
+  .rednote-main {
+    padding-bottom: 64px !important;
+  }
+
+  /* ============================
+   5. CONTENT AREA POLISH
+   ============================ */
+  .rednote-content {
+    padding: 8px 8px 16px;
+  }
+
+  /* Masonry grid */
+  ul.rednote-grid {
+    column-count: 2;
+    column-gap: 8px;
+  }
+
+  ul.rednote-grid > li {
+    margin-bottom: 8px;
+  }
+
+  /* Post card styling */
+  .rednote-grid .post {
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+    break-inside: avoid;
+  }
+
+  .rednote-grid .post:hover {
+    transform: none !important;
+  }
+
+  .rednote-grid .post-media-image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .rednote-grid .post-text {
+    font-size: 12px !important;
+    padding: 8px 10px 2px !important;
+    line-height: 1.6 !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .rednote-grid .post-author {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+  }
+
+  .rednote-grid .post-avatar-picture {
+    width: 22px !important;
+    height: 22px !important;
+    border-radius: 50% !important;
+  }
+
+  .rednote-grid .post-time {
+    font-size: 10px !important;
+  }
+
+  .rednote-grid .post-stats {
+    padding: 4px 10px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Hide default main-header on mobile */
+  .main-wrapper > .main-header {
+    display: none !important;
+  }
+
+  /* ============================
+   6. PUBLISHER MOBILE FIX
+   ============================ */
+  .rednote-content .publisher {
+    border-radius: 14px !important;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .publisher-message textarea {
+    font-size: 14px !important;
+    min-height: 38px !important;
+    padding: 10px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .publisher-avatar {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  /* ============================
+   7. STORIES CARD FIX
+   ============================ */
+  .rednote-stories-card {
+    border-radius: 14px !important;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .rednote-stories-wrapper {
+    padding: 10px;
+  }
+
+  /* ============================
+   8. MODALS — Bottom sheet style
+   ============================ */
+  .modal-dialog {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .modal-content {
+    border-radius: 20px 20px 0 0 !important;
+    min-height: 50vh;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 16px 18px !important;
+  }
+
+  .modal-footer {
+    padding: 14px 18px !important;
+  }
+
+  /* ============================
+   9. DROPDOWNS & MENUS FIX
+   ============================ */
+  .dropdown-menu {
+    max-width: 92vw !important;
+    border-radius: 14px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+    padding: 8px !important;
+  }
+
+  .dropdown-item {
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* Footer quick adds on mobile */
+  .footer-quick-adds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px !important;
+  }
+
+  .add-quick-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 8px;
+    border-radius: 12px;
+    background: #f8f8f8;
+    font-size: 11px;
+    text-align: center;
+    transition: background 0.2s ease;
+  }
+
+  body.night-mode .add-quick-item {
+    background: #2a2a2a;
+  }
+
+  .add-quick-item:hover {
+    background: var(--rednote-primary-light) !important;
+  }
+
+  .add-quick-item .main-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .add-quick-item .mt5 {
+    margin-top: 0 !important;
+  }
+
+  /* ============================
+   10. RTL-SPECIFIC MOBILE FIXES
+   ============================ */
+  [dir="RTL"] .rednote-main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [dir="RTL"] .rednote-search-wrapper .form-control {
+    padding: 6px 36px 6px 12px !important;
+    text-align: right;
+  }
+
+  [dir="RTL"] .rednote-content {
+    padding: 8px 8px 16px;
+  }
+
+  [dir="RTL"] .rednote-categories-wrapper {
+    padding: 0 12px;
+    direction: rtl;
+  }
+
+  [dir="RTL"] .rednote-grid .post-text {
+    text-align: right;
+  }
+
+  [dir="RTL"] .rednote-grid .post-stats {
+    text-align: right;
+  }
+
+  [dir="RTL"] .publisher-message textarea {
+    text-align: right;
+  }
+
+  /* ============================
+   11. MISC FIXES
+   ============================ */
+
+  /* Prevent iOS zoom on input focus */
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent overscroll */
+  body {
+    overscroll-behavior: none;
+  }
+
+  /* Footer spacing */
+  .footer {
+    margin: 10px 0 64px 0 !important;
+    padding: 15px 12px !important;
+    text-align: center;
+  }
+
+  /* See more button */
+  .rednote-see-more {
+    padding: 16px;
+  }
+
+  .rednote-see-more.alert-info {
+    border-radius: 20px !important;
+    font-size: 13px;
+  }
+
+  /* Cards */
+  .rednote-content .card {
+    border-radius: 14px !important;
+    margin-bottom: 10px;
+  }
+
+  /* Alert boxes */
+  .rednote-content .alert {
+    border-radius: 14px !important;
+    font-size: 13px;
+  }
+
+  /* Page header */
+  .rednote-content .page-header {
+    border-radius: 14px !important;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+  }
+
+  /* PWA banner */
+  .pwa_install_banner {
+    bottom: 60px !important;
+  }
+}
+
+/* ============================
+   12. SMALL MOBILE (≤ 380px)
+   ============================ */
+@media (max-width: 380px) {
+  .rn-mobile-header {
+    padding: 8px 10px;
+    min-height: 48px;
+  }
+
+  .rn-mobile-header-logo .rednote-logo-text {
+    padding: 5px 10px !important;
+    font-size: 14px !important;
+  }
+
+  .rn-mobile-header-search .form-control {
+    height: 32px !important;
+    font-size: 12px !important;
+  }
+
+  .rn-mobile-header-menu {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .rednote-categories-wrapper {
+    top: 48px;
+  }
+
+  .rednote-content {
+    padding: 6px 6px 14px;
+  }
+
+  ul.rednote-grid {
+    column-gap: 6px;
+  }
+
+  ul.rednote-grid > li {
+    margin-bottom: 6px;
+  }
+
+  .rednote-grid .post {
+    border-radius: 10px !important;
+  }
+
+  .rednote-grid .post-text {
+    font-size: 11px !important;
+    padding: 6px 8px 2px !important;
+  }
+
+  .rednote-grid .post-author {
+    font-size: 10px !important;
+  }
+
+  .rn-bottom-nav {
+    height: 50px;
+  }
+
+  .rn-bottom-nav-item {
+    font-size: 9px;
+  }
+
+  .rn-bottom-nav-item i {
+    font-size: 18px;
+  }
+
+  .rn-bottom-nav-pub {
+    width: 38px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+/* ============================
+   13. TABLET (768px–991px) FIXES
+   ============================ */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Hide new mobile header on tablet */
+  .rn-mobile-header {
+    display: none !important;
+  }
+
+  /* Show the original rednote-header on tablet */
+  .rednote-header {
+    display: flex !important;
+  }
+
+  [dir="RTL"] .rednote-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  [dir="RTL"] .rednote-sidebar.show {
+    transform: translateX(0);
+    animation: rnSlideFromRight 0.28s ease forwards;
+  }
+
+  /* Tablet: hide bottom nav */
+  .rn-bottom-nav {
+    display: none !important;
+  }
+
+  .rednote-main {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* ============================
+   14. DESKTOP — Hide mobile elements
+   ============================ */
+@media (min-width: 992px) {
+  .rn-mobile-header {
+    display: none !important;
+  }
+
+  .rn-bottom-nav {
+    display: none !important;
+  }
+
+  .rn-sidebar-overlay {
+    display: none !important;
+  }
+
+  .rn-sidebar-close {
+    display: none !important;
+  }
+}

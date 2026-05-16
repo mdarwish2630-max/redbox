@@ -6,6 +6,11 @@
 
   <!-- SIDEBAR -->
   <div class="rednote-sidebar">
+    <!-- Close button (mobile only) -->
+    <button class="rn-sidebar-close" id="rn-sidebar-close" type="button">
+      <i class="fa fa-times"></i>
+    </button>
+
     <!-- Logo -->
     <a href="{$system['system_url']}" class="rednote-logo">REDNOTE</a>
 
@@ -147,17 +152,38 @@
       {/if}
     {/if}
 
-    <!-- Mobile menu toggle -->
-    <div class="rednote-mobile-toggle" data-bs-toggle="sg-offcanvas">
-      <i class="fa fa-bars"></i>
-    </div>
   </div>
   <!-- SIDEBAR END -->
 
   <!-- MAIN AREA -->
   <div class="rednote-main">
 
-    <!-- SEARCH BAR -->
+    <!-- MOBILE HEADER (App-style: Logo + Search + Hamburger) -->
+    <div class="rn-mobile-header">
+      <!-- Logo -->
+      <a href="{$system['system_url']}" class="rn-mobile-header-logo">
+        {if $system['system_logo']}
+          <img src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}">
+        {else}
+          <span class="rednote-logo-text">REDNOTE</span>
+        {/if}
+      </a>
+
+      <!-- Search -->
+      {if $user->_logged_in || (!$user->_logged_in && $system['system_public'])}
+        <div class="rn-mobile-header-search">
+          {include file='_header.search.tpl'}
+        </div>
+      {/if}
+
+      <!-- Hamburger Menu -->
+      <button class="rn-mobile-header-menu" id="rn-mobile-menu-btn" type="button">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <!-- MOBILE HEADER END -->
+
+    <!-- SEARCH BAR (Desktop/Tablet) -->
     <div class="rednote-header">
       {if $user->_logged_in || (!$user->_logged_in && $system['system_public'])}
         <div class="rednote-search-wrapper">
@@ -404,30 +430,54 @@ $(document).ready(function() {
     $('.rn-all-categories').slideToggle(200);
   });
 
-  // Mobile: "Me" button opens sidebar
-  $(document).on('click', '#rn-mobile-menu-btn', function() {
+  // Helper: open mobile sidebar
+  function openSidebar() {
     $('.rednote-sidebar').addClass('show');
     $('#rn-sidebar-overlay').addClass('show');
     $('body').css('overflow', 'hidden');
+  }
+
+  // Helper: close mobile sidebar
+  function closeSidebar() {
+    $('.rednote-sidebar').removeClass('show');
+    $('#rn-sidebar-overlay').removeClass('show');
+    $('body').css('overflow', '');
+  }
+
+  // Mobile: hamburger button opens sidebar
+  $(document).on('click', '#rn-mobile-menu-btn', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    openSidebar();
+  });
+
+  // Mobile: close button on sidebar
+  $(document).on('click', '#rn-sidebar-close', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    closeSidebar();
   });
 
   // Mobile: Close sidebar on overlay click
   $(document).on('click', '#rn-sidebar-overlay', function() {
-    $('.rednote-sidebar').removeClass('show');
-    $(this).removeClass('show');
-    $('body').css('overflow', '');
+    closeSidebar();
   });
 
-  // Mobile: Close sidebar when navigating
-  $(document).on('click', '.rednote-sidebar .rednote-menu-item', function() {
-    if ($(window).width() < 768) {
-      $('.rednote-sidebar').removeClass('show');
-      $('#rn-sidebar-overlay').removeClass('show');
-      $('body').css('overflow', '');
+  // Mobile: Close sidebar when navigating (menu item click)
+  $(document).on('click', '.rednote-sidebar a.rednote-menu-item, .rednote-sidebar .rednote-user-btn', function() {
+    if ($(window).width() < 992) {
+      closeSidebar();
     }
   });
 
-  // Fix bottom nav active state for profile pages
+  // Mobile: Close sidebar on Escape key
+  $(document).on('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeSidebar();
+    }
+  });
+
+  // Fix bottom nav active state for profile/settings pages
   var currentPath = window.location.pathname;
   if (currentPath.indexOf('/settings') > -1 || currentPath.indexOf('/profile') > -1) {
     $('#rn-mobile-menu-btn').addClass('active');

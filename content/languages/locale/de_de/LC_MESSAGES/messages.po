@@ -27264,6 +27264,9 @@ msgstr "Kategorie auswählen (Pflicht)"
 msgid "Please select a category before publishing"
 msgstr "Bitte wähle eine Kategorie vor der Veröffentlichung"
 
+msgid "Select a category..."
+msgstr "Kategorie auswählen..."
+
 msgid "Search GIFs"
 msgstr "GIF-Suche"
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:42
+/* Smarty version 5.7.0, created on 2026-05-16 06:33:56
   from 'file:_head.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72b9e1a3db7_75945632',
+  'unifunc' => 'content_6a080fd49d5e97_10719124',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c5fd616ad9ac27928b77c56901c97210e5bf2894' => 
     array (
       0 => '_head.tpl',
-      1 => 1762382794,
+      1 => 1778892872,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_head.css.tpl' => 1,
   ),
 ))) {
-function content_69e72b9e1a3db7_75945632 (\Smarty\Template $_smarty_tpl) {
+function content_6a080fd49d5e97_10719124 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!doctype html>
 
@@ -114,6 +114,13 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
     <?php $_smarty_tpl->renderSubTemplate('file:_head.css.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 ?>
     <!-- CSS Customized -->
+
+    <!-- Browse Category CSS -->
+    <link href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/content/themes/<?php echo $_smarty_tpl->getValue('system')['theme'];?>
+/css/browse-category.css?v=<?php echo $_smarty_tpl->getValue('system')['system_version'];?>
+" rel="stylesheet">
+    <!-- Browse Category CSS -->
 
     <!-- Header Custom JavaScript -->
     <?php if ($_smarty_tpl->getValue('system')['custome_js_header']) {?>

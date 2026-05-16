@@ -39,6 +39,9 @@ msgstr "اختر تصنيفاً (مطلوب)"
 msgid "Please select a category before publishing"
 msgstr "يرجى اختيار تصنيف قبل النشر"
 
+msgid "Select a category..."
+msgstr "اختر تصنيفاً..."
+
 msgid "Recommended"
 msgstr "مُقترح"
 

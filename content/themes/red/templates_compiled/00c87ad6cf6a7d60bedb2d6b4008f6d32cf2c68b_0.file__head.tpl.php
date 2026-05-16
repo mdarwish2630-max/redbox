@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-24 19:09:36
+/* Smarty version 5.7.0, created on 2026-05-15 09:52:23
   from 'file:_head.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69ebbff0499af0_96786791',
+  'unifunc' => 'content_6a06ecd744b999_84929798',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '00c87ad6cf6a7d60bedb2d6b4008f6d32cf2c68b' => 
     array (
       0 => '_head.tpl',
-      1 => 1776835600,
+      1 => 1778863024,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_head.css.tpl' => 1,
   ),
 ))) {
-function content_69ebbff0499af0_96786791 (\Smarty\Template $_smarty_tpl) {
+function content_6a06ecd744b999_84929798 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\red\\templates';
 ?><!doctype html>
 
@@ -116,6 +116,12 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\red\\templat
 /css/rednote.css?v=<?php echo $_smarty_tpl->getValue('system')['system_version'];?>
 " rel="stylesheet">
     <!-- RedNote Theme Override -->
+
+    <!-- v3: Mobile RTL & Layout Fix -->
+    <link href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/content/themes/<?php echo $_smarty_tpl->getValue('system')['theme'];?>
+/css/mobile-v3.css?v=3" rel="stylesheet">
+    <!-- v3: Mobile RTL & Layout Fix -->
 
 <style>
 .rn-reel-thumb{position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;background:#000;border-radius:8px;cursor:pointer;display:block}

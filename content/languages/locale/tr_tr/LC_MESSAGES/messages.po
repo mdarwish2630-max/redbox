@@ -27608,6 +27608,9 @@ msgstr "Kategori Seçin (Zorunlu)"
 msgid "Please select a category before publishing"
 msgstr "Lütfen yayınlamadan önce bir kategori seçin"
 
+msgid "Select a category..."
+msgstr "Bir kategori seçin..."
+
 msgid "Search GIFs"
 msgstr "GIF Ara"
 

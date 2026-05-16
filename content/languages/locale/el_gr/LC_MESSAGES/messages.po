@@ -27886,6 +27886,9 @@ msgstr "Επιλογή κατηγορίας (Απαιτείται)"
 msgid "Please select a category before publishing"
 msgstr "Επιλέξτε μια κατηγορία πριν τη δημοσίευση"
 
+msgid "Select a category..."
+msgstr "Επιλέξτε κατηγορία..."
+
 msgid "Search GIFs"
 msgstr "Αναζήτηση GIF"
 

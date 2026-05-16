@@ -47,6 +47,26 @@
         </div>
         <!-- publisher-message -->
 
+        <!-- inline category dropdown (always visible) -->
+        {if $browse_categories}
+        <div class="publisher-category-row" id="publisher-category-row">
+          <div class="publisher-category-dropdown-wrapper">
+            <i class="fa fa-tags rn-category-dropdown-icon"></i>
+            <select class="form-select rn-category-dropdown" name="browse_category_id" id="browse_category_id">
+              <option value="">{__("Select a category...")}</option>
+              {foreach $browse_categories as $cat}
+                <option value="{$cat['category_id']}">{__($cat['category_name'])}</option>
+              {/foreach}
+            </select>
+          </div>
+          <div class="rn-category-error" style="display: none;">
+            <i class="fa fa-exclamation-circle"></i>
+            {__("Please select a category before publishing")}
+          </div>
+        </div>
+        {/if}
+        <!-- inline category dropdown -->
+
         <!-- publisher-slider -->
         <div class="publisher-slider">
 

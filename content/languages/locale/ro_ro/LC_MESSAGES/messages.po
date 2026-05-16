@@ -28080,6 +28080,9 @@ msgstr "Selectează categoria (Obligatoriu)"
 msgid "Please select a category before publishing"
 msgstr "Selectați o categorie înainte de a publica"
 
+msgid "Select a category..."
+msgstr "Selectați o categorie..."
+
 msgid "Search GIFs"
 msgstr "Căutare GIF"
 

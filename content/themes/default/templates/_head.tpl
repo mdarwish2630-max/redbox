@@ -65,6 +65,10 @@
     {include file='_head.css.tpl'}
     <!-- CSS Customized -->
 
+    <!-- Browse Category CSS -->
+    <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/browse-category.css?v={$system['system_version']}" rel="stylesheet">
+    <!-- Browse Category CSS -->
+
     <!-- Header Custom JavaScript -->
     {if $system['custome_js_header']}
       <script>

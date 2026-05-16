@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-24 19:09:35
+/* Smarty version 5.7.0, created on 2026-05-15 09:49:58
   from 'file:index.newsfeed.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69ebbfef73c167_73985423',
+  'unifunc' => 'content_6a06ec46371d97_30430125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a10bd2eb0a0691e832842b6f6cecf0a1527b339f' => 
     array (
       0 => 'index.newsfeed.tpl',
-      1 => 1776869960,
+      1 => 1778863000,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_head.tpl' => 1,
     'file:_header_rednote.tpl' => 1,
     'file:__svg_icons.tpl' => 15,
-    'file:_header.search.tpl' => 1,
+    'file:_header.search.tpl' => 2,
     'file:_publisher.tpl' => 1,
     'file:_widget.tpl' => 1,
     'file:_boosted_post.tpl' => 1,
@@ -29,7 +29,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ))) {
-function content_69ebbfef73c167_73985423 (\Smarty\Template $_smarty_tpl) {
+function content_6a06ec46371d97_30430125 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\red\\templates';
 $_smarty_tpl->renderSubTemplate('file:_head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 $_smarty_tpl->renderSubTemplate('file:_header_rednote.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
@@ -40,6 +40,11 @@ $_smarty_tpl->renderSubTemplate('file:_header_rednote.tpl', $_smarty_tpl->cache_
 
   <!-- SIDEBAR -->
   <div class="rednote-sidebar">
+    <!-- Close button (mobile only) -->
+    <button class="rn-sidebar-close" id="rn-sidebar-close" type="button">
+      <i class="fa fa-times"></i>
+    </button>
+
     <!-- Logo -->
     <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 " class="rednote-logo">REDNOTE</a>
@@ -243,17 +248,43 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
       <?php }?>
     <?php }?>
 
-    <!-- Mobile menu toggle -->
-    <div class="rednote-mobile-toggle" data-bs-toggle="sg-offcanvas">
-      <i class="fa fa-bars"></i>
-    </div>
   </div>
   <!-- SIDEBAR END -->
 
   <!-- MAIN AREA -->
   <div class="rednote-main">
 
-    <!-- SEARCH BAR -->
+    <!-- MOBILE HEADER (App-style: Logo + Search + Hamburger) -->
+    <div class="rn-mobile-header">
+      <!-- Logo -->
+      <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+" class="rn-mobile-header-logo">
+        <?php if ($_smarty_tpl->getValue('system')['system_logo']) {?>
+          <img src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo'];?>
+" alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+">
+        <?php } else { ?>
+          <span class="rednote-logo-text">REDNOTE</span>
+        <?php }?>
+      </a>
+
+      <!-- Search -->
+      <?php if ($_smarty_tpl->getValue('user')->_logged_in || (!$_smarty_tpl->getValue('user')->_logged_in && $_smarty_tpl->getValue('system')['system_public'])) {?>
+        <div class="rn-mobile-header-search">
+          <?php $_smarty_tpl->renderSubTemplate('file:_header.search.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
+?>
+        </div>
+      <?php }?>
+
+      <!-- Hamburger Menu -->
+      <button class="rn-mobile-header-menu" id="rn-mobile-menu-btn" type="button">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <!-- MOBILE HEADER END -->
+
+    <!-- SEARCH BAR (Desktop/Tablet) -->
     <div class="rednote-header">
       <?php if ($_smarty_tpl->getValue('user')->_logged_in || (!$_smarty_tpl->getValue('user')->_logged_in && $_smarty_tpl->getValue('system')['system_public'])) {?>
         <div class="rednote-search-wrapper">
@@ -583,30 +614,54 @@ $(document).ready(function() {
     $('.rn-all-categories').slideToggle(200);
   });
 
-  // Mobile: "Me" button opens sidebar
-  $(document).on('click', '#rn-mobile-menu-btn', function() {
+  // Helper: open mobile sidebar
+  function openSidebar() {
     $('.rednote-sidebar').addClass('show');
     $('#rn-sidebar-overlay').addClass('show');
     $('body').css('overflow', 'hidden');
+  }
+
+  // Helper: close mobile sidebar
+  function closeSidebar() {
+    $('.rednote-sidebar').removeClass('show');
+    $('#rn-sidebar-overlay').removeClass('show');
+    $('body').css('overflow', '');
+  }
+
+  // Mobile: hamburger button opens sidebar
+  $(document).on('click', '#rn-mobile-menu-btn', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    openSidebar();
+  });
+
+  // Mobile: close button on sidebar
+  $(document).on('click', '#rn-sidebar-close', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    closeSidebar();
   });
 
   // Mobile: Close sidebar on overlay click
   $(document).on('click', '#rn-sidebar-overlay', function() {
-    $('.rednote-sidebar').removeClass('show');
-    $(this).removeClass('show');
-    $('body').css('overflow', '');
+    closeSidebar();
   });
 
-  // Mobile: Close sidebar when navigating
-  $(document).on('click', '.rednote-sidebar .rednote-menu-item', function() {
-    if ($(window).width() < 768) {
-      $('.rednote-sidebar').removeClass('show');
-      $('#rn-sidebar-overlay').removeClass('show');
-      $('body').css('overflow', '');
+  // Mobile: Close sidebar when navigating (menu item click)
+  $(document).on('click', '.rednote-sidebar a.rednote-menu-item, .rednote-sidebar .rednote-user-btn', function() {
+    if ($(window).width() < 992) {
+      closeSidebar();
     }
   });
 
-  // Fix bottom nav active state for profile pages
+  // Mobile: Close sidebar on Escape key
+  $(document).on('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeSidebar();
+    }
+  });
+
+  // Fix bottom nav active state for profile/settings pages
   var currentPath = window.location.pathname;
   if (currentPath.indexOf('/settings') > -1 || currentPath.indexOf('/profile') > -1) {
     $('#rn-mobile-menu-btn').addClass('active');

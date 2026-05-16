@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:28
+/* Smarty version 5.7.0, created on 2026-05-16 06:33:56
   from 'file:_publisher.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352cbd42a8_79687229',
+  'unifunc' => 'content_6a080fd4e93332_02780682',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c1e016873133c64c4781df038e42eb593d6ed86c' => 
     array (
       0 => '_publisher.tpl',
-      1 => 1760826546,
+      1 => 1778892402,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__categories.recursive_options.tpl' => 1,
   ),
 ))) {
-function content_69e7352cbd42a8_79687229 (\Smarty\Template $_smarty_tpl) {
+function content_6a080fd4e93332_02780682 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('user')->_data['can_publish_posts']) {?>
   <?php if ($_smarty_tpl->getValue('system')['verification_for_posts'] && !$_smarty_tpl->getValue('user')->_data['user_verified']) {?>
@@ -85,6 +85,37 @@ echo $_smarty_tpl->getValue('url');
         </div>
         <!-- publisher-message -->
 
+        <!-- inline category dropdown (always visible) -->
+        <?php if ($_smarty_tpl->getValue('browse_categories')) {?>
+        <div class="publisher-category-row" id="publisher-category-row">
+          <div class="publisher-category-dropdown-wrapper">
+            <i class="fa fa-tags rn-category-dropdown-icon"></i>
+            <select class="form-select rn-category-dropdown" name="browse_category_id" id="browse_category_id">
+              <option value=""><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select a category...");?>
+</option>
+              <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('browse_categories'), 'cat');
+$foreach19DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('cat')->value) {
+$foreach19DoElse = false;
+?>
+                <option value="<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
+"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</option>
+              <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+            </select>
+          </div>
+          <div class="rn-category-error" style="display: none;">
+            <i class="fa fa-exclamation-circle"></i>
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Please select a category before publishing");?>
+
+          </div>
+        </div>
+        <?php }?>
+        <!-- inline category dropdown -->
+
         <!-- publisher-slider -->
         <div class="publisher-slider">
 
@@ -137,9 +168,9 @@ echo $_smarty_tpl->getValue('url');
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings'), 'feeling');
-$foreach22DoElse = true;
+$foreach20DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('feeling')->value) {
-$foreach22DoElse = false;
+$foreach20DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-add" data-action="<?php echo $_smarty_tpl->getValue('feeling')['action'];?>
 " data-placeholder="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('feeling')['placeholder']);?>
@@ -166,9 +197,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings_types'), 'type');
-$foreach23DoElse = true;
+$foreach21DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('type')->value) {
-$foreach23DoElse = false;
+$foreach21DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-type" data-type="<?php echo $_smarty_tpl->getValue('type')['action'];?>
 " data-icon="<?php echo $_smarty_tpl->getValue('type')['icon'];?>
@@ -205,9 +236,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
           <div class="publisher-meta" data-meta="colored">
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('colored_patterns'), 'pattern');
-$foreach24DoElse = true;
+$foreach22DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('pattern')->value) {
-$foreach24DoElse = false;
+$foreach22DoElse = false;
 ?>
               <div class="colored-pattern-item js_publisher-pattern" data-id="<?php echo $_smarty_tpl->getValue('pattern')['pattern_id'];?>
 " data-type="<?php echo $_smarty_tpl->getValue('pattern')['type'];?>
@@ -333,9 +364,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <select class="form-select" name="video_category" id="video_category">
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('videos_categories'), 'category');
-$foreach25DoElse = true;
+$foreach23DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('category')->value) {
-$foreach25DoElse = false;
+$foreach23DoElse = false;
 ?>
                 <?php $_smarty_tpl->renderSubTemplate('file:__categories.recursive_options.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 ?>
