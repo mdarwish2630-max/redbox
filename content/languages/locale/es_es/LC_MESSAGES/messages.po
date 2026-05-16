@@ -28139,3 +28139,25 @@ msgstr "Este logotipo se mostrará cuando el idioma sea árabe (RTL)"
 
 msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
 msgstr "Este logotipo se mostrará cuando el idioma sea árabe (RTL) en modo oscuro"
+
+
+msgid "Showing posts from"
+msgstr "Mostrando publicaciones de"
+
+msgid "based on your location"
+msgstr "según tu ubicación"
+
+msgid "No more local posts. Showing posts from around the world."
+msgstr "No hay más publicaciones locales. Mostrando publicaciones de todo el mundo."
+
+msgid "No more posts from"
+msgstr "No hay más publicaciones de"
+
+msgid "Showing popular posts from around the world."
+msgstr "Mostrando publicaciones populares de todo el mundo."
+
+msgid "My Location"
+msgstr "Mi ubicación"
+
+msgid "Auto-detected"
+msgstr "Detectado automáticamente"

@@ -526,6 +526,52 @@ function load_more(element) {
           color_chat_box(chat_widget, chat_widget.data('color'));
         }
       } else {
+        /* Redbox: Geo-priority — when country posts exhausted, auto-switch to global */
+        var streamWrapper = _this.closest('.js_posts_stream');
+        var currentCountry = streamWrapper ? streamWrapper.data('country') : undefined;
+        if (currentCountry && currentCountry !== 'all' && currentCountry !== '0' && !_this.data('geo-switched')) {
+          /* Mark as switched so we don't loop */
+          _this.data('geo-switched', '1');
+          /* Update stream data-country to 'all' for subsequent loads */
+          streamWrapper.data('country', 'all');
+          _this.data('country', 'all');
+          /* Show global banner */
+          var countryName = $('#rn-country-filter-name').text();
+          var $globalBanner = $('#rn-global-banner');
+          if ($globalBanner.length) {
+            $('#rn-global-banner-text').text(__['No more posts from'] + ' ' + countryName + '. ' + __['Showing popular posts from around the world.']);
+            $('#rn-global-banner-back-text').text(countryName);
+            $('#rn-global-banner-back').data('country-id', currentCountry).show();
+            $globalBanner.slideDown('fast');
+          }
+          /* Hide geo banner if visible */
+          $('#rn-geo-banner').slideUp('fast');
+          /* Update filter button text */
+          var $filterName = $('#rn-country-filter-name');
+          if ($filterName.length) {
+            $filterName.text(__['All Countries']);
+          }
+          /* Reload with country=all and get=discover for popular posts */
+          data['country'] = 'all';
+          data['get'] = 'popular';
+          data['offset'] = 1;
+          $.post(api['data/load'], data, function(response2) {
+            if (response2.data) {
+              stream.append(response2.data);
+              _this.data('geo-switched', '1');
+              data['offset'] = 2;
+              _this.data('offset', 2);
+              setTimeout(ui_rebuild(), 200);
+            } else {
+              _this.addClass('done');
+              text.text(__['There is no more data to show']);
+            }
+            _this.data('offset', data['offset']);
+          }, 'json');
+          return; /* Don't process the normal "done" state */
+        }
+        /* End Redbox geo-priority */
+
         if (remove) {
           _this.remove();
         } else {

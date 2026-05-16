@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 09:38:05
+/* Smarty version 5.7.0, created on 2026-05-16 10:28:21
   from 'file:_publisher.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a083afd174fb0_40064732',
+  'unifunc' => 'content_6a0846c5ef8ad7_98457209',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 36,
   ),
 ))) {
-function content_6a083afd174fb0_40064732 (\Smarty\Template $_smarty_tpl) {
+function content_6a0846c5ef8ad7_98457209 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('user')->_data['can_publish_posts']) {?>
   <?php if ($_smarty_tpl->getValue('system')['verification_for_posts'] && !$_smarty_tpl->getValue('user')->_data['user_verified']) {?>

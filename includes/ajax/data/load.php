@@ -56,7 +56,12 @@ try {
         /* merge the three arrays */
         $data = array_merge($data_newsfeed, $data_popular, $data_discover);
       } else {
-        $data = $user->get_posts(['get' => $_POST['get'], 'filter' => $_POST['filter'], 'country' => $_POST['country'], 'offset' => $_POST['offset']]);
+        $load_args = ['get' => $_POST['get'], 'filter' => $_POST['filter'], 'country' => $_POST['country'], 'offset' => $_POST['offset']];
+        /* Redbox: pass category_id if set */
+        if (!empty($_POST['category_id'])) {
+          $load_args['category_id'] = (int)$_POST['category_id'];
+        }
+        $data = $user->get_posts($load_args);
       }
 
       if ($user->_logged_in && $system['reels_enabled']) {

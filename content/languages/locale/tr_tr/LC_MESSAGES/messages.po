@@ -28027,3 +28027,25 @@ msgstr "Bu logo, dil Arapça (RTL) olduğunda görüntülenecektir"
 
 msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
 msgstr "Bu logo, dil Arapça (RTL) olduğunda karanlık modda görüntülenecektir"
+
+
+msgid "Showing posts from"
+msgstr "Gönderiler gösteriliyor:"
+
+msgid "based on your location"
+msgstr "konumunuza göre"
+
+msgid "No more local posts. Showing posts from around the world."
+msgstr "Yerel gönderi kalmadı. Dünyadan gönderiler gösteriliyor."
+
+msgid "No more posts from"
+msgstr "Gönderi kalmadı:"
+
+msgid "Showing popular posts from around the world."
+msgstr "Dünyadan popüler gönderiler gösteriliyor."
+
+msgid "My Location"
+msgstr "Konumum"
+
+msgid "Auto-detected"
+msgstr "Otomatik algılandı"

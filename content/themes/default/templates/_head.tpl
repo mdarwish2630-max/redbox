@@ -69,6 +69,10 @@
     <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/browse-category.css?v={$system['system_version']}" rel="stylesheet">
     <!-- Browse Category CSS -->
 
+    <!-- Geo Detection Banners CSS -->
+    <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/geo-banners.css?v={$system['system_version']}" rel="stylesheet">
+    <!-- Geo Detection Banners CSS -->
+
     <!-- Header Custom JavaScript -->
     {if $system['custome_js_header']}
       <script>

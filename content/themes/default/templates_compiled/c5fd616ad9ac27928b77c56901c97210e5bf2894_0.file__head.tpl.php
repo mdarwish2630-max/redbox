@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 06:33:56
+/* Smarty version 5.7.0, created on 2026-05-16 10:28:20
   from 'file:_head.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a080fd49d5e97_10719124',
+  'unifunc' => 'content_6a0846c4efee96_83888784',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c5fd616ad9ac27928b77c56901c97210e5bf2894' => 
     array (
       0 => '_head.tpl',
-      1 => 1778892872,
+      1 => 1778950718,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_head.css.tpl' => 1,
   ),
 ))) {
-function content_6a080fd49d5e97_10719124 (\Smarty\Template $_smarty_tpl) {
+function content_6a0846c4efee96_83888784 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!doctype html>
 
@@ -121,6 +121,13 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
 /css/browse-category.css?v=<?php echo $_smarty_tpl->getValue('system')['system_version'];?>
 " rel="stylesheet">
     <!-- Browse Category CSS -->
+
+    <!-- Geo Detection Banners CSS -->
+    <link href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/content/themes/<?php echo $_smarty_tpl->getValue('system')['theme'];?>
+/css/geo-banners.css?v=<?php echo $_smarty_tpl->getValue('system')['system_version'];?>
+" rel="stylesheet">
+    <!-- Geo Detection Banners CSS -->
 
     <!-- Header Custom JavaScript -->
     <?php if ($_smarty_tpl->getValue('system')['custome_js_header']) {?>

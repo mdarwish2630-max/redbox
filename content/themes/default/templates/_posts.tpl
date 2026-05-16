@@ -34,19 +34,28 @@
 
     <!-- newsfeed location filter -->
     {if $system['newsfeed_location_filter_enabled'] && in_array($page, ['index', 'group', 'event']) && $view != "scheduled" && $view != "boosted_posts" && (!$_filter || $view == "watch")}
-      <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle countries-filter">
+      <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle countries-filter" id="rn-country-filter-btn">
         <i class="fa fa-globe fa-fw"></i>
         {if $selected_country}
-          <span>{$selected_country['country_name']}</span>
+          <span id="rn-country-filter-name">{$selected_country['country_name']}</span>
+          {if $geo_auto_detected && !$user_country_override}
+            <i class="fa fa-location-crosshairs fa-xs ml5" style="color: #0d6efd;" title="{__("Auto-detected")}"></i>
+          {/if}
         {else}
-          <span>{__("All Countries")}</span>
+          <span id="rn-country-filter-name">{__("All Countries")}</span>
         {/if}
       </a>
       <div class="dropdown-menu dropdown-menu-end countries-dropdown">
         <div class="js_scroller">
-          <a class="dropdown-item" href="?country=all">
-            {__("All Countries")}
+          <a class="dropdown-item {if !$selected_country}active{/if}" href="?country=all">
+            <i class="fa fa-globe fa-fw mr5"></i>{__("All Countries")}
           </a>
+          {if $geo_country && $selected_country}
+            <a class="dropdown-item rn-geo-country-link" href="?country={$geo_country['country_name_native']}" style="background: #f0f6ff; font-weight: 500;">
+              <i class="fa fa-location-crosshairs fa-fw mr5" style="color: #0d6efd;"></i>{$geo_country['country_name']}
+              <small class="text-muted ml10">({__("My Location")})</small>
+            </a>
+          {/if}
           {foreach $countries as $country}
             <a class="dropdown-item" href="?country={$country['country_name_native']}">
               {$country['country_name']}
@@ -243,6 +252,33 @@
 
 <div class="js_posts_stream_staging" style="display: none;"></div>
 <!-- posts staging -->
+
+<!-- Redbox: Geo-detected country banner -->
+{if $geo_auto_detected && $selected_country && !$user_country_override}
+<div class="rn-geo-banner" id="rn-geo-banner">
+  <div class="rn-geo-banner-inner">
+    <i class="fa fa-location-dot"></i>
+    <span>{__("Showing posts from")} <strong>{$selected_country['country_name']}</strong> {__("based on your location")}</span>
+    <a href="?country=all" class="rn-geo-banner-dismiss" title="{__("Show all countries")}">
+      <i class="fa fa-times"></i>
+    </a>
+  </div>
+</div>
+{/if}
+<!-- end geo banner -->
+
+<!-- Redbox: Switched to global banner (hidden by default, shown via JS when country posts exhausted) -->
+<div class="rn-global-banner" id="rn-global-banner" style="display: none;">
+  <div class="rn-global-banner-inner">
+    <i class="fa fa-globe"></i>
+    <span id="rn-global-banner-text">{__("No more local posts. Showing posts from around the world.")}</span>
+    <a href="javascript:void(0)" class="rn-global-banner-back" id="rn-global-banner-back" style="display: none;">
+      <i class="fa fa-arrow-left"></i>
+      <span id="rn-global-banner-back-text"></span>
+    </a>
+  </div>
+</div>
+<!-- end global banner -->
 
 <!-- posts stream -->
 <div class="js_posts_stream" data-get="{$_get}" data-filter="{if $_filter}{$_filter}{else}all{/if}" data-country="{if $selected_country}{$selected_country['country_id']}{else}all{/if}" {if $_id}data-id="{$_id}" {/if} {if $_query}data-query="{$_query}" {/if}>

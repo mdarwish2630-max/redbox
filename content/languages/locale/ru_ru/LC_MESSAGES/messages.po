@@ -29802,3 +29802,25 @@ msgstr "Этот логотип будет отображаться, когда 
 
 msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
 msgstr "Этот логотип будет отображаться, когда язык арабский (RTL) в темном режиме"
+
+
+msgid "Showing posts from"
+msgstr "Показ публикаций из"
+
+msgid "based on your location"
+msgstr "на основе вашего местоположения"
+
+msgid "No more local posts. Showing posts from around the world."
+msgstr "Локальные публикации закончились. Показ публикаций со всего мира."
+
+msgid "No more posts from"
+msgstr "Нет больше публикаций из"
+
+msgid "Showing popular posts from around the world."
+msgstr "Показ популярных публикаций со всего мира."
+
+msgid "My Location"
+msgstr "Моё местоположение"
+
+msgid "Auto-detected"
+msgstr "Автоопределение"

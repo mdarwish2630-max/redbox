@@ -28586,3 +28586,25 @@ msgstr "Acest logo va fi afișat când limba este arabă (RTL)"
 
 msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
 msgstr "Acest logo va fi afișat când limba este arabă (RTL) în modul întunecat"
+
+
+msgid "Showing posts from"
+msgstr "Afișare postări din"
+
+msgid "based on your location"
+msgstr "pe baza locației dvs."
+
+msgid "No more local posts. Showing posts from around the world."
+msgstr "Nu mai sunt postări locale. Afișare postări din întreaga lume."
+
+msgid "No more posts from"
+msgstr "Nu mai sunt postări din"
+
+msgid "Showing popular posts from around the world."
+msgstr "Afișare postări populare din întreaga lume."
+
+msgid "My Location"
+msgstr "Locația mea"
+
+msgid "Auto-detected"
+msgstr "Detectat automat"

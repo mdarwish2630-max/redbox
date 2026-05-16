@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:30
+/* Smarty version 5.7.0, created on 2026-05-16 10:28:23
   from 'file:_posts.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352e488106_86117987',
+  'unifunc' => 'content_6a0846c70f0cd5_63510516',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a40f5bb765dd2d2f34391656326a6cd6377c91b3' => 
     array (
       0 => '_posts.tpl',
-      1 => 1760820632,
+      1 => 1778950650,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_no_data.tpl' => 1,
   ),
 ))) {
-function content_69e7352e488106_86117987 (\Smarty\Template $_smarty_tpl) {
+function content_6a0846c70f0cd5_63510516 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- posts-filter -->
 <div class="posts-filter">
@@ -82,27 +82,40 @@ echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Recent Updates");
 
     <!-- newsfeed location filter -->
     <?php if ($_smarty_tpl->getValue('system')['newsfeed_location_filter_enabled'] && $_smarty_tpl->getSmarty()->getModifierCallback('in_array')($_smarty_tpl->getValue('page'),array('index','group','event')) && $_smarty_tpl->getValue('view') != "scheduled" && $_smarty_tpl->getValue('view') != "boosted_posts" && (!$_smarty_tpl->getValue('_filter') || $_smarty_tpl->getValue('view') == "watch")) {?>
-      <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle countries-filter">
+      <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle countries-filter" id="rn-country-filter-btn">
         <i class="fa fa-globe fa-fw"></i>
         <?php if ($_smarty_tpl->getValue('selected_country')) {?>
-          <span><?php echo $_smarty_tpl->getValue('selected_country')['country_name'];?>
+          <span id="rn-country-filter-name"><?php echo $_smarty_tpl->getValue('selected_country')['country_name'];?>
 </span>
+          <?php if ($_smarty_tpl->getValue('geo_auto_detected') && !$_smarty_tpl->getValue('user_country_override')) {?>
+            <i class="fa fa-location-crosshairs fa-xs ml5" style="color: #0d6efd;" title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Auto-detected");?>
+"></i>
+          <?php }?>
         <?php } else { ?>
-          <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All Countries");?>
+          <span id="rn-country-filter-name"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All Countries");?>
 </span>
         <?php }?>
       </a>
       <div class="dropdown-menu dropdown-menu-end countries-dropdown">
         <div class="js_scroller">
-          <a class="dropdown-item" href="?country=all">
-            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All Countries");?>
+          <a class="dropdown-item <?php if (!$_smarty_tpl->getValue('selected_country')) {?>active<?php }?>" href="?country=all">
+            <i class="fa fa-globe fa-fw mr5"></i><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("All Countries");?>
 
           </a>
+          <?php if ($_smarty_tpl->getValue('geo_country') && $_smarty_tpl->getValue('selected_country')) {?>
+            <a class="dropdown-item rn-geo-country-link" href="?country=<?php echo $_smarty_tpl->getValue('geo_country')['country_name_native'];?>
+" style="background: #f0f6ff; font-weight: 500;">
+              <i class="fa fa-location-crosshairs fa-fw mr5" style="color: #0d6efd;"></i><?php echo $_smarty_tpl->getValue('geo_country')['country_name'];?>
+
+              <small class="text-muted ml10">(<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("My Location");?>
+)</small>
+            </a>
+          <?php }?>
           <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('countries'), 'country');
-$foreach28DoElse = true;
+$foreach4DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('country')->value) {
-$foreach28DoElse = false;
+$foreach4DoElse = false;
 ?>
             <a class="dropdown-item" href="?country=<?php echo $_smarty_tpl->getValue('country')['country_name_native'];?>
 ">
@@ -372,6 +385,38 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
 <div class="js_posts_stream_staging" style="display: none;"></div>
 <!-- posts staging -->
 
+<!-- Redbox: Geo-detected country banner -->
+<?php if ($_smarty_tpl->getValue('geo_auto_detected') && $_smarty_tpl->getValue('selected_country') && !$_smarty_tpl->getValue('user_country_override')) {?>
+<div class="rn-geo-banner" id="rn-geo-banner">
+  <div class="rn-geo-banner-inner">
+    <i class="fa fa-location-dot"></i>
+    <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Showing posts from");?>
+ <strong><?php echo $_smarty_tpl->getValue('selected_country')['country_name'];?>
+</strong> <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("based on your location");?>
+</span>
+    <a href="?country=all" class="rn-geo-banner-dismiss" title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Show all countries");?>
+">
+      <i class="fa fa-times"></i>
+    </a>
+  </div>
+</div>
+<?php }?>
+<!-- end geo banner -->
+
+<!-- Redbox: Switched to global banner (hidden by default, shown via JS when country posts exhausted) -->
+<div class="rn-global-banner" id="rn-global-banner" style="display: none;">
+  <div class="rn-global-banner-inner">
+    <i class="fa fa-globe"></i>
+    <span id="rn-global-banner-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("No more local posts. Showing posts from around the world.");?>
+</span>
+    <a href="javascript:void(0)" class="rn-global-banner-back" id="rn-global-banner-back" style="display: none;">
+      <i class="fa fa-arrow-left"></i>
+      <span id="rn-global-banner-back-text"></span>
+    </a>
+  </div>
+</div>
+<!-- end global banner -->
+
 <!-- posts stream -->
 <div class="js_posts_stream" data-get="<?php echo $_smarty_tpl->getValue('_get');?>
 " data-filter="<?php if ($_smarty_tpl->getValue('_filter')) {
@@ -386,9 +431,9 @@ echo $_smarty_tpl->getValue('selected_country')['country_id'];
       <!-- posts -->
       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('posts'), 'post');
-$foreach29DoElse = true;
+$foreach5DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('post')->value) {
-$foreach29DoElse = false;
+$foreach5DoElse = false;
 ?>
         <?php $_smarty_tpl->renderSubTemplate('file:__feeds_post.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_get'=>$_smarty_tpl->getValue('_get')), (int) 0, $_smarty_current_dir);
 ?>

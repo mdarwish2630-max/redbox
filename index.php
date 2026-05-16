@@ -10,7 +10,54 @@
 // fetch bootloader
 require('bootloader.php');
 
+// Redbox: Geo-detection helper
+require_once('includes/functions/geo_detect.php');
+
 try {
+
+  /* Redbox: Auto-detect visitor's country via IP */
+  $geo_country = null;
+  $geo_auto_detected = false;
+  $user_country_override = false;
+
+  /* Check if user manually selected a country (stored in session) */
+  if (isset($_SESSION['user_country_override'])) {
+    $user_country_override = true;
+  }
+
+  /* Check if user manually picked a country via URL */
+  if (isset($_GET['country']) && $_GET['country'] !== 'all') {
+    $_SESSION['user_country_override'] = $_GET['country'];
+    $user_country_override = true;
+  } elseif (isset($_GET['country']) && $_GET['country'] === 'all') {
+    /* User explicitly chose "All Countries" */
+    unset($_SESSION['user_country_override']);
+    $user_country_override = false;
+  }
+
+  /* If no manual override, auto-detect */
+  if (!$user_country_override && $system['newsfeed_location_filter_enabled']) {
+    $geo_country = detect_geo_country($db);
+    if ($geo_country) {
+      $geo_auto_detected = true;
+    }
+  }
+
+  /* Determine selected_country */
+  if (isset($_GET['country']) && $_GET['country'] !== 'all') {
+    $selected_country = $user->get_country_by_name($_GET['country']);
+  } elseif ($geo_country) {
+    $selected_country = $geo_country;
+  } elseif (isset($_SESSION['user_country_override']) && $_SESSION['user_country_override'] !== 'all') {
+    $selected_country = $user->get_country_by_name($_SESSION['user_country_override']);
+  } else {
+    $selected_country = null;
+  }
+
+  /* Pass geo variables to templates */
+  $smarty->assign('geo_country', $geo_country);
+  $smarty->assign('geo_auto_detected', $geo_auto_detected);
+  $smarty->assign('user_country_override', $user_country_override);
 
   // check user logged in
   if (!$user->_logged_in) {
@@ -54,12 +101,8 @@ try {
         if (!$countries) {
           $smarty->assign('countries', $user->get_countries());
         }
-
-        // get selected country
-        if (isset($_GET['country'])) {
-          /* get selected country */
-          $selected_country = $user->get_country_by_name($_GET['country']);
-          /* assign variables */
+        /* selected_country is already set above by geo-detect or URL */
+        if ($selected_country) {
           $smarty->assign('selected_country', $selected_country);
         }
       }
@@ -72,7 +115,7 @@ try {
       // assign selected category
       $smarty->assign('selected_category', $_GET['category'] ?? '');
 
-      // get posts (newsfeed)
+      // get posts (newsfeed) — with category_id support
       $get_posts_args = [];
       if ($selected_country) {
         $get_posts_args['country'] = $selected_country['country_id'];
@@ -135,12 +178,8 @@ try {
           if (!$countries) {
             $smarty->assign('countries', $user->get_countries());
           }
-
-          // get selected country
-          if (isset($_GET['country'])) {
-            /* get selected country */
-            $selected_country = $user->get_country_by_name($_GET['country']);
-            /* assign variables */
+          /* selected_country is already set above by geo-detect or URL */
+          if ($selected_country) {
             $smarty->assign('selected_country', $selected_country);
           }
         }
@@ -204,12 +243,8 @@ try {
           if (!$countries) {
             $smarty->assign('countries', $user->get_countries());
           }
-
-          // get selected country
-          if (isset($_GET['country'])) {
-            /* get selected country */
-            $selected_country = $user->get_country_by_name($_GET['country']);
-            /* assign variables */
+          /* selected_country is already set above by geo-detect or URL */
+          if ($selected_country) {
             $smarty->assign('selected_country', $selected_country);
           }
         }
@@ -235,12 +270,8 @@ try {
           if (!$countries) {
             $smarty->assign('countries', $user->get_countries());
           }
-
-          // get selected country
-          if (isset($_GET['country'])) {
-            /* get selected country */
-            $selected_country = $user->get_country_by_name($_GET['country']);
-            /* assign variables */
+          /* selected_country is already set above by geo-detect or URL */
+          if ($selected_country) {
             $smarty->assign('selected_country', $selected_country);
           }
         }
@@ -498,12 +529,8 @@ try {
           if (!$countries) {
             $smarty->assign('countries', $user->get_countries());
           }
-
-          // get selected country
-          if (isset($_GET['country'])) {
-            /* get selected country */
-            $selected_country = $user->get_country_by_name($_GET['country']);
-            /* assign variables */
+          /* selected_country is already set above by geo-detect or URL */
+          if ($selected_country) {
             $smarty->assign('selected_country', $selected_country);
           }
         }
