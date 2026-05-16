@@ -294,32 +294,85 @@ function publisher_tab(publisher, tab) {
 }
 
 
-// handle category pill click (red theme) + dropdown change (default theme)
+// handle category dropdown toggle (default theme)
+$(document).on('click', '.rn-category-dropdown-trigger', function(e) {
+  e.stopPropagation();
+  var $trigger = $(this);
+  var $menu = $trigger.siblings('.rn-category-dropdown-menu');
+  var isOpen = $menu.hasClass('show');
+  /* close all other dropdowns first */
+  $('.rn-category-dropdown-menu.show').removeClass('show');
+  $('.rn-category-dropdown-trigger.open').removeClass('open');
+  if (!isOpen) {
+    $trigger.addClass('open');
+    $menu.addClass('show');
+  }
+});
+
+// handle category dropdown item selection (default theme)
+$(document).on('click', '.rn-category-dropdown-item', function(e) {
+  e.stopPropagation();
+  var $item = $(this);
+  var publisher = $item.closest('.publisher');
+  var $wrapper = $item.closest('.rn-category-dropdown-wrapper');
+  var catId = $item.data('category-id');
+  var catName = $item.data('category-name');
+  /* remove selected from all items */
+  $wrapper.find('.rn-category-dropdown-item').removeClass('selected');
+  /* mark selected item */
+  $item.addClass('selected');
+  /* set the hidden input value */
+  publisher.find('input[name="browse_category_id"]').val(catId);
+  /* update trigger text */
+  var $triggerText = $wrapper.find('.rn-category-dropdown-text');
+  $triggerText.text(catName);
+  $wrapper.find('.rn-category-dropdown-trigger').addClass('selected');
+  /* close dropdown */
+  $wrapper.find('.rn-category-dropdown-menu').removeClass('show');
+  $wrapper.find('.rn-category-dropdown-trigger').removeClass('open');
+  /* clear error state */
+  publisher.find('.rn-category-error').hide();
+  publisher.find('.publisher-category-row').removeClass('category-error');
+  /* update badge on tab (for red theme) */
+  var $badge = publisher.find('.rn-category-badge');
+  if ($badge.length) {
+    $badge.text(catName).show();
+  }
+  /* mark tab as activated (for red theme) */
+  publisher.find('.js_publisher-tab[data-tab="browse_category"]').addClass('activated');
+});
+
+// close category dropdown when clicking outside
+$(document).on('click', function(e) {
+  if (!$(e.target).closest('.rn-category-dropdown-wrapper').length) {
+    $('.rn-category-dropdown-menu.show').removeClass('show');
+    $('.rn-category-dropdown-trigger.open').removeClass('open');
+  }
+});
+
+// handle category pill click (red theme - grid inside tab)
 $(document).on('click', '.rn-category-pill', function() {
   var $pill = $(this);
   var publisher = $pill.closest('.publisher');
+  /* remove active from all pills */
   publisher.find('.rn-category-pill').removeClass('active');
+  /* add active to clicked pill */
   $pill.addClass('active');
+  /* set the hidden input value */
   var catId = $pill.data('category-id');
   publisher.find('input[name="browse_category_id"]').val(catId);
+  /* update badge on tab (for red theme) */
   var catName = $pill.find('span').text();
   var $badge = publisher.find('.rn-category-badge');
   if ($badge.length) {
     $badge.text(catName).show();
   }
+  /* mark tab as activated (for red theme) */
   publisher.find('.js_publisher-tab[data-tab="browse_category"]').addClass('activated');
+  /* clear error state */
   publisher.find('.rn-category-error').hide();
   publisher.find('.rn-category-grid').css('border', 'none');
   publisher.find('.publisher-category-row').removeClass('category-error');
-});
-
-// handle category dropdown change (default theme)
-$(document).on('change', '.rn-category-dropdown', function() {
-  var publisher = $(this).closest('.publisher');
-  if ($(this).val()) {
-    publisher.find('.publisher-category-row').removeClass('category-error');
-    publisher.find('.rn-category-error').slideUp('fast');
-  }
 });
 
 
@@ -1061,8 +1114,8 @@ $(function () {
     var paid_text_input = paid_text_wrapper.find('textarea');
     var paid_image_wrapper = publisher.find("#paid-image-wrapper")
     var paid_image_input = paid_image_wrapper.find('input.js_x-uploader-input');
-    /* get browse category (dropdown select or hidden input for red theme) */
-    var browse_category_id = publisher.find('select[name="browse_category_id"]').val() || publisher.find('input[name="browse_category_id"]').val() || "";
+    /* get browse category */
+    var browse_category_id = publisher.find('input[name="browse_category_id"]').val();
     /* get post_as_page from hidden input if exists */
     var post_as_page = publisher.find('input[name="post_as_page"]').val();
     /* get the error element */
@@ -1129,7 +1182,6 @@ $(function () {
         location.val('');
         location_meta.hide();
         /* hide & empty browse category */
-        publisher.find('select[name="browse_category_id"]').val('');
         publisher.find('input[name="browse_category_id"]').val('');
         publisher.find('.rn-category-pill').removeClass('active');
         publisher.find('.rn-category-badge').hide().text('');
@@ -1138,6 +1190,12 @@ $(function () {
         publisher.find('.rn-category-error').hide();
         publisher.find('.rn-category-grid').css('border', 'none');
         publisher.find('.publisher-category-row').removeClass('category-error');
+        /* reset dropdown (default theme) */
+        publisher.find('.rn-category-dropdown-item').removeClass('selected');
+        publisher.find('.rn-category-dropdown-trigger').removeClass('selected open');
+        var $ddText = publisher.find('.rn-category-dropdown-text');
+        $ddText.text($ddText.data('init-text') || $ddText.text());
+        publisher.find('.rn-category-dropdown-menu').removeClass('show');
         /* hide & empty colored patterns */
         publisher.removeData("colored_pattern");
         publisher.find(".publisher-message").removeAttr('style').removeClass("colored");

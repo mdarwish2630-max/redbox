@@ -38,9 +38,72 @@ msgstr "اختر تصنيفاً (مطلوب)"
 
 msgid "Please select a category before publishing"
 msgstr "يرجى اختيار تصنيف قبل النشر"
-
 msgid "Select a category..."
 msgstr "اختر تصنيفاً..."
+
+msgid "Travel"
+msgstr "سفر"
+
+msgid "Food"
+msgstr "طعام"
+
+msgid "Fashion"
+msgstr "أزياء"
+
+msgid "Beauty"
+msgstr "جمال"
+
+msgid "Technology"
+msgstr "تكنولوجيا"
+
+msgid "Fitness"
+msgstr "لياقة بدنية"
+
+msgid "Art"
+msgstr "فن"
+
+msgid "Music"
+msgstr "موسيقى"
+
+msgid "Photography"
+msgstr "تصوير"
+
+msgid "Pets"
+msgstr "حيوانات أليفة"
+
+msgid "Gaming"
+msgstr "ألعاب فيديو"
+
+msgid "DIY"
+msgstr "أعمال يدوية"
+
+msgid "Sports"
+msgstr "رياضة"
+
+msgid "Comedy"
+msgstr "كوميديا"
+
+msgid "Nature"
+msgstr "طبيعة"
+
+msgid "Cars"
+msgstr "سيارات"
+
+msgid "Books"
+msgstr "كتب"
+
+msgid "Category names are used as translation keys. Add translations in the language files."
+msgstr "أسماء التصنيفات تُستخدم كمفاتيح ترجمة. أضف الترجمات في ملفات اللغة."
+
+msgid "This name is used as the translation key in all language files"
+msgstr "هذا الاسم يُستخدم كمفتاح ترجمة في جميع ملفات اللغات"
+
+msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
+msgstr "صنف أيقونة FontAwesome، مثال: fa-plane, fa-music, fa-camera"
+
+msgid "Active categories are visible to users"
+msgstr "التصنيفات المفعلة مرئية للمستخدمين"
+
 
 msgid "Recommended"
 msgstr "مُقترح"
@@ -1645,6 +1708,9 @@ msgstr "الصفحات"
 #: content/themes/default/templates/admin.courses.tpl:26
 msgid "Categories"
 msgstr "الأقسام"
+
+msgid "Category Name"
+msgstr "اسم التصنيف"
 
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53

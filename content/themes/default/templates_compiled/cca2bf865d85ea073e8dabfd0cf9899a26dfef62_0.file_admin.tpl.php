@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:54:38
+/* Smarty version 5.7.0, created on 2026-05-16 07:14:52
   from 'file:admin.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b41e2fd053_05864737',
+  'unifunc' => 'content_6a08196c7a7842_37523036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cca2bf865d85ea073e8dabfd0cf9899a26dfef62' => 
     array (
       0 => 'admin.tpl',
-      1 => 1766216846,
+      1 => 1778940216,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_footer.tpl' => 1,
   ),
 ))) {
-function content_69e9b41e2fd053_05864737 (\Smarty\Template $_smarty_tpl) {
+function content_6a08196c7a7842_37523036 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 $_smarty_tpl->renderSubTemplate('file:_head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 $_smarty_tpl->renderSubTemplate('file:_header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
@@ -404,11 +404,19 @@ $_smarty_tpl->renderSubTemplate('file:_header.tpl', $_smarty_tpl->cache_id, $_sm
 
                       </a>
                     </li>
+                    <li <?php if ($_smarty_tpl->getValue('view') == "posts" && ($_smarty_tpl->getValue('sub_view') == "browse_categories" || $_smarty_tpl->getValue('sub_view') == "add_browse_category" || $_smarty_tpl->getValue('sub_view') == "edit_browse_category")) {?>class="active" <?php }?>>
+                      <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
+/posts/browse_categories">
+                        <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Categories");?>
+
+                      </a>
+                    </li>
                     <li <?php if ($_smarty_tpl->getValue('view') == "posts" && $_smarty_tpl->getValue('sub_view') == "videos_categories") {?>class="active" <?php }?>>
                       <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
 /posts/videos_categories">
-                        <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("List Videos Categories");?>
+                        <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Videos Categories");?>
 
                       </a>
                     </li>

@@ -47,25 +47,34 @@
         </div>
         <!-- publisher-message -->
 
-        <!-- inline category dropdown (always visible) -->
+        <!-- category dropdown selector -->
         {if $browse_categories}
         <div class="publisher-category-row" id="publisher-category-row">
-          <div class="publisher-category-dropdown-wrapper">
-            <i class="fa fa-tags rn-category-dropdown-icon"></i>
-            <select class="form-select rn-category-dropdown" name="browse_category_id" id="browse_category_id">
-              <option value="">{__("Select a category...")}</option>
+          <div class="rn-category-dropdown-wrapper">
+            <div class="rn-category-dropdown-trigger" id="rn-category-dropdown-trigger">
+              <i class="fa fa-tags rn-category-dropdown-icon"></i>
+              <span class="rn-category-dropdown-text" id="rn-category-dropdown-text" data-init-text='{__("Select a category...")}'>{__("Select a category...")}</span>
+              <span style="color:#dc3545;">*</span>
+              <i class="fa fa-chevron-down rn-category-dropdown-arrow"></i>
+            </div>
+            <div class="rn-category-dropdown-menu" id="rn-category-dropdown-menu">
               {foreach $browse_categories as $cat}
-                <option value="{$cat['category_id']}">{__($cat['category_name'])}</option>
+                <div class="rn-category-dropdown-item" data-category-id="{$cat['category_id']}" data-category-name="{__($cat['category_name'])}">
+                  <i class="{$cat['category_icon']}" style="color: {$cat['category_color']}; width: 18px; text-align: center;"></i>
+                  <span>{__($cat['category_name'])}</span>
+                  <i class="fa fa-check rn-category-dropdown-check"></i>
+                </div>
               {/foreach}
-            </select>
+            </div>
           </div>
+          <input type="hidden" name="browse_category_id" id="browse_category_id" value="">
           <div class="rn-category-error" style="display: none;">
             <i class="fa fa-exclamation-circle"></i>
             {__("Please select a category before publishing")}
           </div>
         </div>
         {/if}
-        <!-- inline category dropdown -->
+        <!-- category dropdown selector -->
 
         <!-- publisher-slider -->
         <div class="publisher-slider">
@@ -246,13 +255,6 @@
             <div class="float-end">
               <button type="button" class="btn-close js_publisher-attachment-file-remover" data-type="video"></button>
             </div>
-          </div>
-          <div class="publisher-meta" data-meta="video">
-            <select class="form-select" name="video_category" id="video_category">
-              {foreach $videos_categories as $category}
-                {include file='__categories.recursive_options.tpl'}
-              {/foreach}
-            </select>
           </div>
           <div class="publisher-custom-thumbnail publisher-video-custom-thumbnail">
             {__("Custom Video Thumbnail")}

@@ -1136,6 +1136,48 @@ try {
           $smarty->assign('pager', $pager->getPager());
           break;
 
+        case 'browse_categories':
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("Posts") . " &rsaquo; " . __("Categories"));
+
+          // get data
+          $get_rows = $db->query("SELECT * FROM posts_categories ORDER BY category_order ASC");
+          $rows = [];
+          if ($get_rows->num_rows > 0) {
+            while ($row = $get_rows->fetch_assoc()) {
+              $rows[] = $row;
+            }
+          }
+
+          // assign variables
+          $smarty->assign('rows', $rows);
+          break;
+
+        case 'edit_browse_category':
+          // valid inputs
+          if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+            _error(404);
+          }
+
+          // get data
+          $get_data = $db->query(sprintf("SELECT * FROM posts_categories WHERE category_id = %s", secure($_GET['id'], 'int')));
+          if ($get_data->num_rows == 0) {
+            _error(404);
+          }
+          $data = $get_data->fetch_assoc();
+
+          // assign variables
+          $smarty->assign('data', $data);
+
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("Posts") . " &rsaquo; " . __("Categories") . " &rsaquo; " . __($data['category_name']));
+          break;
+
+        case 'add_browse_category':
+          // page header
+          page_header($control_panel['title'] . " &rsaquo; " . __("Posts") . " &rsaquo; " . __("Categories") . " &rsaquo; " . __("Add New Category"));
+          break;
+
         case 'videos_categories':
           // page header
           page_header($control_panel['title'] . " &rsaquo; " . __("Posts") . " &rsaquo; " . __("Videos Categories"));

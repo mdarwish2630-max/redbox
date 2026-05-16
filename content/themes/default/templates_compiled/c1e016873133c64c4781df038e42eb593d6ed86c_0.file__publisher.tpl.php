@@ -1,28 +1,27 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 06:33:56
+/* Smarty version 5.7.0, created on 2026-05-16 07:47:58
   from 'file:_publisher.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a080fd4e93332_02780682',
+  'unifunc' => 'content_6a08212e2aeec0_24405286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c1e016873133c64c4781df038e42eb593d6ed86c' => 
     array (
       0 => '_publisher.tpl',
-      1 => 1778892402,
+      1 => 1778942434,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:__svg_icons.tpl' => 36,
-    'file:__categories.recursive_options.tpl' => 1,
   ),
 ))) {
-function content_6a080fd4e93332_02780682 (\Smarty\Template $_smarty_tpl) {
+function content_6a08212e2aeec0_24405286 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('user')->_data['can_publish_posts']) {?>
   <?php if ($_smarty_tpl->getValue('system')['verification_for_posts'] && !$_smarty_tpl->getValue('user')->_data['user_verified']) {?>
@@ -85,28 +84,41 @@ echo $_smarty_tpl->getValue('url');
         </div>
         <!-- publisher-message -->
 
-        <!-- inline category dropdown (always visible) -->
+        <!-- category dropdown selector -->
         <?php if ($_smarty_tpl->getValue('browse_categories')) {?>
         <div class="publisher-category-row" id="publisher-category-row">
-          <div class="publisher-category-dropdown-wrapper">
-            <i class="fa fa-tags rn-category-dropdown-icon"></i>
-            <select class="form-select rn-category-dropdown" name="browse_category_id" id="browse_category_id">
-              <option value=""><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select a category...");?>
-</option>
+          <div class="rn-category-dropdown-wrapper">
+            <div class="rn-category-dropdown-trigger" id="rn-category-dropdown-trigger">
+              <i class="fa fa-tags rn-category-dropdown-icon"></i>
+              <span class="rn-category-dropdown-text" id="rn-category-dropdown-text" data-init-text='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select a category...");?>
+'><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select a category...");?>
+</span>
+              <span style="color:#dc3545;">*</span>
+              <i class="fa fa-chevron-down rn-category-dropdown-arrow"></i>
+            </div>
+            <div class="rn-category-dropdown-menu" id="rn-category-dropdown-menu">
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('browse_categories'), 'cat');
-$foreach19DoElse = true;
+$foreach0DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('cat')->value) {
-$foreach19DoElse = false;
+$foreach0DoElse = false;
 ?>
-                <option value="<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
-"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
-</option>
+                <div class="rn-category-dropdown-item" data-category-id="<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
+" data-category-name="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+">
+                  <i class="<?php echo $_smarty_tpl->getValue('cat')['category_icon'];?>
+" style="color: <?php echo $_smarty_tpl->getValue('cat')['category_color'];?>
+; width: 18px; text-align: center;"></i>
+                  <span><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
+</span>
+                  <i class="fa fa-check rn-category-dropdown-check"></i>
+                </div>
               <?php
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
-            </select>
+            </div>
           </div>
+          <input type="hidden" name="browse_category_id" id="browse_category_id" value="">
           <div class="rn-category-error" style="display: none;">
             <i class="fa fa-exclamation-circle"></i>
             <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Please select a category before publishing");?>
@@ -114,7 +126,7 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
           </div>
         </div>
         <?php }?>
-        <!-- inline category dropdown -->
+        <!-- category dropdown selector -->
 
         <!-- publisher-slider -->
         <div class="publisher-slider">
@@ -168,9 +180,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings'), 'feeling');
-$foreach20DoElse = true;
+$foreach1DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('feeling')->value) {
-$foreach20DoElse = false;
+$foreach1DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-add" data-action="<?php echo $_smarty_tpl->getValue('feeling')['action'];?>
 " data-placeholder="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('feeling')['placeholder']);?>
@@ -197,9 +209,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings_types'), 'type');
-$foreach21DoElse = true;
+$foreach2DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('type')->value) {
-$foreach21DoElse = false;
+$foreach2DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-type" data-type="<?php echo $_smarty_tpl->getValue('type')['action'];?>
 " data-icon="<?php echo $_smarty_tpl->getValue('type')['icon'];?>
@@ -236,9 +248,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
           <div class="publisher-meta" data-meta="colored">
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('colored_patterns'), 'pattern');
-$foreach22DoElse = true;
+$foreach3DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('pattern')->value) {
-$foreach22DoElse = false;
+$foreach3DoElse = false;
 ?>
               <div class="colored-pattern-item js_publisher-pattern" data-id="<?php echo $_smarty_tpl->getValue('pattern')['pattern_id'];?>
 " data-type="<?php echo $_smarty_tpl->getValue('pattern')['type'];?>
@@ -359,21 +371,6 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <div class="float-end">
               <button type="button" class="btn-close js_publisher-attachment-file-remover" data-type="video"></button>
             </div>
-          </div>
-          <div class="publisher-meta" data-meta="video">
-            <select class="form-select" name="video_category" id="video_category">
-              <?php
-$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('videos_categories'), 'category');
-$foreach23DoElse = true;
-foreach ($_from ?? [] as $_smarty_tpl->getVariable('category')->value) {
-$foreach23DoElse = false;
-?>
-                <?php $_smarty_tpl->renderSubTemplate('file:__categories.recursive_options.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
-?>
-              <?php
-}
-$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
-            </select>
           </div>
           <div class="publisher-custom-thumbnail publisher-video-custom-thumbnail">
             <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Custom Video Thumbnail");?>

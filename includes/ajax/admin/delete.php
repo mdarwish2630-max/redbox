@@ -170,6 +170,14 @@ try {
       $user->delete_category("posts_videos_categories", $_POST['id']);
       break;
 
+    case 'browse_category':
+      // check admin|moderator permission
+      if (!$user->_is_admin && ($user->_is_moderator && !$system['mods_posts_permission'])) {
+        modal("MESSAGE", __("System Message"), __("You don't have the right permission to access this"));
+      }
+      $db->query(sprintf("DELETE FROM posts_categories WHERE category_id = %s", secure($_POST['id'], 'int')));
+      break;
+
     case 'page':
       // check admin|moderator permission
       if (!$user->_is_admin && ($user->_is_moderator && !$system['mods_pages_permission'])) {

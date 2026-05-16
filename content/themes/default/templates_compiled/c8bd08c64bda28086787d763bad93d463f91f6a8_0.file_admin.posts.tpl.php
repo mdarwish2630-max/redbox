@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-15 09:39:31
+/* Smarty version 5.7.0, created on 2026-05-16 07:14:55
   from 'file:admin.posts.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a06e9d3dbbdd0_29224557',
+  'unifunc' => 'content_6a08196f4bbcb9_20762713',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c8bd08c64bda28086787d763bad93d463f91f6a8' => 
     array (
       0 => 'admin.posts.tpl',
-      1 => 1740612322,
+      1 => 1778940358,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__categories.recursive_options.tpl' => 2,
   ),
 ))) {
-function content_6a06e9d3dbbdd0_29224557 (\Smarty\Template $_smarty_tpl) {
+function content_6a08196f4bbcb9_20762713 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="card">
   <div class="card-header with-icon">
@@ -35,12 +35,30 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
 
         </a>
       </div>
+    <?php } elseif ($_smarty_tpl->getValue('sub_view') == "browse_categories") {?>
+      <div class="float-end">
+        <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
+/posts/add_browse_category" class="btn btn-md btn-primary">
+          <i class="fa fa-plus"></i><span class="ml5 d-none d-lg-inline-block"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Add New Category");?>
+</span>
+        </a>
+      </div>
     <?php } elseif ($_smarty_tpl->getValue('sub_view') == "videos_categories") {?>
       <div class="float-end">
         <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
 /posts/add_videos_category" class="btn btn-md btn-primary">
           <i class="fa fa-plus"></i><span class="ml5 d-none d-lg-inline-block"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Add New Category");?>
+</span>
+        </a>
+      </div>
+    <?php } elseif ($_smarty_tpl->getValue('sub_view') == "add_browse_category" || $_smarty_tpl->getValue('sub_view') == "edit_browse_category") {?>
+      <div class="float-end">
+        <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
+/posts/browse_categories" class="btn btn-md btn-light">
+          <i class="fa fa-arrow-circle-left"></i><span class="ml5 d-none d-lg-inline-block"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Go Back");?>
 </span>
         </a>
       </div>
@@ -59,6 +77,14 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
     <?php if ($_smarty_tpl->getValue('sub_view') == "find") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Find");
 }?>
     <?php if ($_smarty_tpl->getValue('sub_view') == "pending") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Pending");
+}?>
+    <?php if ($_smarty_tpl->getValue('sub_view') == "browse_categories") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Categories");
+}?>
+    <?php if ($_smarty_tpl->getValue('sub_view') == "add_browse_category") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Categories");?>
+ &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Add New Category");
+}?>
+    <?php if ($_smarty_tpl->getValue('sub_view') == "edit_browse_category") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Categories");?>
+ &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('data')['category_name']);
 }?>
     <?php if ($_smarty_tpl->getValue('sub_view') == "videos_categories") {?> &rsaquo; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Videos Categories");
 }?>
@@ -355,6 +381,309 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
 
     </div>
 
+  <?php } elseif ($_smarty_tpl->getValue('sub_view') == "browse_categories") {?>
+
+    <div class="card-body">
+      <div class="alert alert-info mb15">
+        <i class="fa fa-info-circle mr5"></i>
+        <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Category names are used as translation keys. Add translations in the language files.");?>
+
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th style="width:50px;"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Icon");?>
+</th>
+              <th><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Title");?>
+</th>
+              <th><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Description");?>
+</th>
+              <th style="width:80px;"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Color");?>
+</th>
+              <th style="width:60px;"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Order");?>
+</th>
+              <th style="width:80px;"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Status");?>
+</th>
+              <th style="width:100px;"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Actions");?>
+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php if ($_smarty_tpl->getValue('rows')) {?>
+              <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('rows'), 'row');
+$foreach1DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('row')->value) {
+$foreach1DoElse = false;
+?>
+                <tr>
+                  <td class="text-center">
+                    <?php if ($_smarty_tpl->getValue('row')['category_icon']) {?>
+                      <i class="fa <?php echo $_smarty_tpl->getValue('row')['category_icon'];?>
+" style="color: <?php echo $_smarty_tpl->getValue('row')['category_color'];?>
+; font-size: 18px;"></i>
+                    <?php } else { ?>
+                      <i class="fa fa-tag" style="color: #999; font-size: 18px;"></i>
+                    <?php }?>
+                  </td>
+                  <td>
+                    <strong><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('row')['category_name']);?>
+</strong>
+                    <br><small class="text-muted">[<?php echo $_smarty_tpl->getValue('row')['category_name'];?>
+]</small>
+                  </td>
+                  <td>
+                    <?php if ($_smarty_tpl->getValue('row')['category_description']) {?>
+                      <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('truncate')($_smarty_tpl->getValue('row')['category_description'],60);?>
+
+                    <?php } else { ?>
+                      <span class="text-muted">-</span>
+                    <?php }?>
+                  </td>
+                  <td class="text-center">
+                    <span style="display:inline-block; width:22px; height:22px; border-radius:4px; background:<?php echo $_smarty_tpl->getValue('row')['category_color'];?>
+; vertical-align:middle;" title="<?php echo $_smarty_tpl->getValue('row')['category_color'];?>
+"></span>
+                  </td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-lg bg-info"><?php echo $_smarty_tpl->getValue('row')['category_order'];?>
+</span>
+                  </td>
+                  <td class="text-center">
+                    <label class="switch" style="margin-bottom:0;">
+                      <input type="checkbox" class="js_admin-toggle-browse-category" data-id="<?php echo $_smarty_tpl->getValue('row')['category_id'];?>
+" <?php if ($_smarty_tpl->getValue('row')['is_active']) {?>checked<?php }?>>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <a data-bs-toggle="tooltip" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Edit");?>
+' href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/<?php echo $_smarty_tpl->getValue('control_panel')['url'];?>
+/posts/edit_browse_category/<?php echo $_smarty_tpl->getValue('row')['category_id'];?>
+" class="btn btn-sm btn-icon btn-rounded btn-primary">
+                      <i class="fa fa-pencil-alt"></i>
+                    </a>
+                    <button data-bs-toggle="tooltip" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Delete");?>
+' class="btn btn-sm btn-icon btn-rounded btn-danger js_admin-deleter" data-handle="browse_category" data-id="<?php echo $_smarty_tpl->getValue('row')['category_id'];?>
+">
+                      <i class="fa fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+            <?php } else { ?>
+              <tr>
+                <td colspan="7" class="text-center">
+                  <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("No data to show");?>
+
+                </td>
+              </tr>
+            <?php }?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <?php } elseif ($_smarty_tpl->getValue('sub_view') == "add_browse_category") {?>
+
+    <form class="js_ajax-forms" data-url="admin/posts.php?do=add_browse_category">
+      <div class="card-body">
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Category Name");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_name" placeholder='Travel'>
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("This name is used as the translation key in all language files");?>
+</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Description");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_description">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Icon");?>
+
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+              <input class="form-control" name="category_icon" placeholder="fa-tag" id="browse_category_icon_preview_input">
+              <span class="input-group-text" id="browse_category_icon_preview"><i class="fa fa-tag"></i></span>
+            </div>
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera");?>
+</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Color");?>
+
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" name="category_color" type="color" value="#ff2442" style="height:42px; cursor:pointer;">
+              <input class="form-control" name="category_color_text" placeholder="#ff2442" id="browse_category_color_text">
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Order");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_order" type="number" value="0">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Status");?>
+
+          </label>
+          <div class="col-md-9">
+            <label class="switch" for="bc_is_active">
+              <input type="checkbox" name="is_active" id="bc_is_active" checked>
+              <span class="slider round"></span>
+            </label>
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Active categories are visible to users");?>
+</span>
+          </div>
+        </div>
+
+        <!-- success -->
+        <div class="alert alert-success mt15 mb0 x-hidden"></div>
+        <!-- success -->
+
+        <!-- error -->
+        <div class="alert alert-danger mt15 mb0 x-hidden"></div>
+        <!-- error -->
+      </div>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-primary"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Save Changes");?>
+</button>
+      </div>
+    </form>
+
+  <?php } elseif ($_smarty_tpl->getValue('sub_view') == "edit_browse_category") {?>
+
+    <form class="js_ajax-forms" data-url="admin/posts.php?do=edit_browse_category&id=<?php echo $_smarty_tpl->getValue('data')['category_id'];?>
+">
+      <div class="card-body">
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Category Name");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_name" value="<?php echo $_smarty_tpl->getValue('data')['category_name'];?>
+">
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("This name is used as the translation key in all language files");?>
+</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Description");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_description" value="<?php echo $_smarty_tpl->getValue('data')['category_description'];?>
+">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Icon");?>
+
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+              <input class="form-control" name="category_icon" value="<?php echo $_smarty_tpl->getValue('data')['category_icon'];?>
+" id="browse_category_icon_preview_input">
+              <span class="input-group-text" id="browse_category_icon_preview"><i class="fa <?php echo $_smarty_tpl->getValue('data')['category_icon'];?>
+"></i></span>
+            </div>
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera");?>
+</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Color");?>
+
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" name="category_color" type="color" value="<?php echo $_smarty_tpl->getValue('data')['category_color'];?>
+" style="height:42px; cursor:pointer;">
+              <input class="form-control" name="category_color_text" value="<?php echo $_smarty_tpl->getValue('data')['category_color'];?>
+" id="browse_category_color_text">
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Order");?>
+
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_order" type="number" value="<?php echo $_smarty_tpl->getValue('data')['category_order'];?>
+">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Status");?>
+
+          </label>
+          <div class="col-md-9">
+            <label class="switch" for="bc_is_active">
+              <input type="checkbox" name="is_active" id="bc_is_active" <?php if ($_smarty_tpl->getValue('data')['is_active']) {?>checked<?php }?>>
+              <span class="slider round"></span>
+            </label>
+            <span class="form-text"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Active categories are visible to users");?>
+</span>
+          </div>
+        </div>
+
+        <!-- success -->
+        <div class="alert alert-success mt15 mb0 x-hidden"></div>
+        <!-- success -->
+
+        <!-- error -->
+        <div class="alert alert-danger mt15 mb0 x-hidden"></div>
+        <!-- error -->
+      </div>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-primary"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Save Changes");?>
+</button>
+      </div>
+    </form>
+
   <?php } elseif ($_smarty_tpl->getValue('sub_view') == "videos_categories") {?>
 
     <div class="card-body">
@@ -376,9 +705,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <?php if ($_smarty_tpl->getValue('rows')) {?>
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('rows'), 'row');
-$foreach1DoElse = true;
+$foreach2DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('row')->value) {
-$foreach1DoElse = false;
+$foreach2DoElse = false;
 ?>
                 <?php $_smarty_tpl->renderSubTemplate('file:__categories.recursive_rows.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_url'=>"posts",'_edit_slug'=>"videos",'_handle'=>"video_category"), (int) 0, $_smarty_current_dir);
 ?>
@@ -433,9 +762,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
 </option>
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('categories'), 'category');
-$foreach2DoElse = true;
+$foreach3DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('category')->value) {
-$foreach2DoElse = false;
+$foreach3DoElse = false;
 ?>
                 <?php $_smarty_tpl->renderSubTemplate('file:__categories.recursive_options.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 ?>
@@ -508,9 +837,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
 </option>
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('data')["categories"], 'category');
-$foreach3DoElse = true;
+$foreach4DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('category')->value) {
-$foreach3DoElse = false;
+$foreach4DoElse = false;
 ?>
                 <?php $_smarty_tpl->renderSubTemplate('file:__categories.recursive_options.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('data_category'=>$_smarty_tpl->getValue('data')['category_parent_id']), (int) 0, $_smarty_current_dir);
 ?>

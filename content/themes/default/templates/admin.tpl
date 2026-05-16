@@ -270,9 +270,14 @@
                         {__("List Pending Posts")}
                       </a>
                     </li>
+                    <li {if $view == "posts" && ($sub_view == "browse_categories" || $sub_view == "add_browse_category" || $sub_view == "edit_browse_category")}class="active" {/if}>
+                      <a href="{$system['system_url']}/{$control_panel['url']}/posts/browse_categories">
+                        {__("Categories")}
+                      </a>
+                    </li>
                     <li {if $view == "posts" && $sub_view == "videos_categories"}class="active" {/if}>
                       <a href="{$system['system_url']}/{$control_panel['url']}/posts/videos_categories">
-                        {__("List Videos Categories")}
+                        {__("Videos Categories")}
                       </a>
                     </li>
                   </ul>

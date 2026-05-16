@@ -1631,6 +1631,9 @@ msgstr "Páginas"
 msgid "Categories"
 msgstr "Categorias"
 
+msgid "Category Name"
+msgstr "Nome da categoria"
+
 #: admin.php:1638 admin.php:1676 admin.php:1714 admin.php:1742 admin.php:1747
 #: blogs.php:29 blogs.php:53
 #: content/themes/default/templates/admin.settings.tpl:659
@@ -28421,9 +28424,72 @@ msgstr "Selecionar categoria (Obrigatório)"
 
 msgid "Please select a category before publishing"
 msgstr "Por favor selecione uma categoria antes de publicar"
-
 msgid "Select a category..."
 msgstr "Selecione uma categoria..."
+
+msgid "Travel"
+msgstr "Viagens"
+
+msgid "Food"
+msgstr "Comida"
+
+msgid "Fashion"
+msgstr "Moda"
+
+msgid "Beauty"
+msgstr "Beleza"
+
+msgid "Technology"
+msgstr "Tecnologia"
+
+msgid "Fitness"
+msgstr "Fitness"
+
+msgid "Art"
+msgstr "Arte"
+
+msgid "Music"
+msgstr "Música"
+
+msgid "Photography"
+msgstr "Fotografia"
+
+msgid "Pets"
+msgstr "Animais de Estimação"
+
+msgid "Gaming"
+msgstr "Jogos"
+
+msgid "DIY"
+msgstr "Faça você mesmo"
+
+msgid "Sports"
+msgstr "Desporto"
+
+msgid "Comedy"
+msgstr "Comédia"
+
+msgid "Nature"
+msgstr "Natureza"
+
+msgid "Cars"
+msgstr "Carros"
+
+msgid "Books"
+msgstr "Livros"
+
+msgid "Category names are used as translation keys. Add translations in the language files."
+msgstr "Os nomes das categorias são usados como chaves de tradução."
+
+msgid "This name is used as the translation key in all language files"
+msgstr "Este nome é usado como chave de tradução em todos os ficheiros de idioma"
+
+msgid "FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera"
+msgstr "Classe de ícone FontAwesome, ex: fa-plane, fa-music, fa-camera"
+
+msgid "Active categories are visible to users"
+msgstr "Categorias ativas são visíveis para os utilizadores"
+
 
 msgid "Search GIFs"
 msgstr "Pesquisar GIF"

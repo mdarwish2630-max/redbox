@@ -6,10 +6,22 @@
           <i class="fa fa-arrow-circle-left mr5"></i>{__("Go Back")}
         </a>
       </div>
+    {elseif $sub_view == "browse_categories"}
+      <div class="float-end">
+        <a href="{$system['system_url']}/{$control_panel['url']}/posts/add_browse_category" class="btn btn-md btn-primary">
+          <i class="fa fa-plus"></i><span class="ml5 d-none d-lg-inline-block">{__("Add New Category")}</span>
+        </a>
+      </div>
     {elseif $sub_view == "videos_categories"}
       <div class="float-end">
         <a href="{$system['system_url']}/{$control_panel['url']}/posts/add_videos_category" class="btn btn-md btn-primary">
           <i class="fa fa-plus"></i><span class="ml5 d-none d-lg-inline-block">{__("Add New Category")}</span>
+        </a>
+      </div>
+    {elseif $sub_view == "add_browse_category" || $sub_view == "edit_browse_category"}
+      <div class="float-end">
+        <a href="{$system['system_url']}/{$control_panel['url']}/posts/browse_categories" class="btn btn-md btn-light">
+          <i class="fa fa-arrow-circle-left"></i><span class="ml5 d-none d-lg-inline-block">{__("Go Back")}</span>
         </a>
       </div>
     {elseif $sub_view == "add_videos_category" || $sub_view == "edit_videos_category"}
@@ -22,6 +34,9 @@
     <i class="fa fa-newspaper mr10"></i>{__("Posts")}
     {if $sub_view == "find"} &rsaquo; {__("Find")}{/if}
     {if $sub_view == "pending"} &rsaquo; {__("Pending")}{/if}
+    {if $sub_view == "browse_categories"} &rsaquo; {__("Categories")}{/if}
+    {if $sub_view == "add_browse_category"} &rsaquo; {__("Categories")} &rsaquo; {__("Add New Category")}{/if}
+    {if $sub_view == "edit_browse_category"} &rsaquo; {__("Categories")} &rsaquo; {__($data['category_name'])}{/if}
     {if $sub_view == "videos_categories"} &rsaquo; {__("Videos Categories")}{/if}
     {if $sub_view == "add_videos_category"} &rsaquo; {__("Videos Categories")} &rsaquo; {__("Add New Category")}{/if}
     {if $sub_view == "edit_videos_category"} &rsaquo; {__("Videos Categories")} &rsaquo; {$data['category_name']}{/if}
@@ -242,6 +257,250 @@
       {$pager}
 
     </div>
+
+  {elseif $sub_view == "browse_categories"}
+
+    <div class="card-body">
+      <div class="alert alert-info mb15">
+        <i class="fa fa-info-circle mr5"></i>
+        {__("Category names are used as translation keys. Add translations in the language files.")}
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th style="width:50px;">{__("Icon")}</th>
+              <th>{__("Title")}</th>
+              <th>{__("Description")}</th>
+              <th style="width:80px;">{__("Color")}</th>
+              <th style="width:60px;">{__("Order")}</th>
+              <th style="width:80px;">{__("Status")}</th>
+              <th style="width:100px;">{__("Actions")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {if $rows}
+              {foreach $rows as $row}
+                <tr>
+                  <td class="text-center">
+                    {if $row['category_icon']}
+                      <i class="fa {$row['category_icon']}" style="color: {$row['category_color']}; font-size: 18px;"></i>
+                    {else}
+                      <i class="fa fa-tag" style="color: #999; font-size: 18px;"></i>
+                    {/if}
+                  </td>
+                  <td>
+                    <strong>{__($row['category_name'])}</strong>
+                    <br><small class="text-muted">[{$row['category_name']}]</small>
+                  </td>
+                  <td>
+                    {if $row['category_description']}
+                      {$row['category_description']|truncate:60}
+                    {else}
+                      <span class="text-muted">-</span>
+                    {/if}
+                  </td>
+                  <td class="text-center">
+                    <span style="display:inline-block; width:22px; height:22px; border-radius:4px; background:{$row['category_color']}; vertical-align:middle;" title="{$row['category_color']}"></span>
+                  </td>
+                  <td class="text-center">
+                    <span class="badge rounded-pill badge-lg bg-info">{$row['category_order']}</span>
+                  </td>
+                  <td class="text-center">
+                    <label class="switch" style="margin-bottom:0;">
+                      <input type="checkbox" class="js_admin-toggle-browse-category" data-id="{$row['category_id']}" {if $row['is_active']}checked{/if}>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <a data-bs-toggle="tooltip" title='{__("Edit")}' href="{$system['system_url']}/{$control_panel['url']}/posts/edit_browse_category/{$row['category_id']}" class="btn btn-sm btn-icon btn-rounded btn-primary">
+                      <i class="fa fa-pencil-alt"></i>
+                    </a>
+                    <button data-bs-toggle="tooltip" title='{__("Delete")}' class="btn btn-sm btn-icon btn-rounded btn-danger js_admin-deleter" data-handle="browse_category" data-id="{$row['category_id']}">
+                      <i class="fa fa-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              {/foreach}
+            {else}
+              <tr>
+                <td colspan="7" class="text-center">
+                  {__("No data to show")}
+                </td>
+              </tr>
+            {/if}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  {elseif $sub_view == "add_browse_category"}
+
+    <form class="js_ajax-forms" data-url="admin/posts.php?do=add_browse_category">
+      <div class="card-body">
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Category Name")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_name" placeholder='Travel'>
+            <span class="form-text">{__("This name is used as the translation key in all language files")}</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Description")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_description">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Icon")}
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+              <input class="form-control" name="category_icon" placeholder="fa-tag" id="browse_category_icon_preview_input">
+              <span class="input-group-text" id="browse_category_icon_preview"><i class="fa fa-tag"></i></span>
+            </div>
+            <span class="form-text">{__("FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera")}</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Color")}
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" name="category_color" type="color" value="#ff2442" style="height:42px; cursor:pointer;">
+              <input class="form-control" name="category_color_text" placeholder="#ff2442" id="browse_category_color_text">
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Order")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_order" type="number" value="0">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Status")}
+          </label>
+          <div class="col-md-9">
+            <label class="switch" for="bc_is_active">
+              <input type="checkbox" name="is_active" id="bc_is_active" checked>
+              <span class="slider round"></span>
+            </label>
+            <span class="form-text">{__("Active categories are visible to users")}</span>
+          </div>
+        </div>
+
+        <!-- success -->
+        <div class="alert alert-success mt15 mb0 x-hidden"></div>
+        <!-- success -->
+
+        <!-- error -->
+        <div class="alert alert-danger mt15 mb0 x-hidden"></div>
+        <!-- error -->
+      </div>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-primary">{__("Save Changes")}</button>
+      </div>
+    </form>
+
+  {elseif $sub_view == "edit_browse_category"}
+
+    <form class="js_ajax-forms" data-url="admin/posts.php?do=edit_browse_category&id={$data['category_id']}">
+      <div class="card-body">
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Category Name")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_name" value="{$data['category_name']}">
+            <span class="form-text">{__("This name is used as the translation key in all language files")}</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Description")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_description" value="{$data['category_description']}">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Icon")}
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa fa-search"></i></span>
+              <input class="form-control" name="category_icon" value="{$data['category_icon']}" id="browse_category_icon_preview_input">
+              <span class="input-group-text" id="browse_category_icon_preview"><i class="fa {$data['category_icon']}"></i></span>
+            </div>
+            <span class="form-text">{__("FontAwesome icon class, e.g. fa-plane, fa-music, fa-camera")}</span>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Color")}
+          </label>
+          <div class="col-md-9">
+            <div class="input-group">
+              <input class="form-control" name="category_color" type="color" value="{$data['category_color']}" style="height:42px; cursor:pointer;">
+              <input class="form-control" name="category_color_text" value="{$data['category_color']}" id="browse_category_color_text">
+            </div>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Order")}
+          </label>
+          <div class="col-md-9">
+            <input class="form-control" name="category_order" type="number" value="{$data['category_order']}">
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <label class="col-md-3 form-label">
+            {__("Status")}
+          </label>
+          <div class="col-md-9">
+            <label class="switch" for="bc_is_active">
+              <input type="checkbox" name="is_active" id="bc_is_active" {if $data['is_active']}checked{/if}>
+              <span class="slider round"></span>
+            </label>
+            <span class="form-text">{__("Active categories are visible to users")}</span>
+          </div>
+        </div>
+
+        <!-- success -->
+        <div class="alert alert-success mt15 mb0 x-hidden"></div>
+        <!-- success -->
+
+        <!-- error -->
+        <div class="alert alert-danger mt15 mb0 x-hidden"></div>
+        <!-- error -->
+      </div>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-primary">{__("Save Changes")}</button>
+      </div>
+    </form>
 
   {elseif $sub_view == "videos_categories"}
 

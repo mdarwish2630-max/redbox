@@ -96,6 +96,23 @@ $(function () {
   });
 
 
+  /* browse category toggle (active/inactive) */
+  $('body').on('change', '.js_admin-toggle-browse-category', function () {
+    var _this = $(this);
+    var id = _this.data('id');
+    $.post(api['admin/posts'], { 'do': 'toggle_browse_category', 'id': id }, function (response) {
+      if (response.success) {
+        /* checkbox already toggled by the browser */
+      } else {
+        _this.prop('checked', !_this.prop('checked'));
+      }
+    }, 'json')
+      .fail(function () {
+        _this.prop('checked', !_this.prop('checked'));
+      });
+  });
+
+
   // admin tester
   $('body').on('click', '.js_admin-tester', function () {
     var _this = $(this);
