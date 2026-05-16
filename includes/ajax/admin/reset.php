@@ -508,6 +508,8 @@ try {
         'analytics_code' => secure(''),
         'system_logo' => secure(''),
         'system_logo_dark' => secure(''),
+        'system_logo_ar' => secure(''),
+        'system_logo_ar_dark' => secure(''),
         'system_wallpaper_default' => secure('1'),
         'system_wallpaper' => secure(''),
         'landing_page_template' => secure('elengine'),

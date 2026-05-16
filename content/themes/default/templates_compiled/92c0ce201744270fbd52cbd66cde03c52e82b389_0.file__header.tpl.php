@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:42
+/* Smarty version 5.7.0, created on 2026-05-16 09:40:45
   from 'file:_header.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72b9e7979d3_32067425',
+  'unifunc' => 'content_6a083b9d4b94b5_14939228',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '92c0ce201744270fbd52cbd66cde03c52e82b389' => 
     array (
       0 => '_header.tpl',
-      1 => 1760822836,
+      1 => 1778943624,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_ads.tpl' => 1,
   ),
 ))) {
-function content_69e72b9e7979d3_32067425 (\Smarty\Template $_smarty_tpl) {
+function content_6a083b9d4b94b5_14939228 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if (!$_smarty_tpl->getValue('user')->_logged_in) {?>
 
@@ -155,7 +155,26 @@ if (!$_smarty_tpl->getValue('system')['system_live']) {?> n_live<?php }?>" <?php
                   <!-- logo -->
                   <a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 " class="logo">
-                    <?php if ($_smarty_tpl->getValue('system')['system_logo']) {?>
+                                        <?php if (substr((string) $_smarty_tpl->getValue('system')['current_language'], (int) 0, (int) 2) == 'ar' && $_smarty_tpl->getValue('system')['system_logo_ar']) {?>
+                      <img class="logo-light img-fluid" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo_ar'];?>
+" alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+" title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+">
+                      <?php if ($_smarty_tpl->getValue('system')['system_logo_ar_dark']) {?>
+                        <img class="logo-dark img-fluid" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo_ar_dark'];?>
+" alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+" title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+">
+                      <?php } else { ?>
+                        <img class="logo-dark img-fluid" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo_ar'];?>
+" alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+" title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+">
+                      <?php }?>
+                    <?php } elseif ($_smarty_tpl->getValue('system')['system_logo']) {?>
                       <img class="logo-light img-fluid" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
 /<?php echo $_smarty_tpl->getValue('system')['system_logo'];?>
 " alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
@@ -170,7 +189,7 @@ if (!$_smarty_tpl->getValue('system')['system_live']) {?> n_live<?php }?>" <?php
                       <?php } else { ?>
                         <img class="logo-dark img-fluid" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
 /<?php echo $_smarty_tpl->getValue('system')['system_logo_dark'];?>
-" alt="<?php echo $_smarty_tpl->getValue('system')['system_title'];?>
+" alt="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
 " title="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
 ">
                       <?php }?>

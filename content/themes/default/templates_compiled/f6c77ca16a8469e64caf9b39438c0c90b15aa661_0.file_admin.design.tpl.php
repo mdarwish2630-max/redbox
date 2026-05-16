@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-15 09:33:56
+/* Smarty version 5.7.0, created on 2026-05-16 08:57:17
   from 'file:admin.design.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a06e884cc0245_35654349',
+  'unifunc' => 'content_6a08316d3dbef2_84606208',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6c77ca16a8469e64caf9b39438c0c90b15aa661' => 
     array (
       0 => 'admin.design.tpl',
-      1 => 1760458402,
+      1 => 1778943484,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 10,
   ),
 ))) {
-function content_6a06e884cc0245_35654349 (\Smarty\Template $_smarty_tpl) {
+function content_6a08316d3dbef2_84606208 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="card">
   <div class="card-header with-icon">
@@ -163,6 +163,92 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
               </div>
               <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
               <input type="hidden" class="js_x-uploader-input" name="system_logo_dark" value="<?php echo $_smarty_tpl->getValue('system')['system_logo_dark'];?>
+">
+            </div>
+          <?php }?>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Arabic Logo (Light Mode) -->
+      <div class="row form-group">
+        <label class="col-md-3 form-label">
+          <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Logo");?>
+ (<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Arabic");?>
+) (<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Light Mode");?>
+)
+          <span class="form-text d-block"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("This logo will be displayed when the language is Arabic (RTL)");?>
+</span>
+        </label>
+        <div class="col-md-9">
+          <?php if ($_smarty_tpl->getValue('system')['system_logo_ar'] == '') {?>
+            <div class="x-image">
+              <button type="button" class="btn-close x-hidden js_x-image-remover" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Remove");?>
+'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar" value="">
+            </div>
+          <?php } else { ?>
+            <div class="x-image" style="background-image: url('<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo_ar'];?>
+')">
+              <button type="button" class="btn-close js_x-image-remover" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Remove");?>
+'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar" value="<?php echo $_smarty_tpl->getValue('system')['system_logo_ar'];?>
+">
+            </div>
+          <?php }?>
+        </div>
+      </div>
+
+      <!-- Arabic Logo (Dark Mode) -->
+      <div class="row form-group">
+        <label class="col-md-3 form-label">
+          <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Logo");?>
+ (<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Arabic");?>
+) (<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Dark Mode");?>
+)
+          <span class="form-text d-block"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("This logo will be displayed when the language is Arabic (RTL) in dark mode");?>
+</span>
+        </label>
+        <div class="col-md-9">
+          <?php if ($_smarty_tpl->getValue('system')['system_logo_ar_dark'] == '') {?>
+            <div class="x-image">
+              <button type="button" class="btn-close x-hidden js_x-image-remover" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Remove");?>
+'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar_dark" value="">
+            </div>
+          <?php } else { ?>
+            <div class="x-image" style="background-image: url('<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
+/<?php echo $_smarty_tpl->getValue('system')['system_logo_ar_dark'];?>
+')">
+              <button type="button" class="btn-close js_x-image-remover" title='<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Remove");?>
+'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuamin="0" aria-valuamax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar_dark" value="<?php echo $_smarty_tpl->getValue('system')['system_logo_ar_dark'];?>
 ">
             </div>
           <?php }?>

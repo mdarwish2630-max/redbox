@@ -27866,3 +27866,12 @@ msgstr ""
 
 #~ msgid "User Profile"
 #~ msgstr "Benutzerprofil"
+
+msgid "Arabic"
+msgstr "Arabisch"
+
+msgid "This logo will be displayed when the language is Arabic (RTL)"
+msgstr "Dieses Logo wird angezeigt, wenn die Sprache Arabisch (RTL) ist"
+
+msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
+msgstr "Dieses Logo wird angezeigt, wenn die Sprache Arabisch (RTL) im dunklen Modus ist"

@@ -93,12 +93,20 @@
 
                   <!-- logo -->
                   <a href="{$system['system_url']}" class="logo">
-                    {if $system['system_logo']}
+                    {* Determine which logo to use based on language *}
+                    {if $system['current_language']|substr:0:2 == 'ar' && $system['system_logo_ar']}
+                      <img class="logo-light img-fluid" src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
+                      {if $system['system_logo_ar_dark']}
+                        <img class="logo-dark img-fluid" src="{$system['system_uploads']}/{$system['system_logo_ar_dark']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
+                      {else}
+                        <img class="logo-dark img-fluid" src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
+                      {/if}
+                    {elseif $system['system_logo']}
                       <img class="logo-light img-fluid" src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
                       {if !$system['system_logo_dark']}
                         <img class="logo-dark img-fluid" src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
                       {else}
-                        <img class="logo-dark img-fluid" src="{$system['system_uploads']}/{$system['system_logo_dark']}" alt="{$system['system_title']}" title="{__($system['system_title'])}">
+                        <img class="logo-dark img-fluid" src="{$system['system_uploads']}/{$system['system_logo_dark']}" alt="{__($system['system_title'])}" title="{__($system['system_title'])}">
                       {/if}
                     {else}
                       <span class="rednote-logo-text">REDNOTE</span>
@@ -283,6 +291,37 @@
         </div>
       {/if}
       <!-- main-header -->
+
+      {* ===== RedNote Mobile Compact Header (visible only on mobile for non-index pages) ===== *}
+      <div class="rn-mobile-header d-md-none" id="rn-mobile-header">
+        <div class="rn-mobile-header-left">
+          <a href="{$system['system_url']}" class="rn-mobile-header-logo">
+            {if $system['current_language']|substr:0:2 == 'ar' && $system['system_logo_ar']}
+              <img src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="Logo" style="height: 28px;">
+            {elseif $system['system_logo']}
+              <img src="{$system['system_uploads']}/{$system['system_logo']}" alt="Logo" style="height: 28px;">
+            {else}
+              <span style="color: var(--rednote-primary); font-weight: 700; font-size: 18px;">REDNOTE</span>
+            {/if}
+          </a>
+        </div>
+        <div class="rn-mobile-header-right">
+          {if $user->_logged_in}
+            {if $system['chat_enabled'] && $user->_data['user_privacy_chat'] != "me"}
+              <a href="{$system['system_url']}/messages" class="rn-mobile-header-icon" title="{__("Messages")}">
+                <i class="fa fa-comment-dots"></i>
+              </a>
+            {/if}
+            <a href="{$system['system_url']}/notifications" class="rn-mobile-header-icon" title="{__("Notifications")}">
+              <i class="fa fa-bell"></i>
+            </a>
+          {/if}
+          <button class="rn-mobile-header-icon rn-mobile-hamburger" id="rn-mobile-hamburger" title="{__("Menu")}">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      {* ===== End Mobile Compact Header ===== *}
 
       <!-- ads -->
       {include file='_ads.tpl' _ads=$ads_master['header'] _master=true}

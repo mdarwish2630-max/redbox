@@ -6,13 +6,16 @@
 
   <!-- SIDEBAR -->
   <div class="rednote-sidebar">
-    <!-- Close button (mobile only) -->
-    <button class="rn-sidebar-close" id="rn-sidebar-close" type="button">
-      <i class="fa fa-times"></i>
-    </button>
-
     <!-- Logo -->
-    <a href="{$system['system_url']}" class="rednote-logo">REDNOTE</a>
+    <a href="{$system['system_url']}" class="rednote-logo">
+      {if $system['current_language']|substr:0:2 == 'ar' && $system['system_logo_ar']}
+        <img src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="{__($system['system_title'])}" style="height: 36px;">
+      {elseif $system['system_logo']}
+        <img src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}" style="height: 36px;">
+      {else}
+        REDNOTE
+      {/if}
+    </a>
 
     <!-- Menu -->
     <div class="rednote-menu">
@@ -152,38 +155,17 @@
       {/if}
     {/if}
 
+    <!-- Mobile menu toggle -->
+    <div class="rednote-mobile-toggle" data-bs-toggle="sg-offcanvas">
+      <i class="fa fa-bars"></i>
+    </div>
   </div>
   <!-- SIDEBAR END -->
 
   <!-- MAIN AREA -->
   <div class="rednote-main">
 
-    <!-- MOBILE HEADER (App-style: Logo + Search + Hamburger) -->
-    <div class="rn-mobile-header">
-      <!-- Logo -->
-      <a href="{$system['system_url']}" class="rn-mobile-header-logo">
-        {if $system['system_logo']}
-          <img src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}">
-        {else}
-          <span class="rednote-logo-text">REDNOTE</span>
-        {/if}
-      </a>
-
-      <!-- Search -->
-      {if $user->_logged_in || (!$user->_logged_in && $system['system_public'])}
-        <div class="rn-mobile-header-search">
-          {include file='_header.search.tpl'}
-        </div>
-      {/if}
-
-      <!-- Hamburger Menu -->
-      <button class="rn-mobile-header-menu" id="rn-mobile-menu-btn" type="button">
-        <i class="fa fa-bars"></i>
-      </button>
-    </div>
-    <!-- MOBILE HEADER END -->
-
-    <!-- SEARCH BAR (Desktop/Tablet) -->
+    <!-- SEARCH BAR -->
     <div class="rednote-header">
       {if $user->_logged_in || (!$user->_logged_in && $system['system_public'])}
         <div class="rednote-search-wrapper">
@@ -364,62 +346,7 @@
 </div>
 <!-- ========== REDNOTE LAYOUT END ========== -->
 
-<!-- ===== BOTTOM NAV (Mobile Only) ===== -->
-<nav class="rn-bottom-nav d-md-none">
-  {if $user->_logged_in}
-    <!-- Home -->
-    <a href="{$system['system_url']}" class="rn-bottom-nav-item {if $page == "index" && ($view == "" || $view == "discover" || $view == "popular")}active{/if}">
-      <i class="fa fa-home"></i>
-      <span>{__("Home")}</span>
-    </a>
-    <!-- Discover -->
-    {if $system['discover_posts_enabled']}
-      <a href="{$system['system_url']}/discover" class="rn-bottom-nav-item {if $view == "discover"}active{/if}">
-        <i class="fa fa-compass"></i>
-        <span>{__("Discover")}</span>
-      </a>
-    {else}
-      <a href="{$system['system_url']}" class="rn-bottom-nav-item">
-        <i class="fa fa-compass"></i>
-        <span>{__("Discover")}</span>
-      </a>
-    {/if}
-    <!-- Publish (+) Button -->
-    <div class="rn-bottom-nav-pub" data-toggle="modal" data-url="posts/publisher.php">
-      <i class="fa fa-plus"></i>
-    </div>
-    <!-- Notifications -->
-    <a href="{$system['system_url']}/notifications" class="rn-bottom-nav-item {if $page == "notifications"}active{/if}">
-      <i class="fa fa-bell"></i>
-      <span>{__("Alerts")}</span>
-    </a>
-    <!-- Profile / Menu -->
-    <div class="rn-bottom-nav-item" id="rn-mobile-menu-btn">
-      <i class="fa fa-user"></i>
-      <span>{__("Me")}</span>
-    </div>
-  {else}
-    <!-- Guest bottom nav -->
-    <a href="{$system['system_url']}" class="rn-bottom-nav-item active">
-      <i class="fa fa-home"></i>
-      <span>{__("Home")}</span>
-    </a>
-    <a href="{$system['system_url']}/signin" class="rn-bottom-nav-item">
-      <i class="fa fa-sign-in-alt"></i>
-      <span>{__("Login")}</span>
-    </a>
-    {if $system['registration_enabled']}
-      <a href="{$system['system_url']}/signup" class="rn-bottom-nav-item" style="color: var(--rednote-primary);">
-        <i class="fa fa-user-plus"></i>
-        <span>{__("Sign Up")}</span>
-      </a>
-    {/if}
-  {/if}
-</nav>
-
-<!-- Sidebar overlay for mobile -->
-<div class="rn-sidebar-overlay" id="rn-sidebar-overlay"></div>
-
+{* Bottom Nav is now global via _footer.bottom_bar.tpl -> _mobile_bottom_nav.tpl *}
 {include file='_footer.tpl'}
 
 <script>
@@ -430,58 +357,8 @@ $(document).ready(function() {
     $('.rn-all-categories').slideToggle(200);
   });
 
-  // Helper: open mobile sidebar
-  function openSidebar() {
-    $('.rednote-sidebar').addClass('show');
-    $('#rn-sidebar-overlay').addClass('show');
-    $('body').css('overflow', 'hidden');
-  }
-
-  // Helper: close mobile sidebar
-  function closeSidebar() {
-    $('.rednote-sidebar').removeClass('show');
-    $('#rn-sidebar-overlay').removeClass('show');
-    $('body').css('overflow', '');
-  }
-
-  // Mobile: hamburger button opens sidebar
-  $(document).on('click', '#rn-mobile-menu-btn', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    openSidebar();
-  });
-
-  // Mobile: close button on sidebar
-  $(document).on('click', '#rn-sidebar-close', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    closeSidebar();
-  });
-
-  // Mobile: Close sidebar on overlay click
-  $(document).on('click', '#rn-sidebar-overlay', function() {
-    closeSidebar();
-  });
-
-  // Mobile: Close sidebar when navigating (menu item click)
-  $(document).on('click', '.rednote-sidebar a.rednote-menu-item, .rednote-sidebar .rednote-user-btn', function() {
-    if ($(window).width() < 992) {
-      closeSidebar();
-    }
-  });
-
-  // Mobile: Close sidebar on Escape key
-  $(document).on('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeSidebar();
-    }
-  });
-
-  // Fix bottom nav active state for profile/settings pages
-  var currentPath = window.location.pathname;
-  if (currentPath.indexOf('/settings') > -1 || currentPath.indexOf('/profile') > -1) {
-    $('#rn-mobile-menu-btn').addClass('active');
-  }
+  // Mobile: "Me" button opens sidebar (handled globally via _mobile_bottom_nav.js)
+  // Sidebar logic moved to global footer JS
 
   // ===== POST CLICK LAYER - Prevent hover opening, control clicks properly =====
   function injectClickLayers() {

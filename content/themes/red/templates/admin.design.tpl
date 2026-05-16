@@ -122,6 +122,74 @@
 
       <div class="divider"></div>
 
+      <!-- Arabic Logo (Light Mode) -->
+      <div class="row form-group">
+        <label class="col-md-3 form-label">
+          {__("Logo")} ({__("Arabic")}) ({__("Light Mode")})
+          <span class="form-text d-block">{__("This logo will be displayed when the language is Arabic (RTL)")}</span>
+        </label>
+        <div class="col-md-9">
+          {if $system['system_logo_ar'] == ''}
+            <div class="x-image">
+              <button type="button" class="btn-close x-hidden js_x-image-remover" title='{__("Remove")}'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar" value="">
+            </div>
+          {else}
+            <div class="x-image" style="background-image: url('{$system['system_uploads']}/{$system['system_logo_ar']}')">
+              <button type="button" class="btn-close js_x-image-remover" title='{__("Remove")}'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar" value="{$system['system_logo_ar']}">
+            </div>
+          {/if}
+        </div>
+      </div>
+
+      <!-- Arabic Logo (Dark Mode) -->
+      <div class="row form-group">
+        <label class="col-md-3 form-label">
+          {__("Logo")} ({__("Arabic")}) ({__("Dark Mode")})
+          <span class="form-text d-block">{__("This logo will be displayed when the language is Arabic (RTL) in dark mode")}</span>
+        </label>
+        <div class="col-md-9">
+          {if $system['system_logo_ar_dark'] == ''}
+            <div class="x-image">
+              <button type="button" class="btn-close x-hidden js_x-image-remover" title='{__("Remove")}'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar_dark" value="">
+            </div>
+          {else}
+            <div class="x-image" style="background-image: url('{$system['system_uploads']}/{$system['system_logo_ar_dark']}')">
+              <button type="button" class="btn-close js_x-image-remover" title='{__("Remove")}'></button>
+              <div class="x-image-loader">
+                <div class="progress x-progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <i class="fa fa-camera fa-lg js_x-uploader" data-handle="x-image"></i>
+              <input type="hidden" class="js_x-uploader-input" name="system_logo_ar_dark" value="{$system['system_logo_ar_dark']}">
+            </div>
+          {/if}
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
       <div class="form-table-row">
         <div class="avatar">
           {include file='__svg_icons.tpl' icon="home" class="main-icon" width="40px" height="40px"}

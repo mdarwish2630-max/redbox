@@ -18,12 +18,19 @@
           <div class="p-4 m-auto fr_welcome_sign">
             <div class="position-relative fr_welcome_sign_head">
               <a class="d-inline-block overflow-hidden logo-wrapper" href="{$system['system_url']}">
-                {if $system['system_logo']}
+                {if $system['current_language']|substr:0:2 == 'ar' && $system['system_logo_ar']}
+                  <img class="logo-light ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="{__($system['system_title'])}">
+                  {if $system['system_logo_ar_dark']}
+                    <img class="logo-dark ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo_ar_dark']}" alt="{__($system['system_title'])}">
+                  {else}
+                    <img class="logo-dark ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo_ar']}" alt="{__($system['system_title'])}">
+                  {/if}
+                {elseif $system['system_logo']}
                   <img class="logo-light ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}">
                   {if !$system['system_logo_dark']}
                     <img class="logo-dark ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo']}" alt="{__($system['system_title'])}">
                   {else}
-                    <img class="logo-dark ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo_dark']}" alt="{$system['system_title']}">
+                    <img class="logo-dark ele_logo_pc" src="{$system['system_uploads']}/{$system['system_logo_dark']}" alt="{__($system['system_title'])}">
                   {/if}
                 {else}
                   {__($system['system_title'])}

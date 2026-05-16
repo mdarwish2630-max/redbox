@@ -29748,3 +29748,12 @@ msgstr ""
 
 #~ msgid "Website Logo"
 #~ msgstr "Logo du site Web"
+
+msgid "Arabic"
+msgstr "Arabe"
+
+msgid "This logo will be displayed when the language is Arabic (RTL)"
+msgstr "Ce logo s'affichera lorsque la langue est arabe (RTL)"
+
+msgid "This logo will be displayed when the language is Arabic (RTL) in dark mode"
+msgstr "Ce logo s'affichera lorsque la langue est arabe (RTL) en mode sombre"

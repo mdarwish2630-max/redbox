@@ -45,6 +45,8 @@ try {
     'system_theme_mode_select' => secure($_POST['system_theme_mode_select']),
     'system_logo' => secure($_POST['system_logo']),
     'system_logo_dark' => secure($_POST['system_logo_dark']),
+    'system_logo_ar' => secure($_POST['system_logo_ar']),
+    'system_logo_ar_dark' => secure($_POST['system_logo_ar_dark']),
     'system_wallpaper_default' => secure($_POST['system_wallpaper_default']),
     'system_wallpaper' => secure($_POST['system_wallpaper']),
     'landing_page_template' => secure($_POST['landing_page_template']),
@@ -76,7 +78,7 @@ try {
     'custome_js_footer' => secure($_POST['custome_js_footer'])
   ]);
   /* remove pending uploads */
-  remove_pending_uploads([$_POST['system_logo'], $_POST['system_logo_dark'], $_POST['system_wallpaper'], $_POST['system_favicon'], $_POST['system_ogimage']]);
+  remove_pending_uploads([$_POST['system_logo'], $_POST['system_logo_dark'], $_POST['system_logo_ar'], $_POST['system_logo_ar_dark'], $_POST['system_wallpaper'], $_POST['system_favicon'], $_POST['system_ogimage']]);
   /* return */
   return_json(['callback' => 'window.location.reload();']);
 } catch (Exception $e) {
