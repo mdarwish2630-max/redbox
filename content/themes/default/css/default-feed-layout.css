@@ -1,0 +1,152 @@
+/* ============================================
+   Default Theme — Wide Feed + Sidebar Footer Links
+   Removes right widgets panel, applies masonry grid to posts,
+   and adds footer links at bottom of sidebar.
+   ============================================ */
+
+/* ============================
+   1. MASONRY GRID FOR POSTS
+   Apply column-count to the posts list inside the wide content area.
+   ============================ */
+.sg-offcanvas-mainbar .js_posts_stream > ul {
+  column-count: 2;
+  column-gap: 16px;
+}
+
+.sg-offcanvas-mainbar .js_posts_stream > ul > li {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+.sg-offcanvas-mainbar .js_posts_stream > ul > li .post {
+  break-inside: avoid;
+}
+
+/* 3 columns on wide screens */
+@media (min-width: 1400px) {
+  .sg-offcanvas-mainbar .js_posts_stream > ul {
+    column-count: 3;
+  }
+}
+
+/* 2 columns on tablets */
+@media (max-width: 991px) {
+  .sg-offcanvas-mainbar .js_posts_stream > ul {
+    column-count: 2;
+    column-gap: 12px;
+  }
+}
+
+/* 1 column on mobile */
+@media (max-width: 767px) {
+  .sg-offcanvas-mainbar .js_posts_stream > ul {
+    column-count: 1;
+    column-gap: 0;
+  }
+  .sg-offcanvas-mainbar .js_posts_stream > ul > li {
+    margin-bottom: 0;
+  }
+}
+
+/* ============================
+   2. SIDEBAR FOOTER LINKS
+   Styled footer links placed at bottom of sidebar nav.
+   ============================ */
+.sidebar-footer-links {
+  padding: 0 15px;
+}
+
+.sidebar-footer-divider {
+  height: 1px;
+  background: var(--body-bg-color, #f0f2f5);
+  margin: 10px 0;
+}
+
+body.night-mode .sidebar-footer-divider {
+  background: var(--card-dark-divider, #2e3f4d);
+}
+
+.sidebar-footer-copyright {
+  font-size: 11px;
+  color: #999;
+  padding: 6px 0 2px;
+  font-weight: 500;
+}
+
+body.night-mode .sidebar-footer-copyright {
+  color: #666;
+}
+
+.sidebar-footer-language {
+  padding: 0;
+}
+
+.sidebar-footer-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #666 !important;
+  text-decoration: none !important;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-footer-lang-btn:hover {
+  background: var(--body-bg-color, #f0f2f5);
+  color: var(--link-color, #5e72e4) !important;
+}
+
+body.night-mode .sidebar-footer-lang-btn {
+  color: #999 !important;
+}
+
+body.night-mode .sidebar-footer-lang-btn:hover {
+  background: var(--card-dark-hover, #2b3843);
+  color: #fff !important;
+}
+
+.sidebar-footer-lang-btn img {
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sidebar-footer-nav {
+  list-style: none;
+  padding: 2px 0 0;
+  margin: 0;
+}
+
+.sidebar-footer-nav li {
+  padding: 1px 0;
+}
+
+.sidebar-footer-nav li a {
+  font-size: 11px;
+  color: #999 !important;
+  text-decoration: none !important;
+  line-height: 1.8;
+  transition: color 0.2s ease;
+}
+
+.sidebar-footer-nav li a:hover {
+  color: var(--link-color, #5e72e4) !important;
+}
+
+body.night-mode .sidebar-footer-nav li a {
+  color: #666 !important;
+}
+
+/* ============================
+   3. HIDE OLD BOTTOM FOOTER
+   ============================ */
+.footer {
+  display: none !important;
+}
+
+.mini-footer {
+  display: none !important;
+}

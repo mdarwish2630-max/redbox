@@ -73,6 +73,10 @@
     <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/geo-banners.css?v={$system['system_version']}" rel="stylesheet">
     <!-- Geo Detection Banners CSS -->
 
+    <!-- Full-Width Feed Layout CSS -->
+    <link href="{$system['system_url']}/content/themes/{$system['theme']}/css/default-feed-layout.css?v={$system['system_version']}" rel="stylesheet">
+    <!-- Full-Width Feed Layout CSS -->
+
     <!-- Header Custom JavaScript -->
     {if $system['custome_js_header']}
       <script>

@@ -2,9 +2,7 @@
 {include file='_ads.tpl' _ads=$ads_master['footer'] _master=true}
 <!-- ads -->
 
-{if !in_array($page, ['index', 'profile', 'page', 'group', 'event'])}
-  {include file='_footer.links.tpl'}
-{/if}
+{* Footer links moved to sidebar — no longer shown at bottom of page *}
 
 </div>
 <!-- main wrapper -->

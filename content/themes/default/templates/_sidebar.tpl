@@ -340,5 +340,46 @@
       {/if}
       <!-- explore -->
     </ul>
+
+    <!-- Sidebar Footer Links -->
+    <div class="sidebar-footer-links">
+      <div class="sidebar-footer-divider"></div>
+      <div class="sidebar-footer-copyright">&copy; {date('Y')} {__($system['system_title'])}</div>
+      <div class="sidebar-footer-language dropdown">
+        <a href="#" class="sidebar-footer-lang-btn" data-bs-toggle="dropdown">
+          <img width="14" height="14" src="{$system['language']['flag']}">
+          <span>{$system['language']['title']}</span>
+          <i class="fa fa-chevron-down" style="font-size: 9px; margin-left: 4px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <div class="js_scroller">
+            {foreach $system['languages'] as $language}
+              <a class="dropdown-item" href="?lang={$language['code']}">
+                <img width="16" height="16" class="mr10" src="{$language['flag']}">{$language['title']}
+              </a>
+            {/foreach}
+          </div>
+        </div>
+      </div>
+      <ul class="sidebar-footer-nav">
+        {if $static_pages}
+          {foreach $static_pages as $static_page}
+            {if $static_page['page_in_footer']}
+              <li><a href="{$static_page['url']}">{__($static_page['page_title'])}</a></li>
+            {/if}
+          {/foreach}
+        {/if}
+        {if $system['contact_enabled']}
+          <li><a href="{$system['system_url']}/contacts">{__("Contact Us")}</a></li>
+        {/if}
+        {if $system['support_center_enabled']}
+          <li><a href="{$system['system_url']}/support">{__("Support Center")}</a></li>
+        {/if}
+        {if $system['directory_enabled']}
+          <li><a href="{$system['system_url']}/directory">{__("Directory")}</a></li>
+        {/if}
+      </ul>
+    </div>
+
   </div>
 </div>

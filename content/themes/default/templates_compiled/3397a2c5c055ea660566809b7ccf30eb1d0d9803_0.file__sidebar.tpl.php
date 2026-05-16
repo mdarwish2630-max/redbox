@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:27
+/* Smarty version 5.7.0, created on 2026-05-16 11:59:57
   from 'file:_sidebar.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352b9829f6_24937986',
+  'unifunc' => 'content_6a085c3dd29756_73818289',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3397a2c5c055ea660566809b7ccf30eb1d0d9803' => 
     array (
       0 => '_sidebar.tpl',
-      1 => 1758517066,
+      1 => 1778956190,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 35,
   ),
 ))) {
-function content_69e7352b9829f6_24937986 (\Smarty\Template $_smarty_tpl) {
+function content_6a085c3dd29756_73818289 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="card main-side-nav-card">
   <div class="card-body with-nav">
@@ -466,9 +466,9 @@ echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Merits");?>
       <?php if ($_smarty_tpl->getValue('static_pages')) {?>
         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('static_pages'), 'static_page');
-$foreach20DoElse = true;
+$foreach8DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('static_page')->value) {
-$foreach20DoElse = false;
+$foreach8DoElse = false;
 ?>
           <?php if ($_smarty_tpl->getValue('static_page')['page_in_sidebar']) {?>
             <li <?php if ($_smarty_tpl->getValue('page') == "static_page" && $_smarty_tpl->getValue('static_page')['page_id'] == $_smarty_tpl->getValue('static_page_id')) {?>class="active" <?php }?>>
@@ -487,6 +487,76 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
       <?php }?>
       <!-- explore -->
     </ul>
+
+    <!-- Sidebar Footer Links -->
+    <div class="sidebar-footer-links">
+      <div class="sidebar-footer-divider"></div>
+      <div class="sidebar-footer-copyright">&copy; <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('date')('Y');?>
+ <?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
+</div>
+      <div class="sidebar-footer-language dropdown">
+        <a href="#" class="sidebar-footer-lang-btn" data-bs-toggle="dropdown">
+          <img width="14" height="14" src="<?php echo $_smarty_tpl->getValue('system')['language']['flag'];?>
+">
+          <span><?php echo $_smarty_tpl->getValue('system')['language']['title'];?>
+</span>
+          <i class="fa fa-chevron-down" style="font-size: 9px; margin-left: 4px;"></i>
+        </a>
+        <div class="dropdown-menu">
+          <div class="js_scroller">
+            <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('system')['languages'], 'language');
+$foreach9DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('language')->value) {
+$foreach9DoElse = false;
+?>
+              <a class="dropdown-item" href="?lang=<?php echo $_smarty_tpl->getValue('language')['code'];?>
+">
+                <img width="16" height="16" class="mr10" src="<?php echo $_smarty_tpl->getValue('language')['flag'];?>
+"><?php echo $_smarty_tpl->getValue('language')['title'];?>
+
+              </a>
+            <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+          </div>
+        </div>
+      </div>
+      <ul class="sidebar-footer-nav">
+        <?php if ($_smarty_tpl->getValue('static_pages')) {?>
+          <?php
+$_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('static_pages'), 'static_page');
+$foreach10DoElse = true;
+foreach ($_from ?? [] as $_smarty_tpl->getVariable('static_page')->value) {
+$foreach10DoElse = false;
+?>
+            <?php if ($_smarty_tpl->getValue('static_page')['page_in_footer']) {?>
+              <li><a href="<?php echo $_smarty_tpl->getValue('static_page')['url'];?>
+"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('static_page')['page_title']);?>
+</a></li>
+            <?php }?>
+          <?php
+}
+$_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
+        <?php }?>
+        <?php if ($_smarty_tpl->getValue('system')['contact_enabled']) {?>
+          <li><a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/contacts"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Contact Us");?>
+</a></li>
+        <?php }?>
+        <?php if ($_smarty_tpl->getValue('system')['support_center_enabled']) {?>
+          <li><a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/support"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Support Center");?>
+</a></li>
+        <?php }?>
+        <?php if ($_smarty_tpl->getValue('system')['directory_enabled']) {?>
+          <li><a href="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
+/directory"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Directory");?>
+</a></li>
+        <?php }?>
+      </ul>
+    </div>
+
   </div>
 </div><?php }
 }

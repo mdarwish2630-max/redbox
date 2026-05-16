@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 10:28:23
+/* Smarty version 5.7.0, created on 2026-05-16 11:59:59
   from 'file:_posts.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a0846c70f0cd5_63510516',
+  'unifunc' => 'content_6a085c3fca5980_62077037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -23,7 +23,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_no_data.tpl' => 1,
   ),
 ))) {
-function content_6a0846c70f0cd5_63510516 (\Smarty\Template $_smarty_tpl) {
+function content_6a085c3fca5980_62077037 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- posts-filter -->
 <div class="posts-filter">
@@ -113,9 +113,9 @@ echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Recent Updates");
           <?php }?>
           <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('countries'), 'country');
-$foreach4DoElse = true;
+$foreach15DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('country')->value) {
-$foreach4DoElse = false;
+$foreach15DoElse = false;
 ?>
             <a class="dropdown-item" href="?country=<?php echo $_smarty_tpl->getValue('country')['country_name_native'];?>
 ">
@@ -431,9 +431,9 @@ echo $_smarty_tpl->getValue('selected_country')['country_id'];
       <!-- posts -->
       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('posts'), 'post');
-$foreach5DoElse = true;
+$foreach16DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('post')->value) {
-$foreach5DoElse = false;
+$foreach16DoElse = false;
 ?>
         <?php $_smarty_tpl->renderSubTemplate('file:__feeds_post.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_get'=>$_smarty_tpl->getValue('_get')), (int) 0, $_smarty_current_dir);
 ?>

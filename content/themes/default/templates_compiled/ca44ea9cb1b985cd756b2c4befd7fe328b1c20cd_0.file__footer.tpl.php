@@ -1,40 +1,36 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:44
+/* Smarty version 5.7.0, created on 2026-05-16 12:00:00
   from 'file:_footer.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72ba048e552_43378821',
+  'unifunc' => 'content_6a085c40873767_57926213',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ca44ea9cb1b985cd756b2c4befd7fe328b1c20cd' => 
     array (
       0 => '_footer.tpl',
-      1 => 1746262334,
+      1 => 1778956190,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:_ads.tpl' => 1,
-    'file:_footer.links.tpl' => 1,
     'file:_js_files.tpl' => 1,
     'file:_js_templates.tpl' => 1,
     'file:_footer.bottom_bar.tpl' => 1,
   ),
 ))) {
-function content_69e72ba048e552_43378821 (\Smarty\Template $_smarty_tpl) {
+function content_6a085c40873767_57926213 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- ads -->
 <?php $_smarty_tpl->renderSubTemplate('file:_ads.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_ads'=>$_smarty_tpl->getValue('ads_master')['footer'],'_master'=>true), (int) 0, $_smarty_current_dir);
 ?>
 <!-- ads -->
 
-<?php if (!$_smarty_tpl->getSmarty()->getModifierCallback('in_array')($_smarty_tpl->getValue('page'),array('index','profile','page','group','event'))) {?>
-  <?php $_smarty_tpl->renderSubTemplate('file:_footer.links.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
-}?>
 
 </div>
 <!-- main wrapper -->
