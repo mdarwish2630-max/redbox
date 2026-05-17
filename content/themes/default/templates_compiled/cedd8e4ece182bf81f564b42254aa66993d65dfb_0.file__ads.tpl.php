@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:43
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:24
   from 'file:_ads.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72b9f1fc3c8_23885251',
+  'unifunc' => 'content_6a08e8807d8290_29407146',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e72b9f1fc3c8_23885251 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e8807d8290_29407146 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('_master')) {?>
 
@@ -29,9 +29,9 @@ if ($_smarty_tpl->getValue('_master')) {?>
       <!-- ads -->
       <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_ads'), 'ads_unit');
-$foreach0DoElse = true;
+$foreach13DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('ads_unit')->value) {
-$foreach0DoElse = false;
+$foreach13DoElse = false;
 ?>
         <div class="card">
           <div class="card-header bg-transparent">
@@ -54,9 +54,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
     <!-- ads -->
     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('ads'), 'ads_unit');
-$foreach1DoElse = true;
+$foreach14DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('ads_unit')->value) {
-$foreach1DoElse = false;
+$foreach14DoElse = false;
 ?>
       <div class="card">
         <div class="card-header bg-transparent">

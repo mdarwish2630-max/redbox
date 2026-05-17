@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:42
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:31
   from 'file:__feeds_post.comments.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3e6719897_50378493',
+  'unifunc' => 'content_6a08e887e50a23_05966152',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__feeds_comment.tpl' => 2,
   ),
 ))) {
-function content_69e9b3e6719897_50378493 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e887e50a23_05966152 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="post-comments">
   <?php if ($_smarty_tpl->getValue('user')->_logged_in) {?>
@@ -68,9 +68,9 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
         <?php if ($_smarty_tpl->getValue('photo')['comments'] > 0) {?>
           <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('photo')['photo_comments'], 'comment');
-$foreach7DoElse = true;
+$foreach33DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('comment')->value) {
-$foreach7DoElse = false;
+$foreach33DoElse = false;
 ?>
             <?php $_smarty_tpl->renderSubTemplate('file:__feeds_comment.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_comment'=>$_smarty_tpl->getValue('comment')), (int) 0, $_smarty_current_dir);
 ?>
@@ -137,9 +137,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
         <?php if ($_smarty_tpl->getValue('post')['comments'] > 0) {?>
           <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('post')['post_comments'], 'comment');
-$foreach8DoElse = true;
+$foreach34DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('comment')->value) {
-$foreach8DoElse = false;
+$foreach34DoElse = false;
 ?>
             <?php $_smarty_tpl->renderSubTemplate('file:__feeds_comment.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_comment'=>$_smarty_tpl->getValue('comment')), (int) 0, $_smarty_current_dir);
 ?>

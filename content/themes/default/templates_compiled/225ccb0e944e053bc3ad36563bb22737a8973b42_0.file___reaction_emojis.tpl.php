@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:35
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:24
   from 'file:__reaction_emojis.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3df3e0900_84601076',
+  'unifunc' => 'content_6a08e880160395_83709085',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e9b3df3e0900_84601076 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e880160395_83709085 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- reaction -->
 <div class="emoji">

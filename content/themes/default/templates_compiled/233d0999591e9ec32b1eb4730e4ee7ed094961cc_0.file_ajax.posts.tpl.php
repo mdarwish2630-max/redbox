@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-15 17:56:11
+/* Smarty version 5.7.0, created on 2026-05-17 03:29:18
   from 'file:ajax.posts.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a075e3b28ee33_12164536',
+  'unifunc' => 'content_6a09360e8696c9_74311668',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_no_data.tpl' => 1,
   ),
 ))) {
-function content_6a075e3b28ee33_12164536 (\Smarty\Template $_smarty_tpl) {
+function content_6a09360e8696c9_74311668 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('_get')) {?>
   <?php if ($_smarty_tpl->getValue('posts')) {?>

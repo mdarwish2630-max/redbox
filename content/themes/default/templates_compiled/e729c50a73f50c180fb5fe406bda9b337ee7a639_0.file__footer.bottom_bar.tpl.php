@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:35
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:37
   from 'file:_footer.bottom_bar.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e735337c0ff3_57527046',
+  'unifunc' => 'content_6a08e88d48d0a6_62724157',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_user_menu.tpl' => 1,
   ),
 ))) {
-function content_69e735337c0ff3_57527046 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e88d48d0a6_62724157 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="footer-bottom-bar<?php if ($_smarty_tpl->getValue('page') == 'reels') {?>x-hidden<?php }?>">
   <div class="container">
@@ -35,8 +35,8 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
 if ($_smarty_tpl->getValue('page') == "index" && $_smarty_tpl->getValue('view') == '') {
 echo "active";
 }
-$_prefixVariable2=ob_get_clean();
-$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"header-home",'class'=>"header-icon ".$_prefixVariable2,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
+$_prefixVariable4=ob_get_clean();
+$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"header-home",'class'=>"header-icon ".$_prefixVariable4,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
 ?>
           <div class="title"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Home");?>
 </div>
@@ -53,8 +53,8 @@ $_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, 
 if ($_smarty_tpl->getValue('page') == "reels") {
 echo "active";
 }
-$_prefixVariable3=ob_get_clean();
-$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"reels",'class'=>"header-icon ".$_prefixVariable3,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
+$_prefixVariable5=ob_get_clean();
+$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"reels",'class'=>"header-icon ".$_prefixVariable5,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
 ?>
           <div class="title"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Reels");?>
 </div>
@@ -68,8 +68,8 @@ $_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, 
 if ($_smarty_tpl->getValue('page') == "index" && $_smarty_tpl->getValue('view') == "watch") {
 echo "active";
 }
-$_prefixVariable4=ob_get_clean();
-$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"watch",'class'=>"header-icon ".$_prefixVariable4,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
+$_prefixVariable6=ob_get_clean();
+$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"watch",'class'=>"header-icon ".$_prefixVariable6,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
 ?>
           <div class="title"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Watch");?>
 </div>
@@ -191,8 +191,8 @@ $_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, 
 if ($_smarty_tpl->getValue('page') == "search") {
 echo "active";
 }
-$_prefixVariable5=ob_get_clean();
-$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"header-search",'class'=>"header-icon ".$_prefixVariable5,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
+$_prefixVariable7=ob_get_clean();
+$_smarty_tpl->renderSubTemplate('file:__svg_icons.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('icon'=>"header-search",'class'=>"header-icon ".$_prefixVariable7,'width'=>"24px",'height'=>"24px"), (int) 0, $_smarty_current_dir);
 ?>
           <div class="title"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Search");?>
 </div>

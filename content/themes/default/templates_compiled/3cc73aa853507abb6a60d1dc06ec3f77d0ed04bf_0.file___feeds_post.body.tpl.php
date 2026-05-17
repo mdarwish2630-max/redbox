@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:39
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:28
   from 'file:__feeds_post.body.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3e3359db6_01494271',
+  'unifunc' => 'content_6a08e8847dd843_12396988',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -30,7 +30,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_need_age_verification.tpl' => 1,
   ),
 ))) {
-function content_69e9b3e3359db6_01494271 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e8847dd843_12396988 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- post header -->
 <div class="post-header">
@@ -1177,9 +1177,9 @@ if ($_smarty_tpl->getValue('pinned') || $_smarty_tpl->getValue('boosted')) {?>-<
           <div class="post-custom-fileds-wrapper mt10">
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_post')['custom_fields']['basic'], 'custom_field');
-$foreach2DoElse = true;
+$foreach28DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('custom_field')->value) {
-$foreach2DoElse = false;
+$foreach28DoElse = false;
 ?>
               <?php if ($_smarty_tpl->getValue('custom_field')['value']) {?>
                 <div>
@@ -1360,9 +1360,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
               <div class="post-custom-fileds-wrapper mt10">
                 <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_post')['custom_fields']['basic'], 'custom_field');
-$foreach3DoElse = true;
+$foreach29DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('custom_field')->value) {
-$foreach3DoElse = false;
+$foreach29DoElse = false;
 ?>
                   <?php if ($_smarty_tpl->getValue('custom_field')['value']) {?>
                     <div>
@@ -1474,9 +1474,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <div class="post-custom-fileds-wrapper mt10">
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_post')['custom_fields']['basic'], 'custom_field');
-$foreach4DoElse = true;
+$foreach30DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('custom_field')->value) {
-$foreach4DoElse = false;
+$foreach30DoElse = false;
 ?>
                 <?php if ($_smarty_tpl->getValue('custom_field')['value']) {?>
                   <div>
@@ -1608,9 +1608,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <div class="post-custom-fileds-wrapper mt10">
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_post')['custom_fields']['basic'], 'custom_field');
-$foreach5DoElse = true;
+$foreach31DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('custom_field')->value) {
-$foreach5DoElse = false;
+$foreach31DoElse = false;
 ?>
                 <?php if ($_smarty_tpl->getValue('custom_field')['value']) {?>
                   <div>
@@ -1663,9 +1663,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
 ">
         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_post')['poll']['options'], 'option');
-$foreach6DoElse = true;
+$foreach32DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('option')->value) {
-$foreach6DoElse = false;
+$foreach32DoElse = false;
 ?>
           <div class="mb5">
             <div class="poll-option js_poll-vote" data-id="<?php echo $_smarty_tpl->getValue('option')['option_id'];?>
@@ -1826,8 +1826,8 @@ if ($_smarty_tpl->getValue('pinned') || $_smarty_tpl->getValue('boosted')) {?>-<
           <strong><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("File Type");?>
 </strong>: <?php ob_start();
 echo $_smarty_tpl->getValue('_post')['file']['source'];
-$_prefixVariable1 = ob_get_clean();
-echo $_smarty_tpl->getSmarty()->getModifierCallback('get_extension')($_prefixVariable1);?>
+$_prefixVariable2 = ob_get_clean();
+echo $_smarty_tpl->getSmarty()->getModifierCallback('get_extension')($_prefixVariable2);?>
 
           <div class="mt10">
             <?php if ($_smarty_tpl->getValue('_post')['needs_payment']) {?>
@@ -1875,8 +1875,8 @@ echo $_smarty_tpl->getValue('system')['system_uploads'];?>
         </div>
         <?php ob_start();
 echo $_smarty_tpl->getValue('_post')['merit']['message'];
-$_prefixVariable2 = ob_get_clean();
-if ($_prefixVariable2) {?>
+$_prefixVariable3 = ob_get_clean();
+if ($_prefixVariable3) {?>
           <div class="post-merit-meta">
             <div class="merit-description">
               <!-- post text -->

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 20:23:08
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:24
   from 'file:_sidebar.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a08d22c6da368_01768404',
+  'unifunc' => 'content_6a08e88097aa04_80039165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 35,
   ),
 ))) {
-function content_6a08d22c6da368_01768404 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e88097aa04_80039165 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="card main-side-nav-card">
   <div class="card-body with-nav">
@@ -466,9 +466,9 @@ echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Merits");?>
       <?php if ($_smarty_tpl->getValue('static_pages')) {?>
         <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('static_pages'), 'static_page');
-$foreach10DoElse = true;
+$foreach15DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('static_page')->value) {
-$foreach10DoElse = false;
+$foreach15DoElse = false;
 ?>
           <?php if ($_smarty_tpl->getValue('static_page')['page_in_sidebar']) {?>
             <li <?php if ($_smarty_tpl->getValue('page') == "static_page" && $_smarty_tpl->getValue('static_page')['page_id'] == $_smarty_tpl->getValue('static_page_id')) {?>class="active" <?php }?>>
@@ -506,9 +506,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
           <div class="js_scroller">
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('system')['languages'], 'language');
-$foreach11DoElse = true;
+$foreach16DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('language')->value) {
-$foreach11DoElse = false;
+$foreach16DoElse = false;
 ?>
               <a class="dropdown-item" href="?lang=<?php echo $_smarty_tpl->getValue('language')['code'];?>
 ">
@@ -526,9 +526,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
         <?php if ($_smarty_tpl->getValue('static_pages')) {?>
           <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('static_pages'), 'static_page');
-$foreach12DoElse = true;
+$foreach17DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('static_page')->value) {
-$foreach12DoElse = false;
+$foreach17DoElse = false;
 ?>
             <?php if ($_smarty_tpl->getValue('static_page')['page_in_footer']) {?>
               <li><a href="<?php echo $_smarty_tpl->getValue('static_page')['url'];?>

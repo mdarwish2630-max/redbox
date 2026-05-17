@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:26
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:23
   from 'file:_header.search.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352a628328_20223105',
+  'unifunc' => 'content_6a08e87f6aac38_21973125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:ajax.search.tpl' => 1,
   ),
 ))) {
-function content_69e7352a628328_20223105 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87f6aac38_21973125 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="search-wrapper d-none d-md-block">
   <form>

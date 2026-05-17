@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:27
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:24
   from 'file:_user_menu.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352b097647_34261712',
+  'unifunc' => 'content_6a08e8801ef803_99399322',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 13,
   ),
 ))) {
-function content_69e7352b097647_34261712 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e8801ef803_99399322 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><a href="#" class="dropdown dropdown-toggle user-menu" data-bs-toggle="dropdown" data-display="static">
   <img src="<?php echo $_smarty_tpl->getValue('user')->_data['user_picture'];?>

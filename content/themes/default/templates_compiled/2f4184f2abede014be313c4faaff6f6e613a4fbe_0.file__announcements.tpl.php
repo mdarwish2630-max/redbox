@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:28
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:25
   from 'file:_announcements.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352c9f4da3_17803969',
+  'unifunc' => 'content_6a08e881a702c0_09444951',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,12 +20,12 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e7352c9f4da3_17803969 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e881a702c0_09444951 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('announcements'), 'announcement');
-$foreach21DoElse = true;
+$foreach18DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('announcement')->value) {
-$foreach21DoElse = false;
+$foreach18DoElse = false;
 ?>
   <div class="alert alert-<?php echo $_smarty_tpl->getValue('announcement')['type'];?>
  text-with-list">

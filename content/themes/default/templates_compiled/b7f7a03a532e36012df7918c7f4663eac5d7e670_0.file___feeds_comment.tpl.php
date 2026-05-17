@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:43
+/* Smarty version 5.7.0, created on 2026-05-17 03:29:18
   from 'file:__feeds_comment.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3e719db24_08073743',
+  'unifunc' => 'content_6a09360ec044c2_33885036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__feeds_comment.tpl' => 2,
   ),
 ))) {
-function content_69e9b3e719db24_08073743 (\Smarty\Template $_smarty_tpl) {
+function content_6a09360ec044c2_33885036 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><li>
   <div class="comment <?php if ($_smarty_tpl->getValue('_is_reply')) {?>reply<?php }?>" data-id="<?php echo $_smarty_tpl->getValue('_comment')['comment_id'];?>
@@ -135,11 +135,11 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('system')['reactions_enabled'], 'reaction');
 $_smarty_tpl->getVariable('reaction')->iteration = 0;
-$foreach10DoElse = true;
+$foreach2DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('reaction')->value) {
-$foreach10DoElse = false;
+$foreach2DoElse = false;
 $_smarty_tpl->getVariable('reaction')->iteration++;
-$foreach10Backup = clone $_smarty_tpl->getVariable('reaction');
+$foreach2Backup = clone $_smarty_tpl->getVariable('reaction');
 ?>
                 <div class="reactions_item reaction reaction-<?php echo $_smarty_tpl->getVariable('reaction')->iteration;?>
  js_react-comment" data-reaction="<?php echo $_smarty_tpl->getValue('reaction')['reaction'];?>
@@ -150,7 +150,7 @@ $foreach10Backup = clone $_smarty_tpl->getVariable('reaction');
 ?>
                 </div>
               <?php
-$_smarty_tpl->setVariable('reaction', $foreach10Backup);
+$_smarty_tpl->setVariable('reaction', $foreach2Backup);
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             </div>
@@ -186,9 +186,9 @@ echo $_smarty_tpl->getValue('_comment')['author_user_name'];
               <div class="reactions-stats">
                 <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_comment')['reactions'], 'reaction_count', false, 'reaction_type');
-$foreach11DoElse = true;
+$foreach3DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('reaction_type')->value => $_smarty_tpl->getVariable('reaction_count')->value) {
-$foreach11DoElse = false;
+$foreach3DoElse = false;
 ?>
                   <?php if ($_smarty_tpl->getValue('reaction_count') > 0) {?>
                     <div class="reactions-stats-item">
@@ -247,9 +247,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
             <?php if ($_smarty_tpl->getValue('_comment')['replies'] > 0) {?>
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('_comment')['comment_replies'], 'reply');
-$foreach12DoElse = true;
+$foreach4DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('reply')->value) {
-$foreach12DoElse = false;
+$foreach4DoElse = false;
 ?>
                 <?php $_smarty_tpl->renderSubTemplate('file:__feeds_comment.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('_comment'=>$_smarty_tpl->getValue('reply'),'_is_reply'=>true), (int) 0, $_smarty_current_dir);
 ?>

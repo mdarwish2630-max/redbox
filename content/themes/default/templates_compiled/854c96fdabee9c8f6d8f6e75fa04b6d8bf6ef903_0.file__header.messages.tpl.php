@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:26
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:23
   from 'file:_header.messages.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352ac3fcc8_38525642',
+  'unifunc' => 'content_6a08e87fa5b292_54446136',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__feeds_conversation.tpl' => 1,
   ),
 ))) {
-function content_69e7352ac3fcc8_38525642 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87fa5b292_54446136 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('system')['redirect_to_mobile_apps']) {?>
   <li class="d-block d-md-none">
@@ -59,9 +59,9 @@ if ($_smarty_tpl->getValue('system')['redirect_to_mobile_apps']) {?>
           <ul>
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('user')->_data['conversations'], 'conversation');
-$foreach18DoElse = true;
+$foreach11DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('conversation')->value) {
-$foreach18DoElse = false;
+$foreach11DoElse = false;
 ?>
               <?php $_smarty_tpl->renderSubTemplate('file:__feeds_conversation.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), (int) 0, $_smarty_current_dir);
 ?>

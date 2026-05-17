@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:46
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:34
   from 'file:_js_templates.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72ba29e9b85_69071687',
+  'unifunc' => 'content_6a08e88a912317_52593210',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 64,
   ),
 ))) {
-function content_69e72ba29e9b85_69071687 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e88a912317_52593210 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- Toasts --><div class="toast-container p-3 bottom-0 start-0 fixed-bottom"></div><!-- Toasts --><!-- Modals --><div id="modal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><div class="loader pt10 pb10"></div></div></div></div></div><?php echo '<script'; ?>
  id="modal-login" type="text/template"><div class="modal-header"><h6 class="modal-title"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Not Logged In");?>
@@ -63,9 +63,9 @@ $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\tem
 echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Theme Switcher");?>
 </h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body pb0 pt30"><div class="row"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('system')['themes'], 'theme');
-$foreach15DoElse = true;
+$foreach43DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('theme')->value) {
-$foreach15DoElse = false;
+$foreach43DoElse = false;
 ?><div class="col-6"><div style="background: rgb(0 0 0 / 0.06); padding: 8px; border-radius: 8px; margin-bottom: 30px;"><a style="display: block; position: relative; padding-bottom: 60%;" href="?theme=<?php echo $_smarty_tpl->getValue('theme')['name'];?>
 "><img style="width: 100%; height: 100%; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: 4px;" src="<?php echo $_smarty_tpl->getValue('system')['system_url'];?>
 /content/themes/<?php echo $_smarty_tpl->getValue('theme')['name'];?>
@@ -110,9 +110,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?></d
 echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Switch Accounts");?>
 </h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body ptb30"><ul><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('user')->_data['connected_accounts'], 'connected_account');
-$foreach16DoElse = true;
+$foreach44DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('connected_account')->value) {
-$foreach16DoElse = false;
+$foreach44DoElse = false;
 ?><li class="feeds-item with-hover mt5"><div class="data-container js_connected-account-switch" data-uid="<?php echo $_smarty_tpl->getValue('connected_account')['user_id'];?>
 "><span class="data-avatar"><img src="<?php echo $_smarty_tpl->getValue('connected_account')['user_picture'];?>
 " alt=""></span><div class="data-content"><?php if ($_smarty_tpl->getValue('connected_account')['user_id'] == $_smarty_tpl->getValue('user')->_data['user_id']) {?><div class="float-end"><i class="fa fa-check-circle fa-fw fa-2x text-success"></i></div><?php }?><div class="mt5"><span class="name text-link-no-underline"><?php if ($_smarty_tpl->getValue('system')['show_usernames_enabled']) {
@@ -206,9 +206,9 @@ echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Keyboard Shortcuts");
 ><!-- Keyboard Shortcuts --><!-- Emoji Menu --><?php echo '<script'; ?>
  id="emoji-menu" type="text/template"><div class="emoji-menu"><div class="tab-content"><div class="tab-pane tab-emojis active" id="tab-emojis-{{id}}"><div class="js_scroller" data-slimScroll-height="180"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('emojis'), 'emoji', false, 'emoji_index');
-$foreach17DoElse = true;
+$foreach45DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('emoji_index')->value => $_smarty_tpl->getVariable('emoji')->value) {
-$foreach17DoElse = false;
+$foreach45DoElse = false;
 ?><div class="item item-<?php echo $_smarty_tpl->getValue('emoji_index');?>
 "<?php if ($_smarty_tpl->getValue('emoji_index') > 50) {?> style="display: none;" js-hidden <?php }?>><i data-emoji="<?php echo $_smarty_tpl->getValue('emoji')['unicode_char'];?>
 " class="js_emoji twa twa-2x twa-<?php echo $_smarty_tpl->getValue('emoji')['class'];?>
@@ -216,9 +216,9 @@ $foreach17DoElse = false;
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?></div></div><div class="tab-pane" id="tab-stickers-{{id}}"><div class="js_scroller" data-slimScroll-height="180"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('user')->get_stickers(), 'sticker');
-$foreach18DoElse = true;
+$foreach46DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('sticker')->value) {
-$foreach18DoElse = false;
+$foreach46DoElse = false;
 ?><div class="item"><img data-emoji=":STK-<?php echo $_smarty_tpl->getValue('sticker')['sticker_id'];?>
 :" src="<?php echo $_smarty_tpl->getValue('system')['system_uploads'];?>
 /<?php echo $_smarty_tpl->getValue('sticker')['image'];?>
@@ -229,9 +229,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?></d
 </a></li></ul></div><?php echo '</script'; ?>
 ><!-- Emoji Menu --><!-- Chat --><?php if ($_smarty_tpl->getValue('system')['chat_enabled'] && $_smarty_tpl->getValue('user')->_data['user_privacy_chat'] != "me") {?><!-- Chat Sidebar --><div class="chat-sidebar <?php if (!$_smarty_tpl->getValue('user')->_data['user_chat_enabled']) {?>disabled<?php }?>"><div class="chat-sidebar-content"><div class="js_scroller" data-slimScroll-height="100%"><!-- Online --><div class="js_chat-contacts-online"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('sidebar_friends'), '_user');
-$foreach19DoElse = true;
+$foreach47DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_user')->value) {
-$foreach19DoElse = false;
+$foreach47DoElse = false;
 if ($_smarty_tpl->getValue('_user')['user_is_online']) {?><div class="chat-avatar-wrapper clickable js_chat-start" data-uid="<?php echo $_smarty_tpl->getValue('_user')['user_id'];?>
 "data-name="<?php echo $_smarty_tpl->getValue('_user')['user_fullname'];?>
 "data-link="<?php echo $_smarty_tpl->getValue('_user')['user_name'];?>
@@ -241,9 +241,9 @@ if ($_smarty_tpl->getValue('_user')['user_is_online']) {?><div class="chat-avata
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?></div><!-- Online --><!-- Offline --><div class="js_chat-contacts-offline"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('sidebar_friends'), '_user');
-$foreach20DoElse = true;
+$foreach48DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('_user')->value) {
-$foreach20DoElse = false;
+$foreach48DoElse = false;
 if (!$_smarty_tpl->getValue('_user')['user_is_online']) {?><div class="chat-avatar-wrapper clickable js_chat-start" data-uid="<?php echo $_smarty_tpl->getValue('_user')['user_id'];?>
 "data-name="<?php echo $_smarty_tpl->getValue('_user')['user_fullname'];?>
 "data-link="<?php echo $_smarty_tpl->getValue('_user')['user_name'];?>
@@ -434,9 +434,9 @@ echo '<script'; ?>
 echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Gifts");?>
 </h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><form class="js_ajax-forms" data-url="users/gifts.php?do=send&uid={{uid}}"><div class="modal-body"><div class="js_scroller" data-slimScroll-height="440"><div class="d-flex flex-wrap justify-content-start"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('gifts'), 'gift');
-$foreach21DoElse = true;
+$foreach49DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('gift')->value) {
-$foreach21DoElse = false;
+$foreach49DoElse = false;
 ?><div style="width: calc(100% / 3); padding: 5px; text-align: center;"><input class="x-hidden input-label" type="radio" name="gift" value="<?php echo $_smarty_tpl->getValue('gift')['gift_id'];?>
 " id="gift_<?php echo $_smarty_tpl->getValue('gift')['gift_id'];?>
 " /><label class="button-label-image" for="gift_<?php echo $_smarty_tpl->getValue('gift')['gift_id'];?>
@@ -793,9 +793,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
 </label><select class="form-select" name="billing_country" required><option value="none"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select Country");?>
 </option><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('countries'), 'country');
-$foreach22DoElse = true;
+$foreach50DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('country')->value) {
-$foreach22DoElse = false;
+$foreach50DoElse = false;
 ?><option <?php if ($_smarty_tpl->getValue('user')->_data['user_country'] == $_smarty_tpl->getValue('country')['country_id']) {?>selected<?php }?> value="<?php echo $_smarty_tpl->getValue('country')['country_name'];?>
 "><?php echo $_smarty_tpl->getValue('country')['country_name'];?>
 </option><?php
@@ -845,9 +845,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
 </label><select class="form-select" name="billing_country" required><option value="none"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select Country");?>
 </option><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('countries'), 'country');
-$foreach23DoElse = true;
+$foreach51DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('country')->value) {
-$foreach23DoElse = false;
+$foreach51DoElse = false;
 ?><option <?php if ($_smarty_tpl->getValue('user')->_data['user_country'] == $_smarty_tpl->getValue('country')['country_id']) {?>selected<?php }?> value="<?php echo $_smarty_tpl->getValue('country')['country_name'];?>
 "><?php echo $_smarty_tpl->getValue('country')['country_name'];?>
 </option><?php
@@ -911,9 +911,9 @@ echo '<script'; ?>
  id="auto-connect-node" type="text/template"><div class="auto-connect-node"><div class="row form-group"><label class="col-md-3 form-label"><?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')("Select");?>
  {{nodes_name}}</label><div class="col-md-9"><select class="form-select mb10" name="{{country_field_name}}"><?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('countries'), 'country');
-$foreach24DoElse = true;
+$foreach52DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('country')->value) {
-$foreach24DoElse = false;
+$foreach52DoElse = false;
 ?><option value="<?php echo $_smarty_tpl->getValue('country')['country_id'];?>
 "><?php echo $_smarty_tpl->getValue('country')['country_name'];?>
 </option><?php

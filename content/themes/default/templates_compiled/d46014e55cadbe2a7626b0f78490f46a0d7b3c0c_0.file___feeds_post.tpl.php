@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:38
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:27
   from 'file:__feeds_post.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3e2a1fb83_40358248',
+  'unifunc' => 'content_6a08e883f00821_07874682',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__feeds_post.comments.tpl' => 1,
   ),
 ))) {
-function content_69e9b3e2a1fb83_40358248 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e883f00821_07874682 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if (!$_smarty_tpl->getValue('standalone')) {?><li><?php }?>
   <!-- post -->
@@ -103,9 +103,9 @@ if (!$_smarty_tpl->getValue('standalone')) {?><li><?php }?>
               <div class="reactions-stats">
                 <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('post')['reactions'], 'reaction_count', false, 'reaction_type');
-$foreach0DoElse = true;
+$foreach26DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('reaction_type')->value => $_smarty_tpl->getVariable('reaction_count')->value) {
-$foreach0DoElse = false;
+$foreach26DoElse = false;
 ?>
                   <?php if ($_smarty_tpl->getValue('reaction_count') > 0) {?>
                     <div class="reactions-stats-item">
@@ -247,11 +247,11 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                 <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('system')['reactions_enabled'], 'reaction');
 $_smarty_tpl->getVariable('reaction')->iteration = 0;
-$foreach1DoElse = true;
+$foreach27DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('reaction')->value) {
-$foreach1DoElse = false;
+$foreach27DoElse = false;
 $_smarty_tpl->getVariable('reaction')->iteration++;
-$foreach1Backup = clone $_smarty_tpl->getVariable('reaction');
+$foreach27Backup = clone $_smarty_tpl->getVariable('reaction');
 ?>
                   <div class="reactions_item reaction reaction-<?php echo $_smarty_tpl->getVariable('reaction')->iteration;?>
  js_react-post" data-reaction="<?php echo $_smarty_tpl->getValue('reaction')['reaction'];?>
@@ -262,7 +262,7 @@ $foreach1Backup = clone $_smarty_tpl->getVariable('reaction');
 ?>
                   </div>
                 <?php
-$_smarty_tpl->setVariable('reaction', $foreach1Backup);
+$_smarty_tpl->setVariable('reaction', $foreach27Backup);
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
               </div>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 15:38:27
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:20
   from 'file:_header.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a088f7317b7c0_85464191',
+  'unifunc' => 'content_6a08e87c406c50_96297219',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -27,7 +27,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:_ads.tpl' => 1,
   ),
 ))) {
-function content_6a088f7317b7c0_85464191 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87c406c50_96297219 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if (!$_smarty_tpl->getValue('user')->_logged_in) {?>
 

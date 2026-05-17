@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:42
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:20
   from 'file:_head.css.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72b9e45e5c6_64541280',
+  'unifunc' => 'content_6a08e87c0f7025_70218616',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e72b9e45e5c6_64541280 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87c0f7025_70218616 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('system')['css_customized']) {?><style type="text/css"><?php if ($_smarty_tpl->getValue('system')['css_background']) {?>body {background: <?php echo $_smarty_tpl->getValue('system')['css_background'];?>
 ;}<?php }

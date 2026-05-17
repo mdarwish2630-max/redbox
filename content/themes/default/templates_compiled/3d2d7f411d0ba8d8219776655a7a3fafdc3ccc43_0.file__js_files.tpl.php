@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:44
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:32
   from 'file:_js_files.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72ba0798c62_54167178',
+  'unifunc' => 'content_6a08e888ba1ba2_44794417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e72ba0798c62_54167178 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e888ba1ba2_44794417 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><!-- Initialize --><?php echo '<script'; ?>
 >/* initialize vars */var site_title = "<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('system')['system_title']);?>
@@ -491,15 +491,15 @@ if ($_smarty_tpl->getValue('view') == "earnings" && $_smarty_tpl->getValue('sub_
 echo '<script'; ?>
 >$(function() {$('#payment-methods-chart').highcharts({lang: {viewFullscreen: __['View Fullscreen'],printChart: __['Print Chart'],downloadPNG: __['Download PNG'],downloadJPEG: __['Download JPEG'],downloadPDF: __['Download PDF'],downloadSVG: __['Download SVG vector image'],contextButtonTitle: __['Chart context menu'],},chart: {type: 'column',backgroundColor: 'transparent',},title: {text: __['PayIn Methods']},xAxis: {categories: [__['Jan'],__['Feb'],__['Mar'],__['Apr'],__['May'],__['Jun'],__['Jul'],__['Aug'],__['Sep'],__['Oct'],__['Nov'],__['Dec']],crosshair: true},yAxis: {min: 0,title: {text: __['Total'] + ' ' + '(' + currency + ')'}},tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>',pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +'<td style="padding:0"><b>{point.y}</b></td></tr>',footerFormat: '</table>',shared: true,useHTML: true},plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},series: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('payment_methods'), 'method');
-$foreach8DoElse = true;
+$foreach36DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('method')->value) {
-$foreach8DoElse = false;
+$foreach36DoElse = false;
 ?>{name: '<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('capitalize')($_smarty_tpl->getValue('method'));?>
 ',data: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('payment_methods_chart'), 'payments', false, 'month');
-$foreach9DoElse = true;
+$foreach37DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('month')->value => $_smarty_tpl->getVariable('payments')->value) {
-$foreach9DoElse = false;
+$foreach37DoElse = false;
 echo $_smarty_tpl->getValue('payments')[$_smarty_tpl->getValue('method')];?>
 ,<?php
 }
@@ -507,15 +507,15 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>]},
 }
 $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>]});$('#payment-handles-chart').highcharts({lang: {viewFullscreen: __['View Fullscreen'],printChart: __['Print Chart'],downloadPNG: __['Download PNG'],downloadJPEG: __['Download JPEG'],downloadPDF: __['Download PDF'],downloadSVG: __['Download SVG vector image'],contextButtonTitle: __['Chart context menu'],},chart: {type: 'column',backgroundColor: 'transparent',},title: {text: __['PayIn Types']},xAxis: {categories: [__['Jan'],__['Feb'],__['Mar'],__['Apr'],__['May'],__['Jun'],__['Jul'],__['Aug'],__['Sep'],__['Oct'],__['Nov'],__['Dec']],crosshair: true},yAxis: {min: 0,title: {text: __['Total'] + ' ' + '(' + currency + ')'}},tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>',pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +'<td style="padding:0"><b>{point.y}</b></td></tr>',footerFormat: '</table>',shared: true,useHTML: true},plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},series: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('payment_handles'), 'handle');
-$foreach10DoElse = true;
+$foreach38DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('handle')->value) {
-$foreach10DoElse = false;
+$foreach38DoElse = false;
 ?>{name: '<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('capitalize')($_smarty_tpl->getValue('handle'));?>
 ',data: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('payment_handles_chart'), 'payments', false, 'month');
-$foreach11DoElse = true;
+$foreach39DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('month')->value => $_smarty_tpl->getVariable('payments')->value) {
-$foreach11DoElse = false;
+$foreach39DoElse = false;
 echo $_smarty_tpl->getValue('payments')[$_smarty_tpl->getValue('handle')];?>
 ,<?php
 }
@@ -527,15 +527,15 @@ if ($_smarty_tpl->getValue('view') == "earnings" && $_smarty_tpl->getValue('sub_
 echo '<script'; ?>
 >$(function() {$('#commissions-chart').highcharts({lang: {viewFullscreen: __['View Fullscreen'],printChart: __['Print Chart'],downloadPNG: __['Download PNG'],downloadJPEG: __['Download JPEG'],downloadPDF: __['Download PDF'],downloadSVG: __['Download SVG vector image'],contextButtonTitle: __['Chart context menu'],},chart: {type: 'column',backgroundColor: 'transparent',},title: {text: __['Commissions Types']},xAxis: {categories: [__['Jan'],__['Feb'],__['Mar'],__['Apr'],__['May'],__['Jun'],__['Jul'],__['Aug'],__['Sep'],__['Oct'],__['Nov'],__['Dec']],crosshair: true},yAxis: {min: 0,title: {text: __['Total'] + ' ' + '(' + currency + ')'}},tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>',pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +'<td style="padding:0"><b>{point.y}</b></td></tr>',footerFormat: '</table>',shared: true,useHTML: true},plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},series: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('commissions_handles'), 'handle');
-$foreach12DoElse = true;
+$foreach40DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('handle')->value) {
-$foreach12DoElse = false;
+$foreach40DoElse = false;
 ?>{name: '<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('capitalize')($_smarty_tpl->getValue('handle'));?>
 ',data: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('commissions_handles_chart'), 'commissions', false, 'month');
-$foreach13DoElse = true;
+$foreach41DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('month')->value => $_smarty_tpl->getVariable('commissions')->value) {
-$foreach13DoElse = false;
+$foreach41DoElse = false;
 echo $_smarty_tpl->getValue('commissions')[$_smarty_tpl->getValue('handle')];?>
 ,<?php
 }
@@ -547,9 +547,9 @@ if ($_smarty_tpl->getValue('view') == "earnings" && $_smarty_tpl->getValue('sub_
 echo '<script'; ?>
 >$(function() {$('#admin-chart-earnings').highcharts({lang: {viewFullscreen: __['View Fullscreen'],printChart: __['Print Chart'],downloadPNG: __['Download PNG'],downloadJPEG: __['Download JPEG'],downloadPDF: __['Download PDF'],downloadSVG: __['Download SVG vector image'],contextButtonTitle: __['Chart context menu'],},chart: {type: 'column',backgroundColor: 'transparent',},title: {text: __['Packages']},xAxis: {categories: [__['Jan'],__['Feb'],__['Mar'],__['Apr'],__['May'],__['Jun'],__['Jul'],__['Aug'],__['Sep'],__['Oct'],__['Nov'],__['Dec']],crosshair: true},yAxis: {min: 0,title: {text: __['Total'] + ' ' + '(' + currency + ')'}},tooltip: {headerFormat: '<span style="font-size:10px">{point.key}</span><table>',pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +'<td style="padding:0"><b>{point.y}</b></td></tr>',footerFormat: '</table>',shared: true,useHTML: true},plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},series: [<?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('rows'), 'value', false, 'key');
-$foreach14DoElse = true;
+$foreach42DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('key')->value => $_smarty_tpl->getVariable('value')->value) {
-$foreach14DoElse = false;
+$foreach42DoElse = false;
 ?>{name: "<?php echo $_smarty_tpl->getValue('key');?>
 ",data: [<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('join')($_smarty_tpl->getValue('value')['months_sales'],",");?>
 ]},<?php

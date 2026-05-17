@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:35
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:23
   from 'file:__feeds_notification.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3df114799_53815645',
+  'unifunc' => 'content_6a08e87fdacf29_12373598',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__reaction_emojis.tpl' => 2,
   ),
 ))) {
-function content_69e9b3df114799_53815645 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87fdacf29_12373598 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('_tpl') == "with-action") {?>
   <li class="feeds-action-item <?php if (!$_smarty_tpl->getValue('notification')['seen']) {?>unread<?php }?>" data-id="<?php echo $_smarty_tpl->getValue('notification')['notification_id'];?>

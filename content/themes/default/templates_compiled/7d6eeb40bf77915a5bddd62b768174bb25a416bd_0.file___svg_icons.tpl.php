@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 07:47:48
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:21
   from 'file:__svg_icons.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e72ba4cb0528_93400721',
+  'unifunc' => 'content_6a08e87d0a5fa2_76110610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -287,7 +287,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:../images/svg/support.svg' => 1,
   ),
 ))) {
-function content_69e72ba4cb0528_93400721 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e87d0a5fa2_76110610 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 ?><div class="svg-container <?php if ((true && ($_smarty_tpl->hasVariable('class') && null !== ($_smarty_tpl->getValue('class') ?? null)))) {
 echo $_smarty_tpl->getValue('class');

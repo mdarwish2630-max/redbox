@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-23 05:53:42
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:31
   from 'file:C:\xampp\htdocs\selfie\content\themes\default\templates\../images/svg/comment.svg' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e9b3e660dd12_15741673',
+  'unifunc' => 'content_6a08e887d411f9_01733286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e9b3e660dd12_15741673 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e887d411f9_01733286 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\images\\svg';
 echo '<?'; ?>
 xml version="1.0" encoding="iso-8859-1"<?php echo '?>'; ?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-04-21 08:28:30
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:27
   from 'file:_widget.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_69e7352e35ad63_35040748',
+  'unifunc' => 'content_6a08e88323f446_54967262',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,15 +20,15 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   array (
   ),
 ))) {
-function content_69e7352e35ad63_35040748 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e88323f446_54967262 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('widgets')) {?>
   <!-- Widgets -->
   <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('widgets'), 'widget');
-$foreach27DoElse = true;
+$foreach23DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('widget')->value) {
-$foreach27DoElse = false;
+$foreach23DoElse = false;
 ?>
     <?php if ($_smarty_tpl->getValue('widget')['target_audience'] == 'all' || ($_smarty_tpl->getValue('widget')['target_audience'] == 'visitors' && !$_smarty_tpl->getValue('user')->_logged_in) || ($_smarty_tpl->getValue('widget')['target_audience'] == 'members' && $_smarty_tpl->getValue('user')->_logged_in)) {?>
       <div class="card">

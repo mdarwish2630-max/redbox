@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 5.7.0, created on 2026-05-16 15:38:28
+/* Smarty version 5.7.0, created on 2026-05-16 21:58:25
   from 'file:_publisher.tpl' */
 
 /* @var \Smarty\Template $_smarty_tpl */
 if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
   'version' => '5.7.0',
-  'unifunc' => 'content_6a088f74b3b4e4_48100262',
+  'unifunc' => 'content_6a08e881bec7e5_32457460',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->getCompiled()->isFresh($_smarty_tpl, array (
     'file:__svg_icons.tpl' => 36,
   ),
 ))) {
-function content_6a088f74b3b4e4_48100262 (\Smarty\Template $_smarty_tpl) {
+function content_6a08e881bec7e5_32457460 (\Smarty\Template $_smarty_tpl) {
 $_smarty_current_dir = 'C:\\xampp\\htdocs\\selfie\\content\\themes\\default\\templates';
 if ($_smarty_tpl->getValue('user')->_data['can_publish_posts']) {?>
   <?php if ($_smarty_tpl->getValue('system')['verification_for_posts'] && !$_smarty_tpl->getValue('user')->_data['user_verified']) {?>
@@ -99,9 +99,9 @@ echo $_smarty_tpl->getValue('url');
             <div class="rn-category-dropdown-menu" id="rn-category-dropdown-menu">
               <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('browse_categories'), 'cat');
-$foreach13DoElse = true;
+$foreach19DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('cat')->value) {
-$foreach13DoElse = false;
+$foreach19DoElse = false;
 ?>
                 <div class="rn-category-dropdown-item" data-category-id="<?php echo $_smarty_tpl->getValue('cat')['category_id'];?>
 " data-category-name="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('cat')['category_name']);?>
@@ -180,9 +180,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings'), 'feeling');
-$foreach14DoElse = true;
+$foreach20DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('feeling')->value) {
-$foreach14DoElse = false;
+$foreach20DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-add" data-action="<?php echo $_smarty_tpl->getValue('feeling')['action'];?>
 " data-placeholder="<?php echo $_smarty_tpl->getSmarty()->getModifierCallback('__')($_smarty_tpl->getValue('feeling')['placeholder']);?>
@@ -209,9 +209,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
                   <ul class="feelings-list">
                     <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('feelings_types'), 'type');
-$foreach15DoElse = true;
+$foreach21DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('type')->value) {
-$foreach15DoElse = false;
+$foreach21DoElse = false;
 ?>
                       <li class="feeling-item js_feelings-type" data-type="<?php echo $_smarty_tpl->getValue('type')['action'];?>
 " data-icon="<?php echo $_smarty_tpl->getValue('type')['icon'];?>
@@ -248,9 +248,9 @@ $_smarty_tpl->getSmarty()->getRuntime('Foreach')->restore($_smarty_tpl, 1);?>
           <div class="publisher-meta" data-meta="colored">
             <?php
 $_from = $_smarty_tpl->getSmarty()->getRuntime('Foreach')->init($_smarty_tpl, $_smarty_tpl->getValue('colored_patterns'), 'pattern');
-$foreach16DoElse = true;
+$foreach22DoElse = true;
 foreach ($_from ?? [] as $_smarty_tpl->getVariable('pattern')->value) {
-$foreach16DoElse = false;
+$foreach22DoElse = false;
 ?>
               <div class="colored-pattern-item js_publisher-pattern" data-id="<?php echo $_smarty_tpl->getValue('pattern')['pattern_id'];?>
 " data-type="<?php echo $_smarty_tpl->getValue('pattern')['type'];?>
